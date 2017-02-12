@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Michael Schauer</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">						<!--Responsive-->
+
+	<link rel="stylesheet" type="text/css" href="style.css">									<!--Main CSS-->
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">							<!--Favicon-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">				<!--Font-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>	<!--jQuery-->
+	<script src="java.js"></script>
+
+</head>
+<body>
+	<div id="content">
+	<nav>
+		<div class="nav" id="nav">
+				<a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
+				<a href="#home" onclick="closeNav()" >Home</a>
+				<a href="#about" onclick="closeNav()">Über mich</a>
+				<a href="#others" onclick="closeNav()">Anderes</a>
+				<a href="#contact" onclick="closeNav()">Kontakt</a>
+		</div>
+		<div id="navbar">
+			<span id="open" class="open" onclick="openNav()"><img src="menuw.svg"></span>
+			<div id="title" class="header">
+				<h3>MICHAEL SCHAUER</h3>
+			</div>
+		</div>	
+	</nav>
+	<div id="navspace"></div>
+			<div id="home" class="card">
+				<div class="content-wrap">
+					<h3 class="cardtitle">Hallo,</h3>
+					<p class="cardp">mein Name ist Michael Schauer und ich wünsche dir
+						viel Spaß beim Durchstöbern meiner ersten Homepage.</p>
+				</div>
+			</div>
+			<div id="about" class="card">
+				<div class="content-wrap">
+					<h3 class="cardtitle">Über mich</h3>
+					<p class="cardp">Mein Name ist Michael Schauer und ich bin am 11.4.2000 in Linz geboren. In meiner Freizeit verbringe ich gerne Zeit mit meiner Familie und meinen Freunden. Ich besuche die Schule der Kreuzschwestern in Linz, wo ich den AHS Zweig gewählt habe Mit meinem in Informatik erlernten Wissen habe ich nun diese Website erstellt, die ich laufend aktualisieren werde.</p>
+				</div>
+			</div>
+
+			<div id="others" class="card">
+				<div class="content-wrap">
+					<h3 class="cardtitle">Anderes</h3>
+					<p class="cardp">Stundenwiederholungsgenerator</p>
+					<div class="buttondiv">
+						<button class="show"  id="button" onclick="show()">Ansehen</button>
+					</div>
+					<div class="buttondiv2">
+						<button class="show"  id="button2" onclick="hide()">Verbergen</button>
+					</div>
+					<div id="stundenwh">
+					    <div id="wrapper">
+					    	<div class="stuninput">
+						        <p>Zahl 1:<input id="anfang" size="5" placeholder="1"></p>
+						        <p>Zahl 2:<input id="ende" size="5" placeholder="30"></p>
+					        </div>  
+					        <p><input class="button" value="Los" onclick="zufall();" type="button"></p>
+					        <div class="erg">
+					        	<p class="whitep">Klassennummer:</p>
+					         	<span id="ergebnis" class="alert">-</span>
+					        </div>
+						</div>
+					</div>
+				</div>
+			</div>			
+
+			<div id="contact" class="card">
+				<div class="content-wrap">
+					<h3 class="cardtitle">Kontakt</h3>
+					<div id="form-div">
+						<section id="contact">
+							<form action="https://formspree.io/schauer.michael.ms@gmail.com" method="POST">
+								<div class="info">
+									<label><span>Name</span>
+						    		<input type="text" name="name"></label>
+						    		<label><span>Email</span>
+						    		<input type="email" name="_replyto"></label>
+					    		</div>
+					    		<label><span>Nachricht</span>
+					    		<textarea name="message"></textarea></label>
+					    		<div class="submit-wrap">
+					    			<input type="submit" value="Senden">
+					    		</div>
+							</form>
+						</section>
+					  </div>
+					</div>
+			</div>
+			<div id="footer">
+				<div class="info">
+				<h4>Michael Schauer</h4>
+				<p>schauer.michael.ms@gmail.com</p>
+				<p>Stockhofstraße 10, Linz</p>
+			</div>
+			<div class="social">
+				<a href="https://www.facebook.com/MichaelSchauer114" target="_blank"><img src="fb.svg"></a>
+				<a href="https://www.instagram.com/_michael_schauer_" target="_blank"><img src="in.svg"></a>
+				<button id="snapchat" onclick="snapcodeshow()" ><img src="sc.svg"></button>
+			</div>
+		</div>
+	</div>	
+	<div id="snapcode" onclick="snapcodeclose()"><img src="snapcode.svg"></div>
+</body>
+</html>
