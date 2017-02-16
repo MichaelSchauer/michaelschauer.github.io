@@ -13,15 +13,19 @@ function closeNav(){
 }
 
 function show(){
-	document.getElementById("stundenwh").style.display="block";
+	document.getElementById("stundenwh").style.height="auto";
+	document.getElementById("stundenwh").style.opacity="1";
 	document.getElementById("button").style.display="none";
 	document.getElementById("button2").style.display="block"	
+	document.getElementById("hrothers").style.display="block"
 }
 
 function hide(){
-	document.getElementById("stundenwh").style.display="none";
+	document.getElementById("stundenwh").style.height="0";
+	document.getElementById("stundenwh").style.opacity="0";
 	document.getElementById("button2").style.display="none";
-	document.getElementById("button").style.display="block";	
+	document.getElementById("button").style.display="block";
+	document.getElementById("hrothers").style.display="none"	
 }
 
 function snapcodeshow(){

@@ -119,7 +119,7 @@ p.cardp{
   color: #455a64;
   margin: 10px 8px;
   line-height: 22px;
-}
+} 
 
                       /* others */
 #others a{
@@ -136,13 +136,16 @@ p.cardp{
   height: 40px;
   font-size: 15px;
   width: 100px;
-  margin-top: 20px;
+  margin-top: 25px;
   margin-bottom: 10px;
   outline:none;
   border: none;
   cursor: pointer;
   letter-spacing: 1.1px;
-  margin-left: 10px;
+  text-align: center;
+  margin: 50px auto;
+  display: block;
+  transition: 0.2s ease-out;
 }
 
 .buttondiv button:hover{
@@ -160,14 +163,15 @@ p.cardp{
   height: 40px;
   font-size: 15px;
   width: 100px;
-  margin-top: 20px;
+  margin-top: 25px;
   margin-bottom: 10px;
   outline:none;
   border: none;
   cursor: pointer;
   letter-spacing: 1.1px;
   display: none;
-  margin-left: 10px;
+  margin: 50px auto;
+  transition: 0.2s ease-out;
 }
 
 .buttondiv2 button:hover{
@@ -175,8 +179,22 @@ p.cardp{
 }
 
                       /* stundenwh */
+
+#hrothers{
+  display: none;
+}
+
+#others hr{
+  background-color: #455a64;
+  height: 1px;
+  margin: 10px;
+}
+
 #stundenwh{
-  display: none; 
+  transition: opacity 1s ease-out;
+  opacity: 0; 
+  height: 0;
+  overflow: hidden;
 }
 
 #wrapper{
@@ -209,6 +227,8 @@ p.cardp{
   cursor: pointer;
   letter-spacing: 1.1px;
   font-family: 'Roboto', sans-serif;
+  text-align: center;
+  transition: 0.2s ease-out;
 }
 
 #wrapper input[type=button]:hover{
@@ -312,6 +332,7 @@ form input, textarea{
   background-color: #fff;
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
+  transition: 0.2s ease-out;
 }
 
 form input:focus, textarea:focus{
