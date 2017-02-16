@@ -185,9 +185,9 @@ p.cardp{
 }
 
 #others hr{
-  background-color: #455a64;
-  height: 1px;
+  height: 0px;
   margin: 10px;
+  border: 1px solid #9e9e9e;
 }
 
 #stundenwh{
@@ -448,6 +448,19 @@ button#snapchat{
 }
 
 @media only screen and (max-width: 1000px) {
+  .open img{
+    position: absolute;
+  }
+  .nav{
+    position: fixed;
+  }
+  #navbar{
+    position: absolute;
+  }
+  .header h3{
+    position: absolute;
+  }
+
   .card{
     width: 80%;
   }
