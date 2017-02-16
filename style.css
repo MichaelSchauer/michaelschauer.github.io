@@ -448,19 +448,6 @@ button#snapchat{
 }
 
 @media only screen and (max-width: 1000px) {
-  .open img{
-    position: absolute;
-  }
-  .nav{
-    position: fixed;
-  }
-  #navbar{
-    position: absolute;
-  }
-  .header h3{
-    position: absolute;
-  }
-
   .card{
     width: 80%;
   }
