@@ -17,8 +17,7 @@ html,body{
   display: block;
   cursor: pointer;
   position: fixed;
-  margin: 4px 0px 0px 14px;
-  padding: 10px;
+  margin: 14px 0px 0px 25px;
 }
 .open img:hover{
   filter: brightness(40%);
@@ -32,12 +31,10 @@ html,body{
   z-index: 80;
   position: fixed;
   background-color: #42a5f5;
-  opacity: 0.95;
-  transition: 0.2s ease; 
+  opacity: 0.9;
+  transition: 0.5s;
   display: block;
   text-align: center;
-  top:0;
-  left: 0;
 }
 
 .nav a{
@@ -47,8 +44,7 @@ html,body{
   display: block;
   text-decoration: none;
   padding: 1em 0;
-  transition: 0.2s ease;
-  text-transform: uppercase;
+  transition: 0.3s;
 }
 
 .close{
@@ -80,13 +76,6 @@ a .close{
 #navspace{
   height: 50px;
   display: block;
-}
-
-a.anchor {
-    display: block;
-    position: relative;
-    top: -50px;
-    visibility: hidden;
 }
 
                       /* HEADER */
@@ -128,7 +117,7 @@ p.cardp{
   color: #455a64;
   margin: 10px 8px;
   line-height: 22px;
-} 
+}
 
                       /* others */
 #others a{
@@ -145,16 +134,13 @@ p.cardp{
   height: 40px;
   font-size: 15px;
   width: 100px;
-  margin-top: 25px;
+  margin-top: 20px;
   margin-bottom: 10px;
   outline:none;
   border: none;
   cursor: pointer;
   letter-spacing: 1.1px;
-  text-align: center;
-  margin: 50px auto;
-  display: block;
-  transition: 0.2s ease-out;
+  margin-left: 10px;
 }
 
 .buttondiv button:hover{
@@ -172,15 +158,14 @@ p.cardp{
   height: 40px;
   font-size: 15px;
   width: 100px;
-  margin-top: 25px;
+  margin-top: 20px;
   margin-bottom: 10px;
   outline:none;
   border: none;
   cursor: pointer;
   letter-spacing: 1.1px;
   display: none;
-  margin: 50px auto;
-  transition: 0.2s ease-out;
+  margin-left: 10px;
 }
 
 .buttondiv2 button:hover{
@@ -188,22 +173,8 @@ p.cardp{
 }
 
                       /* stundenwh */
-
-#hrothers{
-  display: none;
-}
-
-#others hr{
-  height: 0px;
-  margin: 10px;
-  border: 1px solid #9e9e9e;
-}
-
 #stundenwh{
-  transition: opacity 0.2s ease;
-  opacity: 0; 
-  height: 0;
-  overflow: hidden;
+  display: none; 
 }
 
 #wrapper{
@@ -236,8 +207,6 @@ p.cardp{
   cursor: pointer;
   letter-spacing: 1.1px;
   font-family: 'Roboto', sans-serif;
-  text-align: center;
-  transition: 0.2s ease;
 }
 
 #wrapper input[type=button]:hover{
@@ -298,33 +267,6 @@ p.cardp{
   font-size: 50px;
   color: #E91E63;
 }
-/*-------------------------------Download-----------------------------------*/
-.downlinks{
-  margin-left: 5px;
-  margin-right: 5px; 
-  text-align: center;
-}
-.downlinks a{
-  text-decoration: none;
-  background-color: #E91E63;
-  color: #fff;
-  width: 150px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin: 10px auto;
-  display: block;
-  text-transform: uppercase;
-  transition: 0.2s ease;
-}
-
-.downlinks a:hover{
-  background-color: #F06292;
-}
-
-.downlinks a:nth-child(1){
-  margin-top: 30px;
-}
-
 
 
                       /* Contact */
@@ -368,7 +310,6 @@ form input, textarea{
   background-color: #fff;
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
-  transition: 0.2s ease-out;
 }
 
 form input:focus, textarea:focus{
@@ -399,10 +340,6 @@ input[type=submit]:hover{
   background-color: #F06292;
 }
 
-#form{
-  margin-left: 10px;
-  margin-right: 10px;
-}
 
 /*-------------------------------Footer-----------------------------------*/
 
@@ -435,8 +372,8 @@ input[type=submit]:hover{
 }
 
 .social img{
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   padding: 5px;
   padding-bottom: 10px;
   -webkit-transition: ease 0.2s;
@@ -478,7 +415,7 @@ button#snapchat{
 
 #snapcode img{
     width: 100%;
-    height: auto; 
+    height: auto;
 }
 
 #content{
