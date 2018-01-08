@@ -9,6 +9,30 @@ html,body{
   position: absolute;
 }
 
+.matura a{
+    height: 50px;
+    width: 50%;
+    margin-top: 20px;
+    background: black;
+    display: block;
+    margin: 0 auto;
+    background-color: #E91E63;
+    border: none;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    transition: 0.2s ease;
+}
+
+.matura a:hover{
+    background-color: #F06292;
+}
+
+.maturaabstand{
+    height: 25px;
+}
                       /* NAV */
 
 .open img{

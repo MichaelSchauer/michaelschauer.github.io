@@ -1,0 +1,105 @@
+html,body{
+  height: auto;
+  width: 100%;
+  overflow: auto;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.feldgroß{
+    padding: 10px;
+    text-align: center;
+}
+
+.blau{
+    background-color: #42A5F5;
+    height: 30px;
+    width: 100%;
+    margin: 0;
+}
+
+.blau a{
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+    margin-left: 10px;
+}
+
+.feldklein{
+    background-color: #f1f1f1;
+}
+.textp{
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    max-width: 600px;
+}
+
+h1{
+    margin: 0;
+    margin-top: 10px;
+    color: #E91E63;
+    padding-bottom: 20px;
+}
+
+h4{
+margin: 0;
+}
+
+form{
+    width: 100%;
+}
+
+select{
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+    height: 30px;
+    border-radius: 7px;
+    border: 2px solid #E91E63;
+    text-indent: 0%;
+}
+
+textarea{
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 40px;
+    margin-top: 5px;
+    min-height: 50px;
+    border-radius: 7px;
+    border: 2px solid #E91E63;
+}
+
+option{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+
+input{
+    background-color: #E91E63;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    border: none;
+    width: 100%;
+    max-width: 300px;
+    height: 50px;
+    margin-top: 30px;
+    font-size: 15px;
+    border-radius:7px;
+    transition: 0.2s ease;
+    margin-bottom: 20px;
+}
+
+input:hover{
+    background-color: #F06292;
+    cursor: pointer;
+}
+
+textarea:focus{
+    min-height: 100px;
+    transition: 0.2s ease;
+}
