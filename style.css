@@ -516,6 +516,10 @@ button#snapchat{
     width: 80%;
   }
 
+    .matura a{
+        width: 80%;
+    }
+
   form{
   width: 100%;
   }
@@ -539,6 +543,10 @@ button#snapchat{
   .card{
     width: 95%;
   }
+    
+    .matura a{
+        width: 95%;
+    }
   .submit-wrap{
     text-align: center;
   }
