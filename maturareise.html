@@ -20,9 +20,18 @@
     <div class="feldgroß">
         <div class="feldklein">
         <h1>Maturareise</h1>
-        <div class="textp">
-            <p>Herzlich Willkommen auf meiner Website. Ich bitte die, die mitfahren wollen, euren Namen auszuwählen und eure Präferenzen anzugeben, damit wir uns einen kurzen Überblick verschaffen können.</p>
+            
+        <h4>Der Zettel als Download</h4>
+        
+        <div class="download">
+            <a href="maturareise.pdf" download>	<img src="cloud.png"></a>    
         </div>
+            
+        <div class="textp">
+            <p>Herzlich Willkommen auf meiner Website. Bitte wählt euren Namen aus und füllt die Umfrage aus, damit wir uns einen kurzen Überblick verschaffen können.</p>
+        </div>
+            
+            
         <form action="https://formspree.io/schauer.michael.ms@gmail.com" method="POST">
             <h4>Name</h4>
             <select id="names" name="Name">
@@ -54,21 +63,22 @@
                 <h4>Land</h4>
                 <select id="land" name="Land">
                     <option disabled selected value></option>
-                    <option value="italien">Italien</option>
-                    <option value="spanien">Spanien</option>
-                    <option value="frankreich">Frankreich</option>
+                    <option value="Italien">Italien</option>
+                    <option value="Spanien">Spanien</option>
+                    <option value="Frankreich">Frankreich</option>
                 </select>
 
-                <h4>Ich bin bereit maximal zu zahlen</h4>
+                <h4>Maximale Kosten</h4>
                 <select id="preis" name="Preis">
                     <option disabled selected value></option>
+                    <option value="400€ oder weniger">400€ oder weniger</option>
                     <option value="400€ - 500€">400€ - 500€</option>
                     <option value="500€ - 600€">500€ - 600€</option>
                     <option value="600€ oder mehr">600€ oder mehr</option>
                 </select>
 
-                <h4>Anmerkungen, Ideen, Wünsche,...</h4>
-                <textarea name="nachricht"></textarea>
+                <h4>Anmerkungen, Ideen, Wünsche</h4>
+                <textarea name="Nachricht"></textarea>
 
                 <p>DIE ANGABEN WERDEN VERTRAULICH BEHANDELT!</p>
 

@@ -3,7 +3,7 @@ html,body{
   width: 100%;
   overflow: auto;
   font-family: 'Roboto', sans-serif;
-  background-color: #f1f1f1;
+  background-color: white;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -28,19 +28,47 @@ html,body{
     margin-left: 10px;
 }
 
-.feldklein{
-    background-color: #f1f1f1;
+.download{
+    width: 100%;
 }
+
+.download a{
+    text-decoration: none;
+    color: #000;
+    height: 50px;
+    display: block;
+    background-color: #E91E63;
+    line-height: 50px;
+    margin: 10px auto 30px auto;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 7px;
+    transition: 0.2s ease;
+}
+
+.download a:hover{
+    background-color: #F06292;
+}
+
+.download img{
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+
+}
+
 .textp{
     margin: 0 auto;
     display: block;
     text-align: center;
     max-width: 600px;
+    margin-bottom: 30px;
 }
 
 h1{
     margin: 0;
     margin-top: 10px;
+    margin-bottom: 30px;
     color: #E91E63;
     padding-bottom: 20px;
 }
@@ -58,11 +86,15 @@ select{
     max-width: 300px;
     margin-bottom: 30px;
     margin-top: 5px;
-    height: 30px;
+    height: 50px;
     border-radius: 7px;
-    border: 2px solid #E91E63;
-    text-indent: 0%;
-    background-color: white;
+    border: none;
+    background-color: #e3e3e3;
+    outline: none;
+}
+
+select:hover{
+    cursor: pointer;
 }
 
 textarea{
@@ -71,8 +103,10 @@ textarea{
     margin-bottom: 40px;
     margin-top: 5px;
     min-height: 50px;
+    border: none;
     border-radius: 7px;
-    border: 2px solid #E91E63;
+    background-color: #e3e3e3;
+    outline: none;
 }
 
 option{
@@ -93,6 +127,7 @@ input{
     border-radius:7px;
     transition: 0.2s ease;
     margin-bottom: 20px;
+    outline: none;
 }
 
 input:hover{
@@ -101,6 +136,6 @@ input:hover{
 }
 
 textarea:focus{
-    min-height: 100px;
+    min-height: 130px;
     transition: 0.2s ease;
 }
