@@ -62,6 +62,7 @@ select{
     border-radius: 7px;
     border: 2px solid #E91E63;
     text-indent: 0%;
+    background-color: white;
 }
 
 textarea{
