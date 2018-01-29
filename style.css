@@ -9,30 +9,6 @@ html,body{
   position: absolute;
 }
 
-.matura a{
-    height: 50px;
-    width: 50%;
-    margin-top: 20px;
-    background: black;
-    display: block;
-    margin: 0 auto;
-    background-color: #E91E63;
-    border: none;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    line-height: 50px;
-    font-size: 20px;
-    transition: 0.2s ease;
-}
-
-.matura a:hover{
-    background-color: #F06292;
-}
-
-.maturaabstand{
-    height: 20px;
-}
                       /* NAV */
 
 .open img{
@@ -55,7 +31,7 @@ html,body{
   height: 100vh;
   z-index: 80;
   position: fixed;
-  background-color: #42a5f5;
+  background-color: #000;
   opacity: 0.95;
   transition: 0.2s ease; 
   display: block;
@@ -90,15 +66,16 @@ a .close{
 }
 
 
-.nav a:not(:first-child):hover{
-  background-color: #e91e63;
+.nav a:hover{
+  color: #35BFAE;
 }
 
 #navbar{
-  background-color: #42A5F5;
+  background-color: #000;
   width: 100%;
   position: fixed;
   height: 50px;
+  opacity: 0.95;
 }
 
 #navspace{
@@ -516,10 +493,6 @@ button#snapchat{
     width: 80%;
   }
 
-    .matura a{
-        width: 80%;
-    }
-
   form{
   width: 100%;
   }
@@ -543,10 +516,6 @@ button#snapchat{
   .card{
     width: 95%;
   }
-    
-    .matura a{
-        width: 95%;
-    }
   .submit-wrap{
     text-align: center;
   }
