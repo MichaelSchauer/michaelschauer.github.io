@@ -17,7 +17,7 @@
 <body id="body">
 	<div id="content">
 	<nav>
-		<div class="nav" id="nav"><a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
+		<div class="nav" id="nav"><a href="javascript:void(0)" class="close" onclick="closeNav()">&#10005</a>
 				<a class="smoothScroll" href="#homescroll" onclick="closeNav()" >Home</a>
 				<a class="smoothScroll" href="#aboutscroll" onclick="closeNav()">Über mich</a>
 				<a class="smoothScroll" href="#anderesscroll" onclick="closeNav()">Anderes</a>
@@ -37,6 +37,7 @@
 			<div id="home" class="card">
 				<div class="content-wrap">
 					<h3 class="cardtitle">Hallo,</h3>
+                    <img src="bit3.png">
 					<p class="cardp">mein Name ist Michael Schauer und ich wünsche dir
 						viel Spaß beim Durchstöbern meiner ersten Homepage.</p>
 				</div>
@@ -45,7 +46,7 @@
 			<div id="about" class="card">
 				<div class="content-wrap">
 					<h3 class="cardtitle">Über mich</h3>
-					<p class="cardp">Mein Name ist Michael Schauer und ich bin am 11.4.2000 in Linz geboren. In meiner Freizeit verbringe ich gerne Zeit mit meiner Familie und meinen Freunden. Ich besuche die Schule der Kreuzschwestern in Linz, wo ich den AHS Zweig gewählt habe Mit meinem in Informatik erlernten Wissen habe ich nun diese Website erstellt, die ich laufend aktualisieren werde.</p>
+					<p class="cardp">Mein Name ist Michael Schauer und ich bin am 11.4.2000 in Linz geboren. In meiner Freizeit verbringe ich gerne Zeit mit meiner Familie und meinen Freunden. Ich besuchte die Schule der Kreuzschwestern in Linz, wo ich den AHS Zweig gewählt habe Mit meinem in Informatik erlernten Wissen habe ich diese Website erstellt, die ich laufend aktualisieren werde.</p>
 				</div>
 			</div>
 			<a class="anchor" id="anderesscroll"></a>
@@ -99,13 +100,13 @@
 							<div id="form">
 								<form action="https://formspree.io/schauer.michael.ms@gmail.com" method="POST">
 									<div class="info">
-										<label><span>Name</span>
-							    		<input type="text" name="name"></label>
-							    		<label><span>Email</span>
-							    		<input type="email" name="_replyto"></label>
+										<label>
+							    		<input type="text" name="name" placeholder="Name"></label>
+							    		<label>
+							    		<input type="email" name="_replyto" placeholder="E-Mail"></label>
 						    		</div>
-						    		<label><span>Nachricht</span>
-						    		<textarea name="message"></textarea></label>
+						    		<label>
+						    		<textarea name="message" placeholder="Nachricht"></textarea></label>
 						    		<div class="submit-wrap">
 						    			<input type="submit" value="Senden">
 						    		</div>

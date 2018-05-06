@@ -32,13 +32,13 @@ function snapcodeshow(){
 	document.getElementById("snapcode").style.display="block";
 	document.getElementById("content").style.background="black";
 	document.getElementById("content").style.filter="blur(5px)";
-	document.getElementById("content").style.background="#f1f1f1";
+	document.getElementById("content").style.background="#000";
 }
 
 function snapcodeclose(){
 	document.getElementById("snapcode").style.display="none";
 	document.getElementById("content").style.filter="blur(0px)";
-	document.getElementById("content").style.background="#f1f1f1";
+	document.getElementById("content").style.background="#000";
 }
 
 function zufall() {
