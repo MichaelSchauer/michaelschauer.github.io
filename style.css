@@ -30,15 +30,16 @@ html,body{
   overflow-x: hidden;
   overflow: hidden;
   height: 100vh;
-  z-index: 100;
-  position: fixed;
   background-color: #151515;
   opacity: 0.95;
   transition: 0.2s ease; 
   display: block;
   text-align: center;
-  top: 0;
+  position: fixed;
+  right: 0;
   left: 0;
+  top: 0;
+  z-index: 1030;
 }
 
 .nav a{
