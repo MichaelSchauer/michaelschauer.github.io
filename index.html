@@ -1,152 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Michael Schauer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MTest </title>
 
-	<meta charset="utf-8">
-	<meta name="theme-color" content="#151515">
-	<meta name="viewport" content="width=device-width, initial-scale=1">						<!--Responsive-->
-
-	<link rel="stylesheet" type="text/css" href="style.css">									<!--Main CSS-->
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">							<!--Favicon-->
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">				<!--Font-->
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>	<!--jQuery-->
-	<script src="java.js"></script>
-
+    <link rel="stylesheet" href="style.css">
+    <script src="main1.js"></script>
 </head>
-<body id="body">
-	<div id="content">
-	<nav>
-		<div class="nav" id="nav"><a href="javascript:void(0)" class="close" onclick="closeNav()">&#10005</a>
-				<a class="smoothScroll" href="#homescroll" onclick="closeNav()" >Home</a>
-				<a class="smoothScroll" href="#aboutscroll" onclick="closeNav()">Über mich</a>
-				<a class="smoothScroll" href="#anderesscroll" onclick="closeNav()">Anderes</a>
-				<a class="smoothScroll" href="#downloadsscroll" onclick="closeNav()">Downloads</a>
-				<a class="smoothScroll" href="#contactscroll" onclick="closeNav()">Kontakt</a>
-				<a class="smoothScroll" href="login.htm" onclick="closeNav()">Login</a>
-		</div>
-		<div id="navbar">
-			<span id="open" class="open" onclick="openNav()"><img src="menuw.svg"></span>
-			<div id="title" class="header">
-				<h3>MICHAEL SCHAUER</h3>
-			</div>
-		</div>	
-	</nav>
-	<div id="navspace"></div>
-			<a class="anchor" id="homescroll"></a>
-			<div id="home" class="card">
-				<div class="content-wrap">
-					<h3 class="cardtitle">Hallo,</h3>
-                    <img src="bit3.png">
-					<p class="cardp">mein Name ist Michael Schauer und ich wünsche dir
-						viel Spaß beim Durchstöbern meiner ersten Homepage.</p>
-				</div>
-			</div>
-			<a class="anchor" id="aboutscroll"></a>
-			<div id="about" class="card">
-				<div class="content-wrap">
-					<h3 class="cardtitle">Über mich</h3>
-					<p class="cardp">Mein Name ist Michael Schauer und ich bin am 11.4.2000 in Linz geboren. In meiner Freizeit verbringe ich gerne Zeit mit meiner Familie und meinen Freunden. Ich besuchte die Schule der Kreuzschwestern in Linz, wo ich den AHS Zweig gewählt habe Mit meinem in Informatik erlernten Wissen habe ich diese Website erstellt, die ich laufend aktualisieren werde.</p>
-				</div>
-			</div>
-			<a class="anchor" id="anderesscroll"></a>
-			<div id="others" class="card">
-				<div class="content-wrap">
-					<h3 class="cardtitle">Anderes</h3>
-					<p class="cardp">Stundenwiederholungsgenerator</p>
-					<div class="buttondiv">
-						<button class="show"  id="button" onclick="show()">Ansehen</button>
-					</div>
-					<div class="buttondiv2">
-						<button class="show"  id="button2" onclick="hide()">Verbergen</button>
-					</div>
-					
-					<div id="stundenwh">
-					    <div id="wrapper">
-						    <div id="hrothers">
-								<hr>
-							</div>
-					    	<div class="stuninput">
-						        <p>Zahl 1:<input id="anfang" size="5" placeholder="1"></p>
-						        <p>Zahl 2:<input id="ende" size="5" placeholder="30"></p>
-					        </div>  
-					        <p><input class="button" value="Los" onclick="zufall();" type="button"></p>
-					        <div class="erg">
-					        	<p class="whitep">Klassennummer:</p>
-					         	<span id="ergebnis" class="alert">-</span>
-					        </div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<a class="anchor" id="downloadsscroll"></a>
-			<div id="downloads" class="card">
-				<div class="content-wrap">
-					<h3 class="cardtitle">Download</h3>
-					<p class="cardp">Hier können Sie diese Website oder Teile davon herunterladen und sich davon inspirieren lassen</p>
-					<div class="downlinks">
-						<a href="index.html" download>html</a>
-						<a href="style.css" download>css</a>
-						<a href="java.js" download>javascript</a>
-					</div>
-				</div>
-			</div>
-			<a class="anchor" id="contactscroll"></a>
-			<div id="contact" class="card">
-				<div class="content-wrap">
-					<h3 class="cardtitle">Kontakt</h3>
-					<div id="form-div">
-						<section id="contact">
-							<div id="form">
-								<form action="https://formspree.io/schauer.michael.ms@gmail.com" method="POST">
-									<div class="info">
-										<label>
-							    		<input type="text" name="name" placeholder="Name"></label>
-							    		<label>
-							    		<input type="email" name="_replyto" placeholder="E-Mail"></label>
-						    		</div>
-						    		<label>
-						    		<textarea name="message" placeholder="Nachricht"></textarea></label>
-						    		<div class="submit-wrap">
-						    			<input type="submit" value="Senden">
-						    		</div>
-								</form>
-							</div>
-						</section>
-					  </div>
-					</div>
-			</div>
-			<div id="footer">
-				<div class="info">
-				<h4>Michael Schauer</h4>
-				<p>schauer.michael.ms@gmail.com</p>
-				<p>Stockhofstraße 10, Linz</p>
-			</div>
-			<div class="social">
-				<a href="https://www.facebook.com/MichaelSchauer114" target="_blank"><img src="fb.svg"></a>
-				<a href="https://www.instagram.com/_michael_schauer_" target="_blank"><img src="in.svg"></a>
-				<button id="snapchat" onclick="snapcodeshow()" ><img src="sc.svg"></button>
-			</div>
-		</div>
-	</div>	
-	<div id="snapcode" onclick="snapcodeclose()"><img src="snapcode.svg"></div>
 
-	<script>
-		$(function() {
-		  $('.smoothScroll').click(function() {
-		    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-		      var target = $(this.hash);
-		      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-		      if (target.length) {
-		        $('html,body').animate({
-		          scrollTop: target.offset().top
-		        }, 500);
-		        return false;
-		      }
-		    }
-		  });
-		});
-	</script>
+<body>
+    <!--<nav>
+        <div class="nav" id="nav">
+            <a href="javascript:void(0)" class="close" onclick="closeNav()">&#10005</a>
+            <a class="smoothScroll" href="#homescroll" onclick="closeNav()">Home</a>
+            <a class="smoothScroll" href="#aboutscroll" onclick="closeNav()">Über mich</a>
+            <a class="smoothScroll" href="#anderesscroll" onclick="closeNav()">Anderes</a>
+            <a class="smoothScroll" href="#downloadsscroll" onclick="closeNav()">Downloads</a>
+            <a class="smoothScroll" href="#contactscroll" onclick="closeNav()">Kontakt</a>
+            <a class="smoothScroll" href="login.htm" onclick="closeNav()">Login</a>
+        </div>
+        <div class="menu">
+            <button id="open" onclick="openNav()">MENU</button>
+        </div>
+    </nav>-->
+    <div class="wrapper">
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d5285.655073787987!2d13.7813641!3d48.5173707!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sat!4v1620372324601!5m2!1sde!2sat" width="100%" height="280px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>        </div>
+        <div id="description">
+            <div class="thumbcont">
+                <div id="thumbnail">
+                    <img src="resources/ranna.jpg">
+                </div>
+            </div>
+            <h1>Ranna Talsperre</h1>
+            <div class="inlinefont">
+                <div class="container1" style=display:inline;>
+                    <span class="dottxt">Schwierigkeit</span>
+                </div>
+                <div class="container2" style=display:inline;>
+                    <span class="dot" style="display:inline;">&#8226</span>
+                </div>
+            </div>
+            <div class="inlinefont">
+                <div class="container1" style=display:inline;>
+                    <span class="dottxt">Natur und Panorama</span>
+                </div>
+                <div class="container2" style=display:inline;>
+                    <span class="dot" style="display:inline;">&#8226</span>
+                    <span class="dot" style="display:inline;">&#8226</span>
+                    <span class="dot" style="display:inline;">&#8226</span>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+        </div>
 </body>
 </html>
