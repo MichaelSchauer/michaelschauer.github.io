@@ -148,6 +148,19 @@ body {
     text-align: center;
 }
 
+#wrongpass{
+    color: red;
+    font-size: 17px;
+    text-decoration: none;
+    position:absolute;
+    width: 300px;
+    bottom:40px;
+    right:25%;
+    left:50%;
+    margin-left: -150px;
+    text-align: center;
+}
+
 #homecard{
     height: 320px;
     position: absolute; /*Can also be `fixed`*/
