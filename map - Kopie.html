@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Places</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resources.css">
+    <script src="main.js"></script>
+    <script src="positions2.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />   
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoicGhvY2VuaWMiLCJhIjoiY2s5dGo4MW8yMGs2MjNlcGMzemZwOGp3MSJ9.0h1MJ_vPLzXUBvjmJ-VYNQ';
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/phocenic/ckp58lbz50jr718qfbmajwpbp', // style URL
+        center: [14.150868, 48.437173], // starting position [lng, lat]
+        zoom: 10 // starting zoom
+    });
+     
+    map.on('load', function () {
+    // Add a GeoJSON source with 3 points.
+    map.addSource('points', {
+    'type': 'geojson',
+    'data': {
+    'type': 'FeatureCollection',
+    'features': [
+    {
+        'type': 'Feature',
+            'properties': {
+                title: 'Rannastausee',
+                description: '<button class="buttonstyleblack" onclick="window.location="place1.html";">Entdecken</button>',
+            },
+            'geometry': {
+            'type': 'Point',
+            'coordinates': [
+                13.780028646172786, 48.51739524859247
+            ]
+            }
+            },
+            {
+            'type': 'Feature',
+            'properties': {
+                title: 'Alpenblick',
+                description: '<button class="buttonstyleblack" onclick="window.location="place2.html";">Entdecken</button>',
+            },
+            'geometry': {
+            'type': 'Point',
+            'coordinates': [
+                13.940986846314372, 48.69574783484846
+            ]
+            }
+            },
+            {
+            'type': 'Feature',
+            'properties': {
+                title: 'Dürnberg',
+                description: '<button class="buttonstyleblack" onclick="window.location="place3.html";">Entdecken</button>',
+            },
+            'geometry': {
+            'type': 'Point',
+            'coordinates': [
+                14.205468055243905, 48.33772235114186
+            ]
+            }
+            },
+            {
+            'type': 'Feature',
+            'properties': {
+                title: 'Moldaublick',
+                description: '<button class="buttonstyleblack" onclick="window.location="place4.html";">Entdecken</button>',
+            },
+            'geometry': {
+            'type': 'Point',
+            'coordinates': [
+                13.971389606145218, 48.702728949490144
+            ]
+            }
+            },
+            {'type': 'Feature',
+            'properties': {
+                title: 'Braunberg',
+                description: '<button class="buttonstyleblack" onclick="window.location="place5.html";">Entdecken</button>',
+            },
+            'geometry': {
+            'type': 'Point',
+            'coordinates': [
+                14.584474012923286, 48.480040230913204
+            ]
+            }
+            },
+            {
+            'type': 'Feature',
+            'properties': {
+                title: 'Kettenturm',
+                description: '<button class="buttonstyleblack" onclick="window.location="place6.html";">Entdecken</button>',
+            },
+            'geometry': {
+            'type': 'Point',
+            'coordinates': [
+                13.988572075620798, 48.4223404172315
+            ]
+            }
+            },
+            {
+            'type': 'Feature',
+            'properties': {
+                title: 'Donaublick',
+                description: '<button class="buttonstyleblack" onclick="window.location="place7.html";">Entdecken</button>',
+            },
+            'geometry': {
+            'type': 'Point',
+            'coordinates': [
+                13.930686733875842, 48.44540225182456
+            ]
+            }
+            },
+            {
+            'type': 'Feature',
+            'properties': {
+                title: 'Pesenbachtal',
+                description: '<button class="buttonstyleblack" onclick="window.location="place8.html";">Entdecken</button>',
+            },
+            'geometry': {
+            'type': 'Point',
+            'coordinates': [
+                48.367548682928216, 14.057348182953923
+            ]
+            }
+            },
+            {
+            'type': 'Feature',
+            'properties': {
+                title: 'Lug ins Land',
+                description: '<button class="buttonstyleblack" onclick="window.location="place9.html";">Entdecken</button>',
+            },
+            'geometry': {
+            'type': 'Point',
+            'coordinates': [
+                14.287252683556616, 48.532887225527155
+            ]
+            }
+            },
+            {
+            'type': 'Feature',
+            'properties': {
+                title: 'Bärenstein',
+                description: '<h3>Bärenstein</h3><button class="buttonstyleblack" onclick="window.location="place10.html";">Entdecken</button>',
+            },
+            'geometry': {
+            'type': 'Point',
+            'coordinates': [
+                13.984722, 48.683333
+    ]
+    }
+    }
+    ]
+    }
+    });
+    // Add a circle layer
+    map.addLayer({
+    'id': 'circle',
+    'type': 'circle',
+    'source': 'points',
+    'paint': {
+    'circle-color': '#66A4D6',
+    'circle-radius': 10,
+    'circle-stroke-width': 0,
+    'circle-stroke-color': '#ffffff'
+    }
+    });
+
+    // When a click event occurs on a feature in the places layer, open a popup at the
+    // location of the feature, with description HTML from its properties.
+    map.on('click', 'circle', function (e) {
+    var coordinates = e.features[0].geometry.coordinates.slice();
+    var description = e.features[0].properties.description;
+    
+    // Ensure that if the map is zoomed out such that multiple
+    // copies of the feature are visible, the popup appears
+    // over the copy being pointed to.
+    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
+    
+    new mapboxgl.Popup()
+    .setLngLat(coordinates)
+    .setHTML(description)
+    .addTo(map);
+    });
+     
+    // Center the map on the coordinates of any clicked circle from the 'circle' layer.
+    map.on('click', 'circle', function (e) {
+    map.flyTo({
+    center: e.features[0].geometry.coordinates
+    });
+    });
+     
+    // Change the cursor to a pointer when the it enters a feature in the 'circle' layer.
+    map.on('mouseenter', 'circle', function () {
+    map.getCanvas().style.cursor = 'pointer';
+    });
+     
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'circle', function () {
+    map.getCanvas().style.cursor = '';
+    });
+    });
+    </script>
+    <div id="footerboth">
+        <div class="singlemap" onclick="window.location='map.html';">
+            <p>Karte</p>
+        </div>
+    </div>
+<style>
+    .marker {
+    background-color: #66A4D6;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+
+    .mapboxgl-popup {
+    max-width: 320px;
+    height: 200px;
+    }
+
+    .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    width: 200px;
+    height: 200px;
+    }
+
+    .mapboxgl-popup-close-button {
+        display: none;
+    }
+
+
+</style>
+</body>
+</html>

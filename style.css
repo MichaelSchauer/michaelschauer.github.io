@@ -1,0 +1,570 @@
+@font-face {
+    font-family: "Segoe UI Web (West European)";
+    src: url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff2") format("woff2"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.contentwrapIMG {
+    width: 100%;
+    position: relative;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    height:auto;
+    height:100%;
+    min-height:100%;
+    animation: 0.2s ease-out 0s 1 slideInFromLeft;
+
+}
+    @keyframes slideInFromLeft {
+        0% {
+            transform: translateY(100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+.contentwrapIMG::after{
+    content: "";
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url("resources/ranna.jpg");
+    background-color: white;
+    /*background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    position: absolute;
+    z-index: -1;   
+    background-attachment: fixed;
+
+    background-position: bottom center; 
+	background-repeat: no-repeat; 
+	background-size:cover; 
+    overflow: hidden;
+}
+
+.card{
+    background-color: white;
+    width: 91%;
+    max-width: 700px;
+    height: 320px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.buttonstyleblack{
+    width: 137px;
+    height: 56px;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+.buttonstyleblack:active{
+    background-color: #1c1c1c;
+}
+.exploremap{
+    width: 137px;
+    height: 56px;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    line-height: 56px;
+    text-decoration: none;
+    margin: 0 auto;
+}
+.exploremap:active{
+    background-color: #1c1c1c;
+}
+
+
+
+
+/* HOME */
+
+#home{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+#home h2{
+    color: white;
+    margin: 0;
+    padding-top: 60px;
+    text-transform: uppercase;
+    font-size: 27px;
+    line-height: 40px;
+}
+
+#home h3{
+    color: black;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 17px;
+    line-height: 27px;
+}
+
+#home a{
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+    position:absolute;
+    width: 80px;
+    bottom:20px;
+    right:25%;
+    left:50%;
+    margin-left: -40px;
+    text-align: center;
+}
+
+#homecard{
+    height: 320px;
+    position: absolute; /*Can also be `fixed`*/
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#homecard p{
+    font-size: 17px;
+    line-height: 27px;
+    margin-top: 17px;
+}
+
+#homecard input{
+    width: 90%;
+    max-width: 360px;
+    height: 56px;
+    background-color: white;
+    color: black;
+    outline: none;
+    border: 1px solid black;
+    font-size: 17px;
+    margin-top: 31px;
+    text-indent: 20px;
+}
+
+#home button{
+    margin-top: 40px;
+}
+
+
+/* HOME  Unlocked*/
+
+#homecardunlocked{
+    height: 320px;
+    position: absolute; /*Can also be `fixed`*/
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.unlockedcircle{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    background-color: #66A4D6;
+    position: absolute; /*Can also be `fixed`*/
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.unlockedcircle p{
+    color: white;
+    font-size: 87px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 200px;
+    margin: 0;
+}
+
+/* Orte */
+
+#orte{
+    text-align: center;
+}
+
+.cardorte{
+    background-color: white;
+    width: 91%;
+    max-width: 700px;
+    height: auto;
+    display: inline-block;
+    border: none;
+    margin-top: 30px;
+    -webkit-box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.16); 
+    box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.16);
+    margin-left: 15px;
+    margin-right: 15px;
+
+}
+
+.cardorte:last-child{
+    margin-bottom: 100px;;
+}
+
+.placeholder{
+    height: 20px;
+}
+
+.headingorte{
+    color: white;
+    top: 18;
+    width: 300px;
+    line-height: 40px;
+    font-size: 27px;
+    margin: 0 auto;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+.cardp{
+  font-size: 19px;
+  font-weight: bold;  
+  line-height: 27px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.imgthumb{
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    margin: 0 auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#orte button{
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+/* Place */
+
+.place{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.headingplaces{
+    font-size: 17px;
+    text-transform: uppercase;
+    color: #66A4D6;
+    margin-top: 24px;
+    line-height: 27px;
+    font-weight: bold;
+}
+
+.placename{
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 37px;
+    color: black;
+    margin-top: 19px;
+    margin-bottom: 0;
+}
+
+.village{
+    font-size: 17px;
+    line-height: 27px;
+    color: black;
+    margin: 0;
+}
+
+.placeimage{
+    width: 330px;
+    height: 220px;
+    background-color: white;
+    margin: 0 auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 30px;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16); 
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+    border: none;
+}
+
+.text{
+    font-size: 17px;
+    line-height: 27px;
+    width: 80%;
+    max-width: 390px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.coordinates{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 27px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+}
+
+#maploc{
+    width: 100%;
+    max-width: 390px;
+    height: calc(100vw/1.5);
+    max-height: 291px;
+    margin: 0 auto;
+    position: relative
+}
+
+#maploc iframe{
+    padding-bottom: 100px;
+}
+
+/* Karte */
+
+#Karte{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#Karte h2{
+    color: white;
+    margin: 0;
+    padding-top: 60px;
+    text-transform: uppercase;
+    font-size: 27px;
+    line-height: 40px;
+}
+
+#Karte h3{
+    color: black;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 17px;
+    line-height: 27px;
+}
+
+#mapcard{
+    height: 320px;
+    position: absolute; /*Can also be `fixed`*/
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#mapcard p:first-child{
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 80px;
+    margin-bottom: 70px;
+}
+
+#mapcard p{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Impressum */
+#impressum{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#impressum h2{
+    color: white;
+    margin: 0;
+    padding-top: 60px;
+    text-transform: uppercase;
+    font-size: 27px;
+    line-height: 40px;
+}
+
+#impressumcard{
+    height: 320px;
+    position: absolute; /*Can also be `fixed`*/
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#impressumcard p{
+    font-size: 17px;
+    line-height: 27px;
+    padding-top: 30px;
+}
+
+#impressum a{
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+    position:absolute;
+    width: 80px;
+    bottom:20px;
+    right:25%;
+    left:50%;
+    margin-left: -40px;
+    text-align: center;
+}
+
+/* NAV */
+
+#footerboth{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    margin: 0; 
+    background-color: white;
+    display: flex;
+    -webkit-box-shadow: 0px -17px 20px 0px rgba(0,0,0,0.16); 
+    box-shadow: 0px -17px 20px 0px rgba(0,0,0,0.16);
+    z-index: 10;
+}
+
+#footerboth p{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+    margin: 0;
+    font-size: 17px;
+}
+
+.bothlocation, .bothmap{
+    width: 50vw;
+    height: 60px;
+    margin: 0;
+    flex: 50%;
+    cursor: pointer;
+}
+
+.bothlocation{
+    border-right: 0.5px solid #C5C5C5;
+}
+
+.bothnav{
+    border-left: 0.5px solid #C5C5C5;
+}
+
+/* MAP only */
+
+#footermap{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    margin: 0; 
+    background-color: white;
+    display: flex;
+    -webkit-box-shadow: 0px -17px 20px 0px rgba(0,0,0,0.16); 
+    box-shadow: 0px -17px 20px 0px rgba(0,0,0,0.16);
+}
+
+#footerboth p{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+    margin: 0;
+    font-size: 17px;
+}
+
+.singlemap{
+    width: 100vw;
+    height: 60px;
+    margin: 0;
+    flex: 100%;
+    cursor: pointer;
+}
+
+/* Places only */
+
+#footerloc{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    margin: 0; 
+    background-color: white;
+    display: flex;
+    -webkit-box-shadow: 0px -17px 20px 0px rgba(0,0,0,0.16); 
+    box-shadow: 0px -17px 20px 0px rgba(0,0,0,0.16);
+}
+
+#footerloc p{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+    margin: 0;
+    font-size: 17px;
+}
+
+.singlelocation{
+    width: 100vw;
+    height: 60px;
+    margin: 0;
+    flex: 100%;
+    cursor: pointer;
+}

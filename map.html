@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Places</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resources.css">
+    <script src="main.js"></script>
+    <script src="positions.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />   
+</head>
+
+<body>
+    <section id="Karte" class="section">
+        <div id='map' style='width: 100%; height: 100%;'></div>
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoicGhvY2VuaWMiLCJhIjoiY2s5dGo4MW8yMGs2MjNlcGMzemZwOGp3MSJ9.0h1MJ_vPLzXUBvjmJ-VYNQ';
+        var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/phocenic/ckp58lbz50jr718qfbmajwpbp', // style URL
+        center: [14.150868, 48.437173], // starting position [lng, lat]
+        zoom: 10 // starting zoom
+        });
+
+
+        // add markers to map
+        geojson.features.forEach(function(marker) {
+
+        // create a HTML element for each feature
+        var el = document.createElement('div');
+        el.className = 'marker';
+
+        // make a marker for each feature and add to the map
+        new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .setPopup(new mapboxgl.Popup({ offset: 25, closeOnMove:true, className: 'custompopup'}) // add popups
+        .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+        .addTo(map);
+        });
+
+        // Center the map on the coordinates of any clicked circle from the 'circle' layer.
+        map.on('click', 'marker', function (e) {
+        map.flyTo({
+        center: e.features[0].geometry.coordinates
+        });
+        });
+
+        </script>
+            <div id="footerboth">
+                <div class="singlelocation" onclick="window.location='places.html';">
+                    <p>Orte</p>
+                </div>
+            </div>
+    </section>
+    <style>
+        .marker {
+        background-color: #66A4D6;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        }
+
+        .mapboxgl-popup {
+        max-width: 320px;
+        height: 100px;
+        }
+
+        .mapboxgl-popup-content {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        width: 200px;
+        height: 100px;
+        }
+
+        .mapboxgl-popup-close-button {
+            display: none;
+        }
+
+
+    </style>
+</body>
+</html>
