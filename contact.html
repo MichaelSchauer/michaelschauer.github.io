@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Places</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+
+</head>
+
+<body>
+    <section id="contact" class="placecontact">
+        <p class="headingplaces">Secret Places</p>
+        <p class="placename">Kontakt</p>
+            <div id="contactcard" class="card">
+                <p class="text">Benötigst du ein Passwort, hast du eine Idee für einen neuen Platz oder möchtest du mir etwas Anderes mitteilen?</p>
+                <form action="https://formspree.io/f/schauer.michael.ms@gmail.com" method="POST">
+                    <input type="text" name="_replyto" placeholder="Name">
+                    <input type="email" name="_replyto" placeholder="Email">
+                    <textarea name="message" placeholder="Nachricht"></textarea>
+                    <!-- your other form fields go here -->
+                    <button class="buttonstyleblack" type="submit">Senden</button>
+                </form>
+            </div>
+            <div id="footerboth">
+                <div class="singlelocation" onclick="window.location='index.html';">
+                    <p onclick="window.location='index.html';">HOME</p>
+                </div>
+            </div>
+    </section>
+</body>
+</html>

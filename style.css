@@ -16,6 +16,7 @@ html, body {
 body {
     overflow: auto;
     scroll-behavior: smooth;
+    position: relative;
 }
 
 .contentwrapIMG {
@@ -51,7 +52,7 @@ body {
     /*background-position: center;
     background-repeat: no-repeat;
     background-size: cover;*/
-    position: absolute;
+    position: fixed;
     z-index: -1;   
     background-attachment: fixed;
 
@@ -68,7 +69,8 @@ body {
     background-color: white;
     width: 91%;
     max-width: 700px;
-    height: 320px;
+    min-height: 320px;
+    height: auto;
     text-align: center;
     margin: 0 auto;
 }
@@ -138,19 +140,6 @@ body {
     line-height: 27px;
 }
 
-#home a{
-    color: white;
-    font-size: 17px;
-    text-decoration: none;
-    position:absolute;
-    width: 80px;
-    bottom:20px;
-    right:25%;
-    left:50%;
-    margin-left: -40px;
-    text-align: center;
-}
-
 #wrongpass{
     color: red;
     font-size: 17px;
@@ -184,7 +173,7 @@ body {
 }
 
 #homecard input{
-    width: 90%;
+    width: 85%;
     max-width: 360px;
     height: 56px;
     background-color: white;
@@ -194,6 +183,7 @@ body {
     font-size: 17px;
     margin-top: 31px;
     text-indent: 20px;
+    border-radius: none;
 }
 
 #home button{
@@ -216,11 +206,14 @@ body {
     max-height: 100%;
 }
 
+
+
+/* Circle Animated */
 .unlockedcircle{
     height: 200px;
     width: 200px;
     border-radius: 100px;
-    background-color: #66A4D6;
+    background-color: none;
     position: absolute; /*Can also be `fixed`*/
     left: 0;
     right: 0;
@@ -231,16 +224,141 @@ body {
     max-width: 100%;
     max-height: 100%;
 }
+.cls-1 {
+    fill: none;
+    stroke: #cac9ca;
+    stroke-miterlimit: 10;
+    stroke-width: 5px;
+  }
+  
+  svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  svg .cls-1 {
+    stroke: #66A4D6;
+  }
+  
+  .circle {
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+  }
+  
+  .checkmark {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+  }
+  
+  .run-animation .circle {
+    -webkit-animation: 2.5s circleDraw forwards;
+            animation: 2.5s circleDraw forwards;
+  }
+  .run-animation .checkmark {
+    -webkit-animation: 0.75s checkmarkDraw forwards;
+            animation: 0.75s checkmarkDraw forwards;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+  }
+  
+  @-webkit-keyframes circleDraw {
+    from {
+      stroke-dashoffset: 700;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes circleDraw {
+    from {
+      stroke-dashoffset: 700;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @-webkit-keyframes checkmarkDraw {
+    from {
+      stroke-dashoffset: 150;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes checkmarkDraw {
+    from {
+      stroke-dashoffset: 150;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+/* Kontakt */
 
-.unlockedcircle p{
-    color: white;
-    font-size: 87px;
-    font-weight: bold;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 200px;
-    margin: 0;
+#contactcard p{
+    font-size: 17px;
+    line-height: 27px;
+    margin-top: 17px;
 }
+
+#contactcard input{
+    width: 85%;
+    max-width: 360px;
+    height: 56px;
+    background-color: white;
+    color: black;
+    outline: none;
+    border: 1px solid black;
+    font-size: 17px;
+    margin-top: 30px;
+    text-indent: 20px;
+    border-radius: none;
+}
+
+#contactcard input:nth-child(2){
+    margin-bottom: 30px;
+}
+
+#contactcard textarea{
+    width: 85%;
+    max-width: 360px;
+    height: 160px;
+    background-color: white;
+    color: black;
+    outline: none;
+    border: 1px solid black;
+    font-size: 17px;
+    text-indent: 20px;
+    border-radius: none;
+    font-family: inherit;
+    font-size: inherit;
+    padding-top: 10px;
+    display: block;
+    margin: 0 auto;
+}
+.textarea{
+    width: 50%;
+}
+#contactcard button{
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.placecontact{
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    overflow: auto;
+}
+
 
 /* Orte */
 
@@ -582,5 +700,35 @@ body {
     height: 60px;
     margin: 0;
     flex: 100%;
+    cursor: pointer;
+}
+
+/* Info */
+
+#infolink{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    margin: 0; 
+    background-color: none;
+    display: flex;
+    z-index: 10;
+}
+
+#infolink p{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+    margin: 0;
+    font-size: 17px;
+    color: white;
+}
+
+.infolink1, .infolink2{
+    width: 50vw;
+    height: 60px;
+    margin: 0;
+    flex: 50%;
     cursor: pointer;
 }
