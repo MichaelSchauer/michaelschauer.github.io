@@ -322,7 +322,7 @@ body {
     border-radius: none;
 }
 
-#contactcard input:nth-child(2){
+.mailinput{
     margin-bottom: 30px;
 }
 
@@ -356,6 +356,7 @@ body {
     width: 100%;
     margin: 0;
     text-align: center;
+    overflow: auto;
 }
 
 
