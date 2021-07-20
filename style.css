@@ -30,17 +30,7 @@ body {
     height:auto;
     height:100%;
     min-height:100%;
-    animation: 0.2s ease-out 0s 1 slideInFromLeft;
-
 }
-    @keyframes slideInFromLeft {
-        0% {
-            transform: translateY(100%);
-        }
-        100% {
-            transform: translateY(0);
-        }
-    }
 
 .contentwrapIMG::after{
     content: "";
@@ -623,7 +613,7 @@ input {
     display: flex;
     -webkit-box-shadow: 0px -17px 20px 0px rgba(0,0,0,0.16); 
     box-shadow: 0px -17px 20px 0px rgba(0,0,0,0.16);
-    z-index: 10;
+    z-index:1000;
 }
 
 #footerboth p{
@@ -738,4 +728,31 @@ input {
     margin: 0;
     flex: 50%;
     cursor: pointer;
+}
+
+/* Rainmap */
+.playpause{
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    padding: none;
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.playpause button{
+    height: 40px;
+    border: none;
+    background-color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+#timenow{
+    font-size: 20px;
+    font-family: "Segoe UI Web (West European)";
+    margin-top:10px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
