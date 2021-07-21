@@ -14,7 +14,7 @@
         //window.onload = checkCookieofuser;
     </script>
 </head>
-<body>
+<body onload="footer()">
     <section id="home" class="section" >
         <div class="contentwrapIMG">
             <h2>Secret Places</h2>
@@ -30,19 +30,28 @@
                     <svg id="checkmark-svg" class="run-animation" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193.3 193.3"><circle class="cls-1 circle" cx="96.65" cy="96.65" r="94.15"/><polyline class="cls-1 checkmark" points="46.9 101.4 76.9 131.4 146.4 61.9"/></svg>
                 </div>
             </div>
-            <div id="footerboth" style="display: none;">
-                <div class="bothlocation" onclick="window.location='places.html';">
-                    <p>Orte</p>
+            <div id="Regenradar" onclick="window.location='rainmapsec.html';">
+                <p>Regenradar</p>
+            </div>
+            <div id="expanav" style="display: none;">
+                <div id="menuitemcontainer">
+                    <div id="menuitem" onclick="window.location='places.html';">Orte</div>
+                    <div id="menuitem" onclick="window.location='map.html';">Karte</div>
+                    <div id="menuitem" onclick="window.location='rainmap.html';">Regenradar</div>
+                    <div id="menuitem" onclick="window.location='contact.html';">Kontakt</div>
                 </div>
-                <div class="bothmap" onclick="window.location='map.html';">
-                    <p>Karte</p>
+                <div id="closenav" onclick= closenav()><p>&#x2716;</p></div>
+            </div>
+            <div id="footerexp" style="display: none;">
+                <div class="opennav" onclick= opennav()>
+                    <img src="resources/nav.svg">
                 </div>
             </div>
             <div id="infolink">
                 <div class="infolink1" onclick="window.location='impressum.html';">
                     <p>INFO</p>
                 </div>
-                <div class="infolink2" onclick="window.location='contact.html';">
+                <div class="infolink2" onclick="window.location='contactopen.html';">
                     <p>KONTAKT</p>
                 </div>
             </div>

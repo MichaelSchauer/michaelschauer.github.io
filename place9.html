@@ -33,14 +33,20 @@
         <p class="coordinates">48°31'58.4"N 14°17'14.1"E</p>
         <div id="maploc">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2422.7369019719!2d14.286864067314479!3d48.53297843379138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sat!4v1622092071619!5m2!1sde!2sat" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>        </div>
-        <div id="footerboth">
-            <div class="bothlocation" onclick="window.location='places.html';">
-                <p>Orte</p>
+            <div id="expanav">
+                <div id="menuitemcontainer">
+                    <div id="menuitem" onclick="window.location='places.html';">Orte</div>
+                    <div id="menuitem" onclick="window.location='map.html';">Karte</div>
+                    <div id="menuitem" onclick="window.location='rainmap.html';">Regenradar</div>
+                    <div id="menuitem" onclick="window.location='contact.html';">Kontakt</div>
+                </div>
+                <div id="closenav" onclick= closenav()><p>&#x2716;</p></div>
             </div>
-            <div class="bothmap" onclick="window.location='map.html';">
-                <p>Karte</p>
+            <div id="footerexp" style="position: fixed;">
+                <div class="opennav" onclick= opennav()>
+                    <img src="resources/nav.svg">
+                </div>
             </div>
-        </div>
     </section>
 </body>
 </html>

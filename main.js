@@ -6,15 +6,15 @@ function login(){
     document.getElementById("homecard").style.display = "none";
     document.getElementById("infolink").style.display = "none";
     document.getElementById("homecardunlocked").style.display = "block";
-    document.getElementById("footerboth").style.display = "flex";
+    document.getElementById("expanav").style.display = "block";
+    document.getElementById("footerexp").style.display = "block";
     document.getElementById("wrongpass").innerHTML = "";
-    addCookie(30);
+    document.getElementById("Regenradar").setAttribute("onClick", "window.location='rainmap.html';");
 	}
 	else
    {
     document.getElementById("wrongpass").innerHTML="FALSCHES PASSWORT";
     document.getElementById('userinput').value ='';
-    deleteAllCookies();
   }
 }
 
@@ -25,15 +25,16 @@ $('#checkmark-svg').on('click', function(){
   return false;
 })
 
-/* function openNav() {
-	document.getElementById("open").style.display = "none";
-	document.getElementById("nav").style.width = "100vw";
-	document.getElementById("title").style.display = "none";
+function opennav(){
+  document.getElementById("expanav").style.height = "100%";
+  document.getElementById("footerexp").style.height = "0px";
+  document.getElementById("closenav").style.height = "60px";
+  document.getElementById("menuitemcontainer").style.height = "320px"; //change to height of 80px x list items
 }
 
-function closeNav() {
-	document.getElementById("nav").style.width = "0";
-	document.getElementById("open").style.display = "block";
-	document.getElementById("title").style.display = "block";
-	document.getElementById("open").style.display = "inline-block";
-}  */
+function closenav(){
+  document.getElementById("expanav").style.height = "0%";
+  document.getElementById("footerexp").style.height = "60px";
+  document.getElementById("closenav").style.height = "0px";
+  document.getElementById("menuitemcontainer").style.height = "0px";
+}
