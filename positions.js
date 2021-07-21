@@ -104,6 +104,17 @@ var geojson = {
         type: 'Feature',
         geometry: {
         type: 'Point',
+        coordinates: [14.852883, 48.499621]
+        },
+        properties: {
+        title: 'Tanner Moor',
+        description: '<a class="exploremap" href="place11.html">Entdecken</a>'
+        }
+    },
+    {
+        type: 'Feature',
+        geometry: {
+        type: 'Point',
         coordinates: [13.984722, 48.683333]
         },
         properties: {
