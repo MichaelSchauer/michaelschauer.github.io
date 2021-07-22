@@ -303,12 +303,10 @@ input {
 }
 
 .rainleft img{
-    height: 50px;
+    height: 42px;
     width: auto;
     filter: invert(1);
     -webkit-filter: invert(1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
 }
 
 /* Kontakt */
