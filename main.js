@@ -3,18 +3,17 @@ function login(){
 	var pass1="mysharedmoments";
 	password = document.getElementById("userinput").value;
 	if (password == pass1){
-    document.getElementById("homecard").style.display = "none";
     document.getElementById("infolink").style.display = "none";
-    document.getElementById("homecardunlocked").style.display = "block";
     document.getElementById("expanav").style.display = "block";
     document.getElementById("footerexp").style.display = "block";
-    document.getElementById("wrongpass").innerHTML = "";
     document.getElementById("Regenradar").setAttribute("onClick", "window.location='rainmap.html';");
+    unlockcircle();
+    document.getElementById('lockcirc').onclick = '';
 	}
 	else
    {
-    document.getElementById("wrongpass").innerHTML="FALSCHES PASSWORT";
     document.getElementById('userinput').value ='';
+    wrongpasscircle();
   }
 }
 
@@ -37,4 +36,20 @@ function closenav(){
   document.getElementById("footerexp").style.height = "60px";
   document.getElementById("closenav").style.height = "0px";
   document.getElementById("menuitemcontainer").style.height = "0px";
+}
+
+function unlockcircle(){
+  document.getElementById("lockcirc").style.marginLeft = "45px";
+  document.getElementById("lockcirc").style.backgroundColor = "#c7ffc7";
+ }
+
+ function wrongpasscircle(){
+  var element = document.getElementById("lockcirc");
+  element.classList.add("lockcircwrong");
+  setTimeout("removeanim()", 1000);
+ }
+
+ function removeanim() {
+  var element = document.getElementById("lockcirc");
+  element.classList.remove("lockcircwrong");
 }

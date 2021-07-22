@@ -34,7 +34,7 @@ body {
 
 .contentwrapIMG::after{
     content: "";
-    opacity: 0.8;
+    opacity: 1;
     top: 0;
     left: 0;
     bottom: 0;
@@ -58,7 +58,12 @@ body {
 }
 
 .card{
-    background-color: white;
+    background-color: rgba(255, 255, 255, .25);  
+    backdrop-filter: blur(8px);
+    -webkit-background-color: rgba(255, 255, 255, .25);  
+    -webkit-backdrop-filter: blur(8px);
+    -moz-background-color: rgba(255, 255, 255, .25);  
+    -moz-backdrop-filter: blur(8px);
     width: 91%;
     max-width: 700px;
     min-height: 320px;
@@ -79,6 +84,26 @@ body {
     font-size: 16px;
     cursor: pointer;
 }
+
+.buttonstylewhite{
+    width: 137px;
+    height: 56px;
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, .25);  
+    backdrop-filter: blur(8px);
+    -webkit-background-color: rgba(255, 255, 255, .25);  
+    -webkit-backdrop-filter: blur(8px);
+    -moz-background-color: rgba(255, 255, 255, .25);  
+    -moz-backdrop-filter: blur(8px);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid white;
+}
+
 .buttonstyleblack:active{
     background-color: #1c1c1c;
 }
@@ -135,19 +160,6 @@ input {
     line-height: 27px;
 }
 
-#wrongpass{
-    color: red;
-    font-size: 17px;
-    text-decoration: none;
-    position:absolute;
-    width: 300px;
-    bottom:40px;
-    right:25%;
-    left:50%;
-    margin-left: -150px;
-    text-align: center;
-}
-
 #homecard{
     height: 320px;
     left: 0;
@@ -157,24 +169,24 @@ input {
     max-width: 100%;
     max-height: 100%;
     margin-bottom: 30px;
-    margin-top: 30px;
+    margin-top: 40px;
     max-width: 700px;
 }
 
 #homecard p{
     font-size: 17px;
     line-height: 27px;
-    padding-top: 17px;
+    padding-top: 40px;
 }
 
-#homecard input{
+.inputpass{
     width: 85%;
     max-width: 360px;
     height: 56px;
     background-color: white;
     color: black;
     outline: none;
-    border: 1px solid black;
+    border: none;
     font-size: 17px;
     margin-top: 31px;
     text-indent: 20px;
@@ -191,10 +203,70 @@ input {
     margin: 0 auto;
 }
 
+.lockwrap{
+    height: 40px;
+    width: 80px;
+    display: block;
+    margin: 0 auto;
+}
+
+.lockslide{
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .25);  
+    backdrop-filter: blur(8px);
+    -webkit-background-color: rgba(255, 255, 255, .25);  
+    -webkit-backdrop-filter: blur(8px);
+    -moz-background-color: rgba(255, 255, 255, .25);  
+    -moz-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#lockcirc{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 5px;
+    -webkit-transition: 0.5s linear;
+    -moz-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    cursor: pointer;
+}
+
+.lockcircwrong{
+    -webkit-transition: 0.5s linear;
+    -moz-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear; 
+    animation-name: wrongpass;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    -webkit-animation: wrongpass;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+}
+
+@keyframes wrongpass {
+    0% { margin-left: 5px; background-color: white; }
+    50% { margin-left: 45px; background-color: hsl(0, 100%, 81%);}
+    100% { margin-left: 5px; background-color: white}
+  }
+
+
 /*regenradar button */
 
 #Regenradar{
-    background-color: white;
+    background-color: rgba(255, 255, 255, .25);  
+    backdrop-filter: blur(8px);
+    -webkit-background-color: rgba(255, 255, 255, .25);  
+    -webkit-backdrop-filter: blur(8px);
+    -moz-background-color: rgba(255, 255, 255, .25);  
+    -moz-backdrop-filter: blur(8px);
     width: 91%;
     max-width: 700px;
     height: 80px;
@@ -207,107 +279,29 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
 }
 
-/* HOME  Unlocked*/
-
-#homecardunlocked{
-    height: 320px;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
-    max-width: 100%;
-    max-height: 100%;
-    max-width: 700px;
-    margin-bottom: 30px;
-    margin-top: 30px;
-}
-
-
-
-/* Circle Animated */
-.unlockedcircle{
-    height: 200px;
-    width: 200px;
-    border-radius: 100px;
-    background-color: none;
-    display: inline-block;
-    margin-top: 60px;
-}
-
-.cls-1 {
-    fill: none;
-    stroke: #cac9ca;
-    stroke-miterlimit: 10;
-    stroke-width: 5px;
-  }
-  
-  svg {
-    margin: auto;
-    width: 100%;
+.rainleft{
+    display: flex;
+    float: left;
+    width: 30%;
     height: 100%;
-  }
-  svg .cls-1 {
-    stroke: #66A4D6;
-  }
-  
-  .circle {
-    stroke-dasharray: 700;
-    stroke-dashoffset: 700;
-  }
-  
-  .checkmark {
-    stroke-dasharray: 150;
-    stroke-dashoffset: 150;
-  }
-  
-  .run-animation .circle {
-    -webkit-animation: 2.5s circleDraw forwards;
-            animation: 2.5s circleDraw forwards;
-  }
-  .run-animation .checkmark {
-    -webkit-animation: 0.75s checkmarkDraw forwards;
-            animation: 0.75s checkmarkDraw forwards;
-    -webkit-animation-delay: 1s;
-            animation-delay: 1s;
-  }
-  
-  @-webkit-keyframes circleDraw {
-    from {
-      stroke-dashoffset: 700;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  
-  @keyframes circleDraw {
-    from {
-      stroke-dashoffset: 700;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  @-webkit-keyframes checkmarkDraw {
-    from {
-      stroke-dashoffset: 150;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  @keyframes checkmarkDraw {
-    from {
-      stroke-dashoffset: 150;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
+    justify-content: center;
+    align-items: center;
+}
+
+.rainright{
+    display: flex;
+    float: right;
+    width: 70%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Kontakt */
 
 #contactcard p{
@@ -739,6 +733,7 @@ input {
 }
 
 /* Rainmap */
+
 .playpause{
     margin: 0 auto;
     position: absolute;
