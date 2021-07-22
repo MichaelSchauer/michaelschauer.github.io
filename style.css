@@ -887,3 +887,78 @@ input {
     margin: 0;
     font-size: 30px;
 }
+
+/* Responsive */
+
+@media screen and (min-width: 600px) and (min-height: 700px){
+    #home h2{
+        font-size: 37px;
+    }
+    
+    #home h3{
+        font-size: 27px;
+        margin-top: 10px;
+    }
+
+    #homecard{
+        margin-top: 100px;
+        max-width: 800px;
+    }
+    .card{
+        max-width: 800px;
+    }
+
+    #Regenradar{
+        max-width: 800px;
+        height: 200px;
+        flex-direction: column;
+    }
+    
+    .rainleft{
+        display: flex;
+        width: 100%;
+        height: 70%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .rainright{
+        display: flex;
+        width: 100%;
+        height: 30%;
+        justify-content:center;
+        margin-bottom: 10px;
+        align-items:center;
+    }
+    
+    .rainleft img{
+        margin-top: 30px;
+        height: 100px;
+        width: auto;
+        filter: invert(1);
+        -webkit-filter: invert(1);
+    }
+
+    #menuitem{
+        font-size: 30px;
+    }
+
+    #contactcard input{
+       max-width: 700px;
+    }
+
+    #contactcard p{
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    #contactcard textarea{
+        max-width: 700px;
+    }
+    
+    .placename{
+        font-size: 50px;
+        margin-bottom: 50px;
+    }
+
+  }
