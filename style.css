@@ -302,6 +302,15 @@ input {
     align-items: center;
 }
 
+.rainleft img{
+    height: 50px;
+    width: auto;
+    filter: invert(1);
+    -webkit-filter: invert(1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
 /* Kontakt */
 
 #contactcard p{
