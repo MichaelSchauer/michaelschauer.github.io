@@ -14,7 +14,7 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />   
 </head>
 
-<body style="overflow: hidden; height: 100vh;">
+<body>
     <section id="Karte" class="section">
         <div id='map' style='width: 100%; height: 100%;'></div>
         <script>
@@ -69,20 +69,11 @@
             });
         });
         </script>
-           <div id="expanav">
-            <div id="menuitemcontainer">
-                <div id="menuitem" onclick="window.location='places.html';">Orte</div>
-                <div id="menuitem" onclick="window.location='map.html';">Karte</div>
-                <div id="menuitem" onclick="window.location='rainmap.html';">Regenradar</div>
-                <div id="menuitem" onclick="window.location='contact.html';">Kontakt</div>
+            <div id="footerboth">
+                <div class="singlelocation" onclick="window.location='places.html';">
+                    <p>Orte</p>
+                </div>
             </div>
-            <div id="closenav" onclick= closenav()><p>&#x2716;</p></div>
-        </div>
-        <div id="footerexp">
-            <div class="opennav" onclick= opennav()>
-                <img src="resources/nav.svg">
-            </div>
-        </div>
     </section>
     <style>
         .titlepopup{
