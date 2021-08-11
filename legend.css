@@ -1,0 +1,96 @@
+/* Legends */
+.legendWeatherShow{
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    height: 20px;
+    bottom: 60px;
+    left: 0px;
+    z-index: 1500;
+    position: absolute;
+    -webkit-box-shadow: 0px -17px 20px 0px rgba(0,0,0,0.16); 
+    box-shadow: 0px -17px 20px 0px rgba(0,0,0,0.16);
+}
+
+.legendWeatherHidden{
+    display: None;
+    visibility: hidden;
+    -webkit-box-shadow: 0px -0px 0px 0px rgba(0,0,0,0.16); 
+    box-shadow: 0px -0px 0px 0px rgba(0,0,0,0.16);
+    position: inherit;
+    z-index: -1500;
+    height: 0px;
+    width: 0px;
+}
+
+#legendRain{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.aRain,.bRain,.cRain,.dRain,.eRain, .fRain, .gRain, .hRain, .iRain, .jRain, .kRain, .lRain, .mRain{
+    height: 20px;
+    line-height: 20px;
+    border: none;
+    text-align: center;
+    flex-grow: 1;
+    color: white;
+}
+
+.aRain {
+  background: #0000bb;
+}
+
+.bRain {
+  background: #0000f7;
+}
+
+.cRain {
+  background: #004ffe;
+}
+
+.dRain {
+  background: #00adfe;
+}
+
+.eRain {
+  background: #07fdf7;
+  color: black;
+} 
+
+.fRain{
+    background: #4ffdaf;
+    color: black;
+}
+
+.gRain{
+    background: #9bfe63;
+    color: black;
+}
+
+.hRain{
+    background-color: #e3fe1b;
+    color: black;
+}
+
+.iRain{
+    background-color: #fed300;
+    color: black;
+}
+
+.jRain{
+    background-color: #fe8b00;
+}
+
+.kRain{
+    background-color: #fe3f00;
+}
+
+.lRain{
+    background-color: #f70000;
+}
+
+.mRain{
+    background-color: #bb0000;
+}

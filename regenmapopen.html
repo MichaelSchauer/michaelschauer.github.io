@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regenradar</title>
+    <link rel="icon" href="resources/faviconrain.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="resources/faviconrain.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon-precomposed" href="resources/faviconrain.png"/>
+    <link rel="apple-touch-icon" href="resources/faviconrain.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="resources/rain72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="resources/rain114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="resources/rain144.png" />
+    <link rel="stylesheet" href="legend.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resources.css">
+    <link rel="stylesheet" href="resources/leaflet.css"/>
+    <script src="main.js"></script>
+    <script src="resources/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    
+
+</head>
+
+<body style="padding:0; margin:0; text-align:center;">
+    <section id="" class="section">
+        <div id="weathermenu">
+            <div id="activeLayer"><p id="activeLayerP">Wetterkarte</p></div>
+            <div id="settings" onclick= openweather()>
+                <img id="spinani" src="resources/settings.svg">
+            </div>
+        </div>
+		<div id="weatheritemcontainer">
+			<div id="weatheritem" onclick= activeClouds()>Wolken</div>
+			<div id="weatheritem" onclick= activePrecipitation()>Niederschlag</div>
+			<div id="weatheritem" onclick= activeRain()>Regen</div>
+			<div id="weatheritem" onclick= activeSnow()>Schnee</div>
+		</div>
+    <div id="mapid" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></div>
+    <div id="legendWeather" class="legendWeatherHidden">
+        <div id="legendRain">
+            <div class="aRain">0,1[mm]</div>
+            <div class="bRain">0,25</div>
+            <div class="cRain">0,5</div>
+            <div class="dRain">1</div>
+            <div class="eRain">2,5</div>
+            <div class="fRain">5</div>
+            <div class="gRain">7,5</div>
+            <div class="hRain">10</div>
+            <div class="iRain">15</div>
+            <div class="jRain">20</div>
+            <div class="kRain">25</div>
+            <div class="lRain">50</div>
+            <div class="mRain">100</div>
+        </div>
+    </div>
+    <div id="footerboth">
+        <div class="singlelocation" onclick="window.location='index.html';">
+            <p onclick="window.location='index.html';">HOME</p>
+        </div>
+    </div>
+
+
+    <script>
+
+        var map = L.map('mapid',{
+			center: [48.437173, 14.150868],
+			zoom: 9,
+			zoomControl: false
+			});
+		
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				attributions: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+			}).addTo(map);
+
+
+
+			var Rain = L.tileLayer('http://tile.openweathermap.org/map/rain_cls/{z}/{x}/{y}.png?appid=2ede3ddfaf2748c8ed113f354dac9e76', {
+				maxZoom: 18,
+                opacity: 0.7,
+				id: 'temp'
+			}),
+	
+			Precipitation = L.tileLayer('http://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=2ede3ddfaf2748c8ed113f354dac9e76', {
+				maxZoom: 18,
+			}),
+	
+			Wind = L.tileLayer('http://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=2ede3ddfaf2748c8ed113f354dac9e76', {
+				maxZoom: 18,
+			}),
+	
+			Snow = L.tileLayer('http://tile.openweathermap.org/map/snow/{z}/{x}/{y}.png?appid=2ede3ddfaf2748c8ed113f354dac9e76', {
+				maxZoom: 18,
+			}),
+	
+			Clouds = L.tileLayer('http://tile.openweathermap.org/map/clouds_cls/{z}/{x}/{y}.png?appid=2ede3ddfaf2748c8ed113f354dac9e76', {
+				maxZoom: 18,
+                opacity: 0.6,
+			});
+	
+			var owm = new L.OWMLayer({key: '2ede3ddfaf2748c8ed113f354dac9e76'});
+			var layers = [];
+				for (var providerId in providers) {
+					layers.push(providers[providerId]);
+				}
+
+    </script>
+
+</body>
+</html>

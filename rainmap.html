@@ -29,6 +29,7 @@
             <div id="menuitem" onclick="window.location='places.html';">Orte</div>
             <div id="menuitem" onclick="window.location='map.html';">Karte</div>
             <div id="menuitem" onclick="window.location='rainmap.html';">Regenradar</div>
+            <div id="menuitem" onclick="window.location='regenmap.html';">Wetterkarte</div>
             <div id="menuitem" onclick="window.location='contact.html';">Kontakt</div>
         </div>
         <div id="closenav" onclick= closenav()><p>&#x2716;</p></div>
@@ -43,9 +44,9 @@
     <script>
 
         var map = L.map('mapid',{
-        center: [48.437173, 14.150868],
-        zoom: 9,
-        zoomControl: false
+            center: [48.437173, 14.150868],
+            zoom: 9,
+            zoomControl: false
         });
     
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
