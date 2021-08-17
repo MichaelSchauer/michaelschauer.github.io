@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <filter id="Ellipse_1" x="7.5" y="12.5" width="285" height="285" filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-opacity="0.361"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Rainmap_1">
+      <rect width="300" height="300"/>
+    </clipPath>
+  </defs>
+  <g id="Rainmap_1" data-name="Rainmap – 1" clip-path="url(#clip-Rainmap_1)">
+    <rect width="300" height="300" fill="rgba(255,255,255,0)"/>
+    <rect id="Rechteck_1" data-name="Rechteck 1" width="240" height="240" transform="translate(30 30)" fill="none"/>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Ellipse_1)">
+      <circle id="Ellipse_1-2" data-name="Ellipse 1" cx="120" cy="120" r="120" transform="translate(30 30)" fill="#ffc400"/>
+    </g>
+  </g>
+</svg>

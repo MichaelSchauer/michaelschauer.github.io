@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <filter id="Ellipse_3" x="7.5" y="84.5" width="285" height="178" filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-opacity="0.361"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Rainmap_3">
+      <rect width="300" height="300"/>
+    </clipPath>
+  </defs>
+  <g id="Rainmap_3" data-name="Rainmap – 3" clip-path="url(#clip-Rainmap_3)">
+    <rect width="300" height="300" fill="rgba(255,255,255,0)"/>
+    <rect id="Rechteck_1" data-name="Rechteck 1" width="240" height="240" transform="translate(30 30)" fill="none"/>
+    <g id="Gruppe_2" data-name="Gruppe 2" transform="translate(-25 -63.375)">
+      <g transform="matrix(1, 0, 0, 1, 25, 63.38)" filter="url(#Ellipse_3)">
+        <ellipse id="Ellipse_3-2" data-name="Ellipse 3" cx="120" cy="66.5" rx="120" ry="66.5" transform="translate(30 102)" fill="#f3f3f3"/>
+      </g>
+      <circle id="Ellipse_4" data-name="Ellipse 4" cx="60" cy="60" r="60" transform="translate(94 128.375)" fill="#f3f3f3"/>
+      <circle id="Ellipse_5" data-name="Ellipse 5" cx="51.5" cy="51.5" r="51.5" transform="translate(173 150.375)" fill="#f3f3f3"/>
+    </g>
+  </g>
+</svg>
