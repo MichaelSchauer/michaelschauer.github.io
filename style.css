@@ -979,7 +979,7 @@ input {
     display: flex;
     font-family: 'roboto', sans-serif;
     font-weight: 300;
-    font-size: 15px;
+    font-size: 10px;
     z-index: 450; 
     -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
     box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16);
@@ -1201,6 +1201,10 @@ input {
     .placename{
         font-size: 50px;
         margin-bottom: 50px;
+    }
+
+    #forecastflexcontainer{
+        font-size: 17px;
     }
 
   }
