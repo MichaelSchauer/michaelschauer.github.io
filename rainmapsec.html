@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>Regenradar</title>
     <link rel="icon" href="resources/faviconrain.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="resources/faviconrain.ico" type="image/x-icon"/>
@@ -19,6 +19,9 @@
     <script src="main.js"></script>
     <link rel="stylesheet" href="resources/leaflet.css"/>
     <script src="resources/leaflet.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body style="padding:0; margin:0; text-align:center;">
@@ -31,6 +34,26 @@
     </div>
     
     <div id="mapid" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></div>
+    <div id="forecast">
+      <!--  <form action="" method="get" id="form">
+            <div class="form-group">
+                <label for="q">Get weather information about a city</label>
+                <input type="text" id="q" name="q" class="form-control" placeholder="City">
+            </div>
+            <p>
+                <input type="submit" class="btn btn-primary" value="Search">
+            </p>
+        </form>-->
+        <div id=forecastflexcontainer>
+            <div id="forecastcity" class="forecastflex"><p id="resforecastcity" style="text-transform: uppercase;"></p></div>
+            <div id="forecastdesc" class="forecastflex">
+                <img id="wicon" src="">
+                <p id="resforecastdesc"></p>
+            </div>
+            <div id="forecasttemp" class="forecastflex"><p id="resforecasttemp"></p></div>
+        </div>
+    </div>
+    <div id="closeforecast" onclick="hideforecast()"><p>&#x2716;</p></div>
     <div id="footerboth">
         <div class="singlelocation" onclick="window.location='index.html';">
             <p>Home</p>
@@ -39,8 +62,6 @@
 </section>
     
     <script>
-        //FUTURE: panTO location
-        
         var map = L.map('mapid',{
         center: [48.437173, 14.150868],
         zoom: 9,
@@ -252,6 +273,129 @@
             e.preventDefault();
             return false;
         }
+
+
+        function hideforecast(){
+            document.getElementById("forecast").style.top = "34px";
+            document.getElementById("closeforecast").style.top = "0px";
+        };
+
+document
+        const APIKEY = "17a47c302c066684834da3f9273e93a0";
+        //const APIKEY = "2ede3ddfaf2748c8ed113f354dac9e76";
+        var lat = "";
+        var lon = "";
+        var main = "";
+        var desc = "";
+        var temp = "";
+        var felttemp = "";
+        var mintemp = "";
+        var maxtemp = "";
+        var pressure = "";
+        var humidity = "";
+        var windspeed = "";
+        var clouds = "";
+        var sunrise = "";
+        var sunset = "";
+        var visibility = "";
+        var city = "";
+        var country = "";
+        var windrichtung = "";
+        var rainvol1h = "";
+        var rainvol3h = "";
+        var iconcode = "";
+
+
+        //Get Coordinates from Clicking on Map
+        map.on('click', function(e){
+        var coord = e.latlng;
+        lat = coord.lat;
+        lon = coord.lng;
+        console.log("Coordinates Clicked: latitude: " + lat + ", longitude: " + lon);
+        function showforecast(){
+            document.getElementById("forecast").style.top = "84px";
+            document.getElementById("closeforecast").style.top = "134px";
+        };
+        showforecast();
+        //URL of Weather Service
+        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=de&appid=${APIKEY}`
+
+        //function to get weather data
+        const getWeatherInfo = async ( element, form ) => {
+            try {
+                
+                let response = await request(url);
+                //Display whole Response
+
+                //write response to variables
+                temp = Math.round(response.main.temp) + " °C";
+                main = response.weather[0].main;
+                desc = response.weather[0].description;
+                felttemp = Math.round(response.main.feels_like) + " °C";
+                mintemp = Math.round(response.main.temp_min) + " °C";
+                maxtemp = Math.round(response.main.temp_max) + " °C";
+                pressure = response.main.pressure + " hPa";
+                humidity = response.main.humidity + " %";
+                windspeed = Math.round(response.wind.speed) * 3.6 + " km/h";
+                clouds = response.clouds.all + " %";
+                //sunrise 
+                var unixTimestamprise = response.sys.sunrise
+                var millisecondsrise = unixTimestamprise * 1000 // UNIX Timestamp (1575909015000)
+                var dateObjectrise = new Date(millisecondsrise);
+                sunrise = dateObjectrise.toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'}); // HH:MM
+                //sunset
+                var unixTimestampset = response.sys.sunset
+                var millisecondsset = unixTimestampset * 1000 // UNIX Timestamp (1575909015000)
+                var dateObjectset = new Date(millisecondsset);
+                sunset = dateObjectset.toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'}); // HH:MM
+                visibility = response.visibility / 1000 + " km";
+                city = response.name;
+                country = response.sys.country;
+                //wind DEG to text
+                degrees = response.wind.deg;
+                directions = ['N', 'NO', 'O', 'SO', 'S', 'SW', 'W', 'NW'];
+                degrees = degrees * 8 / 360;
+                // round to nearest integer.
+                degrees = Math.round(degrees, 0);
+                // Ensure it's within 0-7
+                degrees = (degrees + 8) % 8
+                windrichtung = directions[degrees];
+                iconcode = response.weather[0].icon;
+
+                document.getElementById("resforecastcity").innerHTML= city;
+                document.getElementById("resforecastdesc").innerHTML= desc;
+                document.getElementById("resforecasttemp").innerHTML= temp;
+                var iconurl = "resources/weathericons/" + iconcode + ".svg";
+                $('#wicon').attr('src', iconurl);
+
+            } catch(err) {
+                console.log(err);
+            }
+        };
+
+        let form = document.querySelector('#form');
+        getWeatherInfo(document.querySelector('#results'), form);
+    });
+
+
+
+        'use strict'
+
+        const request = url => {
+            return new Promise((resolve, reject) => {
+
+                fetch(url).then(response => {
+                    if(response.ok) {
+                        resolve(response.json());
+                    } else {
+                        reject({
+                            error: 500
+                        });
+                    }
+                });
+
+            });
+        };
     </script>
 
 </body>

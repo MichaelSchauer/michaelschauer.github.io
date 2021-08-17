@@ -16,14 +16,14 @@ function login(){
     wrongpasscircle();
   }
 }
-
+/*
 $('#checkmark-svg').on('click', function(){
   svg = $(this);
   svg.removeClass('run-animation').width();
   svg.addClass('run-animation');
   return false;
 })
-
+*/
 function opennav(){
   document.getElementById("expanav").style.height = "100%";
   document.getElementById("footerexp").style.height = "0px";
@@ -123,8 +123,8 @@ function activeSnow(){
 
 function activePrecipitation(){
   map.removeLayer(Clouds);
-  map.removeLayer(Snow)
-  map.removeLayer(Rain)
+  map.removeLayer(Snow);
+  map.removeLayer(Rain);
   map.addLayer(Precipitation);
   document.getElementById("activeLayerP").innerHTML="Niederschlag";
   closeweather();  

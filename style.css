@@ -292,7 +292,7 @@ input {
     height: 100%;
     justify-content: center;
     align-items: center;
-    border-right: 0.5px solid white;
+    border-right: 0.5px solid rgba(255, 255, 255, 0.5);
 }
 
 .rainright{
@@ -302,7 +302,7 @@ input {
     height: 100%;
     justify-content: center;
     align-items: center;
-    border-left: 0.5px solid white;
+    border-left: 0.5px solid rgba(255, 255, 255, 0.5);
 }
 
 .rainleft img{
@@ -752,8 +752,6 @@ input {
     width: 100%;
     text-align: center;
     padding-top: 40px;
-    -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.1); 
-    box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.1);
     height: 44px;
     width: 100%;
     top: 0;
@@ -939,6 +937,89 @@ input {
     margin-bottom: 30px;
 }
 
+#forecast{
+    display: flex;
+    position: fixed; 
+    height: 50px; 
+    width: 100%; 
+    top: 34px; 
+    left:0; 
+    z-index: 400; 
+    background-color: white;
+    -webkit-transition: top 0.5s linear;
+    -moz-transition: top 0.5s linear;
+    -o-transition: top 0.5s linear;
+    transition: top 0.5s linear;
+    animation-direction: reverse; 
+}
+
+.forecastflex{
+    display: inline-flex;
+    width: 33%;
+    height: 100%;
+    justify-content: center;
+    text-transform: uppercase;
+    z-index: 450; 
+    background-color: white;
+}
+
+#wicon{
+    display: block;
+    margin-right: 5px;
+    height: 40px;
+}
+
+#forecastdesc{
+    align-items: center;
+}
+
+#forecastflexcontainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    z-index: 450; 
+    -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
+    box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16);
+    background-color: white;
+}
+
+#closeforecast{
+    height: 30px;
+    width: 80px;
+    background-color: white;
+    display: flex;
+    position: absolute;
+    z-index: 400;
+    top: 0px;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 0 0 30px 30px ;
+    -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
+    box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16);
+     -webkit-transition: top 0.5s linear;
+    -moz-transition: top 0.5s linear;
+    -o-transition: top 0.5s linear;
+    transition: top 0.5s linear;
+    animation-direction: reverse; 
+}
+
+#closeforecast:hover{
+    cursor: pointer;
+}
+
+#closforecast p{
+    font-size: 20px;
+    line-height: 20px;
+    display: block;
+    padding-bottom: 5px;
+}
+
 /* NEW Weather */
 
 #weathermenu{
@@ -1048,6 +1129,12 @@ input {
     from {transform:rotate(0deg);}
     to {transform:rotate(180deg);}
 }
+
+
+
+
+
+
 /* Responsive */
 
 @media screen and (min-width: 600px) and (min-height: 700px){
@@ -1080,6 +1167,7 @@ input {
         height: 50%;
         justify-content: center;
         align-items: center;
+        border: none;
     }
     
     .rainright{
@@ -1089,6 +1177,8 @@ input {
         justify-content:center;
         margin-bottom: 10px;
         align-items:center;
+        border: none;
+        border-top: 0.5px solid rgba(255, 255, 255, 0.5);
     }
 
     #menuitem{
