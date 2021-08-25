@@ -22,12 +22,16 @@
     <script src="main.js"></script>
     <link rel="stylesheet" href="resources/leaflet.css"/>
     <script src="resources/leaflet.js"></script>
-
+    <style>
+        .leaflet-control-attribution{
+            display: none;
+        }
+    </style>
 
 
 </head>
-
-<body style="padding:0; margin:0; text-align:center; background-color: white;">
+    
+    <body style="padding:0; margin:0; text-align:center; background-color: white;">
     <div id="body-content">
     <section id="" class="section">
     <div class="playpause">
@@ -68,25 +72,7 @@
     </div>
     <div id="closeforecast" onclick="hideforecast()"><p>&#x2716;</p></div>
 
-    <button id="getGPSloc" onclick="getGPS()"><img src="resources/locationButton.svg"></button>
-
-
-
-    <div id="expanav">
-        <div id="menuitemcontainer">
-            <div id="menuitem" onclick="window.location='places.html';">Orte</div>
-            <div id="menuitem" onclick="window.location='map.html';">Karte</div>
-            <div id="menuitem" onclick="window.location='rainmap.html';">Regenradar</div>
-            <div id="menuitem" onclick="window.location='regenmap.html';">Wetterkarte</div>
-            <div id="menuitem" onclick="window.location='contact.html';">Kontakt</div>
-        </div>
-        <div id="closenav" onclick= closenav()><p>&#x2716;</p></div>
-    </div>
-    <div id="footerexp">
-        <div class="opennav" onclick= opennav()>
-            <img src="resources/nav.svg">
-        </div>
-    </div>
+    <button id="getGPSlocmobile" onclick="getGPS()"><img src="resources/locationButton.svg" style="bottom: 50px !important;"></button>
 </section>
     
     <script>
