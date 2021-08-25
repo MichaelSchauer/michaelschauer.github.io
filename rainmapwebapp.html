@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="apple-mobile-web-app-status-bar-style"content="black">
+    <meta name="apple-mobile-web-app-status-bar-style"content="black-translucent">
     <link rel="apple-touch-startup-image" href="resources/launchi12.png">
     <title>Regenradar</title>
     <link rel="icon" href="resources/faviconrain.ico" type="image/x-icon"/>
@@ -31,14 +31,14 @@
 
 </head>
     
-    <body style="padding:0; margin:0; text-align:center; background-color: white;">
+    <body style="padding:0; margin:0; text-align:center; background-color: #74D0FF;">
     <div id="body-content">
     <section id="" class="section">
-    <div class="playpause">
-        <div id="timenow" style="text-align:center; position: absolute;top: 0px; left: 0; right: 0; height: 10px; display: block;"></div>
-        <button style="font-family: 'Segoe UI Web (West European)';font-size: 20px; display: inline-block; width: 50px;" onclick="stop(); showFrame(animationPosition - 1); return;" value="&lt;">&#5130;</button>
-        <button style="font-family: 'Segoe UI Web (West European)';font-size: 20px; display: inline-block; width: 160px;"onclick="playStop();">START</button>
-        <button style="font-family: 'Segoe UI Web (West European)';font-size: 20px; display: inline-block; width: 50px;"onclick="stop(); showFrame(animationPosition + 1); return;" value="&lt;">&#5125;</button>
+    <div class="playpause" style="background-color: #74D0FF !important; color: white;">
+        <div id="timenow" style="text-align:center; position: absolute;top: 0px; left: 0; right: 0; height: 10px; display: block; color: white;"></div>
+        <button style="font-family: 'Segoe UI Web (West European)';font-size: 20px; display: inline-block; width: 50px; background-color: #74D0FF !important; color: white;" onclick="stop(); showFrame(animationPosition - 1); return;" value="&lt;">&#5130;</button>
+        <button style="font-family: 'Segoe UI Web (West European)';font-size: 20px; display: inline-block; width: 160px; background-color: #74D0FF !important; color: white;"onclick="playStop();">START</button>
+        <button style="font-family: 'Segoe UI Web (West European)';font-size: 20px; display: inline-block; width: 50px; background-color: #74D0FF !important; color: white;"onclick="stop(); showFrame(animationPosition + 1); return;" value="&lt;">&#5125;</button>
     </div>
     
     <div id="mapid" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></div>
@@ -52,13 +52,13 @@
                 <input type="submit" class="btn btn-primary" value="Search">
             </p>
         </form>-->
-        <div id=forecastflexcontainer>
-            <div id="forecastcity" class="forecastflex"><p id="resforecastcity" style="text-transform: uppercase;"></p></div>
-            <div id="forecastdesc" class="forecastflex">
+        <div id=forecastflexcontainer style="background-color: #74D0FF !important; color: white;">
+            <div id="forecastcity" class="forecastflex" style="background-color: #74D0FF !important; color: white;"><p id="resforecastcity" style="text-transform: uppercase;"></p></div>
+            <div id="forecastdesc" class="forecastflex" style="background-color: #74D0FF !important; color: white;">
                 <img id="wicon" src="">
                 <p id="resforecastdesc"></p>
             </div>
-            <div id="forecasttemp" class="forecastflex"><p id="resforecasttemp"></p></div>
+            <div id="forecasttemp" class="forecastflex" style="background-color: #74D0FF !important; color: white;"><p id="resforecasttemp"></p></div>
         </div>
     </div>
     <div id="closeforecastwind" onclick="hideforecastwind()"><p>&#x2716;</p></div>
@@ -72,7 +72,7 @@
     </div>
     <div id="closeforecast" onclick="hideforecast()"><p>&#x2716;</p></div>
 
-    <button id="getGPSlocmobile" onclick="getGPS()"><img src="resources/locationButton.svg" style="bottom: 50px !important;"></button>
+    <button id="getGPSlocmobile" onclick="getGPS()"><img src="resources/locationWhite.svg" style="bottom: 50px !important;"></button>
 </section>
     
     <script>
@@ -398,7 +398,7 @@
        
         //Marker 
         var MarkerWhite = L.icon({
-            iconUrl: 'resources/location.svg',
+            iconUrl: 'resources/locationBlue.svg',
             iconSize:     [38, 95], // size of the icon
             iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
             popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
