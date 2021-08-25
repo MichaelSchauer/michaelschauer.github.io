@@ -19,9 +19,14 @@ body {
     overflow: auto;
     scroll-behavior: smooth;
     position: relative;
-    padding-bottom: env(safe-area-inset-bottom);
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
+#body-content {
+    padding: env(safe-area-inset-bottom);
+ }
 
 .contentwrapIMG {
     width: 100%;
