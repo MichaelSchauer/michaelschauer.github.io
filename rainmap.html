@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="resources/rain72.png" />
     <link rel="apple-touch-icon" sizes="114x114" href="resources/rain114.png" />
     <link rel="apple-touch-icon" sizes="144x144" href="resources/rain144.png" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="resources.css">
@@ -23,7 +23,7 @@
     <script src="resources/leaflet.js"></script>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
 <body style="padding:0; margin:0; text-align:center;">
@@ -55,7 +55,21 @@
             <div id="forecasttemp" class="forecastflex"><p id="resforecasttemp"></p></div>
         </div>
     </div>
+    <div id="closeforecastwind" onclick="hideforecastwind()"><p>&#x2716;</p></div>
+    <div id="forecastwindow">
+        <div id="forecastcitywind" class="forecastflexwind"><p id="resforecastcitywind" style="text-transform: uppercase;"></p></div>
+        <div id="forecastdescwind" class="forecastflexwind">
+            <img id="wiconwind" src="">
+            <p id="resforecastdescwind"></p>
+        </div>
+        <div id="forecasttemp" class="forecastflexwind"><p id="resforecasttempwind"></p></div>
+    </div>
     <div id="closeforecast" onclick="hideforecast()"><p>&#x2716;</p></div>
+
+    <button id="getGPSloc" onclick="getGPS()"><img src="resources/locationButton.svg"></button>
+
+
+
     <div id="expanav">
         <div id="menuitemcontainer">
             <div id="menuitem" onclick="window.location='places.html';">Orte</div>
@@ -77,7 +91,8 @@
         var map = L.map('mapid',{
         center: [48.437173, 14.150868],
         zoom: 9,
-        zoomControl: false
+        zoomControl: false,
+        tap: false,
         });
     
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -285,18 +300,19 @@
             e.preventDefault();
             return false;
         }
+</script>
 
-
-        function hideforecast(){
-            document.getElementById("forecast").style.top = "34px";
-            document.getElementById("closeforecast").style.top = "0px";
-        };
-
-document
-        //const APIKEY = "17a47c302c066684834da3f9273e93a0";
+<script>
+        //Weather Variables
         const APIKEY = "2ede3ddfaf2748c8ed113f354dac9e76";
-        var lat = "";
-        var lon = "";
+        //URL of Weather Service
+        //var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=de&appid=${APIKEY}`;
+        var url = `https://api.openweathermap.org/data/2.5/weather`
+        var jsonresponse = "";
+        var lat = "14.245";
+        var lon = "14.256";
+        var lan = "de";
+        var units = "metric";
         var main = "";
         var desc = "";
         var temp = "";
@@ -316,100 +332,160 @@ document
         var rainvol1h = "";
         var rainvol3h = "";
         var iconcode = "";
-
-
+        
         //Get Coordinates from Clicking on Map
         map.on('click', function(e){
         var coord = e.latlng;
         lat = coord.lat;
         lon = coord.lng;
-        console.log("Coordinates Clicked: latitude: " + lat + ", longitude: " + lon);
-        function showforecast(){
-            document.getElementById("forecast").style.top = "84px";
-            document.getElementById("closeforecast").style.top = "132px"; //132
-        };
+        console.log("Coordinates: LAT: " + lat + ", LON: " + lon);
+        //forecastAPI();
+        getWeather();
+        console.log("CALL Forecast");
+            if ($(window).width() <  700) {
+                    showforecast();
+                    console.log("WIDTH Small");
 
-        showforecast();
-        //URL of Weather Service
-        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=de&appid=${APIKEY}`
+                }
+                else {
+                    showforecastwindow();
+                    console.log("WIDTH Big")
 
-        //function to get weather data
-        const getWeatherInfo = async ( element, form ) => {
-            try {
-                
-                let response = await request(url);
-                //Display whole Response
-
-                //write response to variables
-                temp = Math.round(response.main.temp) + " °C";
-                main = response.weather[0].main;
-                desc = response.weather[0].description;
-                felttemp = Math.round(response.main.feels_like) + " °C";
-                mintemp = Math.round(response.main.temp_min) + " °C";
-                maxtemp = Math.round(response.main.temp_max) + " °C";
-                pressure = response.main.pressure + " hPa";
-                humidity = response.main.humidity + " %";
-                windspeed = Math.round(response.wind.speed) * 3.6 + " km/h";
-                clouds = response.clouds.all + " %";
-                //sunrise 
-                var unixTimestamprise = response.sys.sunrise
-                var millisecondsrise = unixTimestamprise * 1000 // UNIX Timestamp (1575909015000)
-                var dateObjectrise = new Date(millisecondsrise);
-                sunrise = dateObjectrise.toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'}); // HH:MM
-                //sunset
-                var unixTimestampset = response.sys.sunset
-                var millisecondsset = unixTimestampset * 1000 // UNIX Timestamp (1575909015000)
-                var dateObjectset = new Date(millisecondsset);
-                sunset = dateObjectset.toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'}); // HH:MM
-                visibility = response.visibility / 1000 + " km";
-                city = response.name;
-                country = response.sys.country;
-                //wind DEG to text
-                degrees = response.wind.deg;
-                directions = ['N', 'NO', 'O', 'SO', 'S', 'SW', 'W', 'NW'];
-                degrees = degrees * 8 / 360;
-                // round to nearest integer.
-                degrees = Math.round(degrees, 0);
-                // Ensure it's within 0-7
-                degrees = (degrees + 8) % 8
-                windrichtung = directions[degrees];
-                iconcode = response.weather[0].icon;
-
-                document.getElementById("resforecastcity").innerHTML= city;
-                document.getElementById("resforecastdesc").innerHTML= desc;
-                document.getElementById("resforecasttemp").innerHTML= temp;
-                var iconurl = "resources/weathericons/" + iconcode + ".svg";
-                $('#wicon').attr('src', iconurl);
-
-            } catch(err) {
-                console.log(err);
+                }
             }
-        };
-
-        let form = document.querySelector('#form');
-        getWeatherInfo(document.querySelector('#results'), form);
-    });
-
-
-
-        'use strict'
-
-        const request = url => {
-            return new Promise((resolve, reject) => {
-
-                fetch(url).then(response => {
-                    if(response.ok) {
-                        resolve(response.json());
-                    } else {
-                        reject({
-                            error: 500
-                        });
+        );
+            
+        function getWeather(){
+                $.ajax({
+                    url: url,
+                    jsonp: "callback",
+                    dataType: "jsonp",
+                    data: {
+                        APPID: APIKEY,
+                        lat: lat,
+                        lon: lon,
+                        units: units,
+                        lang: lan,
+                    },
+                    success: function( jsonresponse ) {
+                        console.log( jsonresponse ); // server response
+                        response = jsonresponse;
+                        writeCallbackData();
+                        console.log(temp);
                     }
                 });
+            }
 
-            });
-        };
-    </script>
+
+
+
+    
+        function showGPS(position) {
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            console.log("CALL Forecast from GPS");
+            getWeather();
+            console.log("CALL Forecast form GPS finished");
+           
+            var marker = L.marker([lat, lon],{icon: MarkerWhite}).addTo(map);
+            map.flyTo([lat, lon], 11);
+            if ($(window).width() <  700) {
+                        showforecast();
+                    }
+                    else {
+                        showforecastwindow();
+                    }
+        };    
+        
+        function getGPS() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showGPS);
+            lat = position.coords.latitude;
+            console.log(lat)
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+       
+        //Marker 
+        var MarkerWhite = L.icon({
+            iconUrl: 'resources/location.svg',
+            iconSize:     [38, 95], // size of the icon
+            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
+    function writeCallbackData(){
+                    //write response to variables
+                    temp = Math.round(response.main.temp) + " °C";
+                    main = response.weather[0].main;
+                    desc = response.weather[0].description;
+                    felttemp = Math.round(response.main.feels_like) + " °C";
+                    mintemp = Math.round(response.main.temp_min) + " °C";
+                    maxtemp = Math.round(response.main.temp_max) + " °C";
+                    pressure = response.main.pressure + " hPa";
+                    humidity = response.main.humidity + " %";
+                    windspeed = Math.round(response.wind.speed) * 3.6 + " km/h";
+                    clouds = response.clouds.all + " %";
+                    //sunrise 
+                    var unixTimestamprise = response.sys.sunrise
+                    var millisecondsrise = unixTimestamprise * 1000 // UNIX Timestamp (1575909015000)
+                    var dateObjectrise = new Date(millisecondsrise);
+                    sunrise = dateObjectrise.toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'}); // HH:MM
+                    //sunset
+                    var unixTimestampset = response.sys.sunset
+                    var millisecondsset = unixTimestampset * 1000 // UNIX Timestamp (1575909015000)
+                    var dateObjectset = new Date(millisecondsset);
+                    sunset = dateObjectset.toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'}); // HH:MM
+                    visibility = response.visibility / 1000 + " km";
+                    city = response.name;
+                    country = response.sys.country;
+                    //wind DEG to text
+                    degrees = response.wind.deg;
+                    directions = ['N', 'NO', 'O', 'SO', 'S', 'SW', 'W', 'NW'];
+                    degrees = degrees * 8 / 360;
+                    // round to nearest integer.
+                    degrees = Math.round(degrees, 0);
+                    // Ensure it's within 0-7
+                    degrees = (degrees + 8) % 8
+                    windrichtung = directions[degrees];
+                    iconcode = response.weather[0].icon;
+
+                    //forecastsmall
+                    document.getElementById("resforecastcity").innerHTML= city;
+                    document.getElementById("resforecastdesc").innerHTML= desc;
+                    document.getElementById("resforecasttemp").innerHTML= temp;
+                //forecastwindow
+                    document.getElementById("resforecastcitywind").innerHTML= city;
+                    document.getElementById("resforecastdescwind").innerHTML= desc;
+                    document.getElementById("resforecasttempwind").innerHTML= temp;
+                    var iconurl = "resources/weathericons/" + iconcode + ".svg";
+                    $('#wiconwind').attr('src', iconurl);
+                    var iconurlwind = "resources/weathericons/" + iconcode + ".svg";
+                    $('#wicon').attr('src', iconurl);
+    ;}
+
+    function hideforecast(){
+        document.getElementById("forecast").style.top = "34px";
+        document.getElementById("closeforecast").style.top = "0px";
+    };
+
+    function hideforecastwind(){
+        document.getElementById("forecastwindow").style.left = "-400px";
+        document.getElementById("closeforecastwind").style.left = "-130px";
+    };
+
+
+    function showforecast(){
+        document.getElementById("forecast").style.top = "84px";
+        document.getElementById("closeforecast").style.top = "134px";
+    };
+    function showforecastwindow(){
+        document.getElementById("forecastwindow").style.left = "20px";
+        document.getElementById("closeforecastwind").style.left = "290px";
+    };
+</script>
 
 </body>
 </html>
