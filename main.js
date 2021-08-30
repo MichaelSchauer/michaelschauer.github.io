@@ -91,44 +91,40 @@ function showlegend() {
 }
 
 function activeClouds(){
+  removeradar();
   map.removeLayer(Rain);
   map.removeLayer(Snow)
   map.removeLayer(Precipitation)
   map.addLayer(Clouds);
   map.addLayer(Precipitation);
-  document.getElementById("activeLayerP").innerHTML="Wolken";
-  closeweather();  
-  hidelegend();
+  hideplaypause();
 };
 
 function activeRain(){
+  removeradar();
   map.removeLayer(Clouds);
   map.removeLayer(Snow)
   map.removeLayer(Precipitation)
-  map.addLayer(Rain);
-  document.getElementById("activeLayerP").innerHTML="Regen";
-  closeweather();  
-  showlegend()
+  map.addLayer(Rain)
+  hideplaypause(); 
 };
 
 function activeSnow(){
+  removeradar();
   map.removeLayer(Clouds);
   map.removeLayer(Rain)
   map.removeLayer(Precipitation)
   map.addLayer(Snow);
-  document.getElementById("activeLayerP").innerHTML="Schnee";
-  closeweather();  
-  hidelegend();
+  hideplaypause();
 };
 
 function activePrecipitation(){
+  removeradar();
   map.removeLayer(Clouds);
   map.removeLayer(Snow);
   map.removeLayer(Rain);
   map.addLayer(Precipitation);
-  document.getElementById("activeLayerP").innerHTML="Niederschlag";
-  closeweather();  
-  hidelegend();
+  hideplaypause(); 
 };
 
 $('.no-zoom').bind('touchend', function(e) {
@@ -137,3 +133,18 @@ $('.no-zoom').bind('touchend', function(e) {
   $(this).click();
   // This line still calls the standard click event, in case the user needs to interact with the element that is being clicked on, but still avoids zooming in cases of double clicking.
 })
+
+function expandmenu(){
+  document.getElementById("menuexpandable").style.width="260px";
+  document.getElementById("menu").setAttribute("onClick", "hidemenu()");
+  document.getElementById("menuicon").src="resources/close.svg";
+  document.getElementById("getGPSlocmobile").style.right="-80px";
+}
+
+function hidemenu(){
+  document.getElementById("menu").setAttribute("onClick", "expandmenu()");
+  //document.getElementById("menuexpandable").style.width="6px";
+  document.getElementById("menuexpandable").style.width="0px";
+  document.getElementById("menuicon").src="resources/settings.svg";
+  document.getElementById("getGPSlocmobile").style.right="20px";
+}
