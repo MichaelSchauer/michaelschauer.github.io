@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-status-bar-style"content="black-translucent">
+    <link rel="apple-touch-startup-image" href="resources/launchi12.png">
+    <title>Regenradar</title>
+    <link rel="icon" href="resources/faviconrain.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="resources/faviconrain.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon-precomposed" href="resources/faviconrain.png"/>
+    <link rel="apple-touch-icon" href="resources/faviconrain.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="resources/rain72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="resources/rain114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="resources/rain144.png" />
+    <link rel="manifest" href="resources/manifest.webmanifest">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resources.css">
+    <link rel="stylesheet" href="resources/all.css">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="resources/leaflet.css"/>
+    <script src="resources/leaflet.js"></script>
+    <style>
+        .leaflet-control-attribution{
+            display: none;
+        }
+
+    </style>
+
+
+</head>
+    
+    <body style="padding:0; margin:0; text-align:center; background-color: #74D0FF; overflow: hidden;">
+    <div id="body-content">
+    <section id="" class="section">
+    <div id="timenow" style="text-align:center; position: absolute;top: 0px; left: 0; width: 100%; height: 50px; display: block; color: white; z-index: 901; background-color: #74D0FF; margin: 0; line-height: 50px;" ></div>
+    <div id="playpausecontainer">
+        <div id="playpause" onclick="stop(); showFrame(animationPosition - 1); return;"><p>&#5130;</p></div>
+        <div id="playpause" onclick="playStop();"><p id="animtext">START</p></div> 
+        <div id="playpause" onclick="stop(); showFrame(animationPosition + 1); return;"><p>&#5125;</p></div> 
+    </div>
+    <div id="mapid" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></div>
+    <!--<div id="forecast">
+        <form action="" method="get" id="form">
+            <div class="form-group">
+                <label for="q">Get weather information about a city</label>
+                <input type="text" id="q" name="q" class="form-control" placeholder="City">
+            </div>
+            <p>
+                <input type="submit" class="btn btn-primary" value="Search">
+            </p>
+        </form>-->
+       <!--<div id=forecastflexcontainer style="background-color: #74D0FF !important; color: white;">
+            <div id="forecastcity" class="forecastflex" style="background-color: #74D0FF !important; color: white;"><p id="resforecastcity" style="text-transform: uppercase;"></p></div>
+            <div id="forecastdesc" class="forecastflex" style="background-color: #74D0FF !important; color: white;">
+                <img id="wicon" src="">
+                <p id="resforecastdesc"></p>
+            </div>
+            <div id="forecasttemp" class="forecastflex" style="background-color: #74D0FF !important; color: white;"><p id="resforecasttemp"></p></div>
+        </div>
+    </div>-->
+    <div id="closeforecastwind" onclick="hideforecastwind()"><p>&#x2716;</p></div>
+    <div id="forecastwindow">
+        <div id="forecastcitywind" class="forecastflexwind"><p id="resforecastcitywind" style="text-transform: uppercase;"></p></div>
+        <div id="forecastdescwind" class="forecastflexwind">
+            <img id="wiconwind" src="">
+            <p id="resforecastdescwind"></p>
+        </div>
+        <div id="forecasttemp" class="forecastflexwind"><p id="resforecasttempwind"></p></div>
+    </div>
+    <div id="closeforecast" onclick="hideforecast()"><p>&#x2716;</p></div>
+    <div id="menu" onclick="expandmenu()">
+       <!-- <input type="checkbox" id="menu-toggle"/>-->
+        <div id="checkbox" id="menu-toggle"><img id="menuicon" src="resources/settings.svg"></div>
+        <ul id="menuexpandable">
+          <li>
+            <a href="#" onclick="addradar()"><img id="layericon" src="resources/radar.svg"></a>
+          </li><li>
+            <a href="#" onclick= activeClouds()><img id="layericon" src="resources/cloud.svg"></a>
+          </li><li>
+            <a href="#" onclick= activeRain()><img id="layericon" src="resources/rain.svg"></a>
+          </li><li>
+            <a href="#" onclick= activeSnow()><img id="layericon" src="resources/snow.svg"></a>
+          </li>
+        </ul>
+      </div>
+      <div id="weatherfloat" onclick="openweatherpanel()">
+            <div id="iconfloat" style="display: none;">
+              <img id="floatico">
+            </div>
+            <div id="weatherbutton" style="width: 100%; text-align: center; display: flex; justify-content: center; align-items: center; height: 56px;"><p style="margin: 0; padding: 0;">Wetter</p></div>
+            <div id="tempfloat" style="display: none;">  
+            </div>
+      </div>
+    <button id="getGPSlocmobile" onclick="getGPS()"><img src="resources/locationWhite.svg" style="bottom: 50px !important;"></button>
+    <div id="weatherpanel">
+        <div id="placeholderweather"></div>
+        <div id="weathercontrols">
+            <!--<div id="expandweatherpanel"><p>ÖFFNEN</p></div>-->        
+            <div id="closeweatherpanel" onclick="closeweatherpanel()"><p>&#x2716;</p></div>
+        </div>
+        <!--<div id="searchwrap">
+            <form action="" method="get" id="form">
+                <div class="form-group">
+                    <input type="text" id="q" name="q" class="form-control" placeholder="STADT ODER DORF">
+                    <button type="submit" class><img src="resources/search.png"></button>
+                </div>
+            </form>
+        </div>-->
+        <div id="headingcontainer">
+            <h1 id="villagepanel">KLICKEN SIE AUF DIE KARTE</h1>
+        </div>
+        <div id="weatherpanelicon">
+            <img id="floaticopanel">
+        </div>
+        <div id="temperature">
+            <p id="temperaturep"></p>
+        </div>
+    </div>
+</section>
+    
+    <script>
+        var map = L.map('mapid',{
+        center: [48.437173, 14.150868],
+        zoom: 9,
+        zoomControl: false,
+        tap: false,
+        });
+    
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attributions: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    
+        /**
+         * RainViewer radar animation part
+         * @type {number[]}
+         */
+        var apiData = {};
+        var mapFrames = [];
+        var lastPastFramePosition = -1;
+        var radarLayers = [];
+    
+        var optionKind = 'radar'; // can be 'radar' or 'satellite'
+    
+        var optionTileSize = 256; // can be 256 or 512.
+        var optionColorScheme = 8; // from 0 to 8. Check the https://rainviewer.com/api/color-schemes.html for additional information
+        var optionSmoothData = 1; // 0 - not smooth, 1 - smooth
+        var optionSnowColors = 1; // 0 - do not show snow colors, 1 - show snow colors
+    
+        var animationPosition = 0;
+        var animationTimer = false;
+    
+        /**
+         * Load all the available maps frames from RainViewer API
+         */
+        var apiRequest = new XMLHttpRequest();
+        apiRequest.open("GET", "https://api.rainviewer.com/public/weather-maps.json", true);
+        apiRequest.onload = function(e) {
+            // store the API response for re-use purposes in memory
+            apiData = JSON.parse(apiRequest.response);
+            initialize(apiData, optionKind);
+        };
+        apiRequest.send();
+    
+        /**
+         * Initialize internal data from the API response and options
+         */
+        function initialize(api, kind) {
+            // remove all already added tiled layers
+            for (var i in radarLayers) {
+                map.removeLayer(radarLayers[i]);
+            }
+            mapFrames = [];
+            radarLayers = [];
+            animationPosition = 0;
+    
+            if (!api) {
+                return;
+            }
+            if (kind == 'satellite' && api.satellite && api.satellite.infrared) {
+                mapFrames = api.satellite.infrared;
+    
+                lastPastFramePosition = api.satellite.infrared.length - 1;
+                showFrame(lastPastFramePosition);
+            }
+            else if (api.radar && api.radar.past) {
+                mapFrames = api.radar.past;
+                if (api.radar.nowcast) {
+                    mapFrames = mapFrames.concat(api.radar.nowcast);
+                }
+    
+                // show the last "past" frame
+                lastPastFramePosition = api.radar.past.length - 1;
+                showFrame(lastPastFramePosition);
+            }
+        }
+    
+        /**
+         * Animation functions
+         * @param path - Path to the XYZ tile
+         */
+        function addLayer(frame) {
+            if (!radarLayers[frame.path]) {
+                var colorScheme = optionKind == 'satellite' ? 0 : optionColorScheme;
+                var smooth = optionKind == 'satellite' ? 0 : optionSmoothData;
+                var snow = optionKind == 'satellite' ? 0 : optionSnowColors;
+    
+                radarLayers[frame.path] = new L.TileLayer(apiData.host + frame.path + '/' + optionTileSize + '/{z}/{x}/{y}/' + colorScheme + '/' + smooth + '_' + snow + '.png', {
+                    tileSize: 256,
+                    opacity: 0.001,
+                    zIndex: frame.time
+                });
+            }
+            if (!map.hasLayer(radarLayers[frame.path])) {
+                map.addLayer(radarLayers[frame.path]);
+            }
+        }
+    
+        /**
+         * Display particular frame of animation for the @position
+         * If preloadOnly parameter is set to true, the frame layer only adds for the tiles preloading purpose
+         * @param position
+         * @param preloadOnly
+         */
+        function changeRadarPosition(position, preloadOnly) {
+            while (position >= mapFrames.length) {
+                position -= mapFrames.length;
+            }
+            while (position < 0) {
+                position += mapFrames.length;
+            }
+    
+            var currentFrame = mapFrames[animationPosition];
+            var nextFrame = mapFrames[position];
+    
+            addLayer(nextFrame);
+    
+            if (preloadOnly) {
+                return;
+            }
+    
+            animationPosition = position;
+    
+            if (radarLayers[currentFrame.path]) {
+                radarLayers[currentFrame.path].setOpacity(0);
+            }
+            radarLayers[nextFrame.path].setOpacity(100);
+            
+            //Zeitstempel
+            var zeit = (new Date(nextFrame.time * 1000)).toString();
+            var current = String(zeit.slice(16, 21));
+    
+            document.getElementById("timenow").innerHTML = current;
+
+            
+        }
+    
+        /**
+         * Check avialability and show particular frame position from the timestamps list
+         */
+        function showFrame(nextPosition) {
+            var preloadingDirection = nextPosition - animationPosition > 0 ? 1 : -1;
+    
+            changeRadarPosition(nextPosition);
+    
+            // preload next next frame (typically, +1 frame)
+            // if don't do that, the animation will be blinking at the first loop
+            changeRadarPosition(nextPosition + preloadingDirection, true);
+        }
+    
+        /**
+         * Stop the animation
+         * Check if the animation timeout is set and clear it.
+         */
+        function stop() {
+            if (animationTimer) {
+                clearTimeout(animationTimer);
+                animationTimer = false;
+                document.getElementById("animtext").innerHTML="START";
+                return true;
+            }
+            return false;
+        }
+    
+        function play() {
+            showFrame(animationPosition + 1);
+            
+            // Main animation driver. Run this function every 500 ms
+            animationTimer = setTimeout(play, 500);
+            document.getElementById("animtext").innerHTML="STOP";
+        }
+    
+        function playStop() {
+            if (!stop()) {
+                play();
+            }
+        }
+    
+        /**
+         * Change map options
+         */
+        function setKind(kind) {
+            optionKind = kind;
+            initialize(apiData, optionKind);
+        }
+    
+    
+        function setColors() {
+            var e = document.getElementById('colors');
+            optionColorScheme = e.options[e.selectedIndex].value;
+            initialize(apiData, optionKind);
+        }
+    
+    
+        /**
+         * Handle arrow keys for navigation between next \ prev frames
+         */
+        document.onkeydown = function (e) {
+            e = e || window.event;
+            switch (e.which || e.keyCode) {
+                case 37: // left
+                    stop();
+                    showFrame(animationPosition - 1);
+                    break;
+    
+                case 39: // right
+                    stop();
+                    showFrame(animationPosition + 1);
+                    break;
+    
+                default:
+                    return; // exit this handler for other keys
+            }
+            e.preventDefault();
+            return false;
+        }
+</script>
+
+<script>
+        //Weather Variables
+        const APIKEY = "07edfe9f2a90b0555953b7a9645f8200";
+        //URL of Weather Service
+        //var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=de&appid=${APIKEY}`;
+        var url = `https://api.openweathermap.org/data/2.5/weather`
+        var jsonresponse = "";
+        var lat = "14.245";
+        var lon = "14.256";
+        var lan = "de";
+        var units = "metric";
+        var main = "";
+        var desc = "";
+        var temp = "";
+        var felttemp = "";
+        var mintemp = "";
+        var maxtemp = "";
+        var pressure = "";
+        var humidity = "";
+        var windspeed = "";
+        var clouds = "";
+        var sunrise = "";
+        var sunset = "";
+        var visibility = "";
+        var city = "";
+        var country = "";
+        var windrichtung = "";
+        var rainvol1h = "";
+        var rainvol3h = "";
+        var iconcode = "";
+        
+        //Get Coordinates from Clicking on Map
+        map.on('click', function(e){
+        var coord = e.latlng;
+        lat = coord.lat;
+        lon = coord.lng;
+        console.log("Coordinates: LAT: " + lat + ", LON: " + lon);
+        //forecastAPI();
+        getWeather();
+        //hidemenu();
+        console.log("CALL Forecast");
+            if ($(window).width() <  700) {
+                    //showforecast();
+                    console.log("WIDTH Small");
+
+                }
+                else {
+                    //showforecastwindow();
+                    console.log("WIDTH Big")
+
+                }
+            }
+        );
+            
+        function getWeather(){
+                $.ajax({
+                    url: url,
+                    jsonp: "callback",
+                    dataType: "jsonp",
+                    data: {
+                        APPID: APIKEY,
+                        lat: lat,
+                        lon: lon,
+                        units: units,
+                        lang: lan,
+                    },
+                    success: function( jsonresponse ) {
+                        console.log( jsonresponse ); // server response
+                        response = jsonresponse;
+                        writeCallbackData();
+                        console.log(temp);
+                    }
+                });
+            }
+
+
+
+
+    
+        function showGPS(position) {
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            console.log("CALL Forecast from GPS");
+            getWeather();
+            console.log("CALL Forecast form GPS finished");
+           
+            var marker = L.marker([lat, lon],{icon: MarkerWhite}).addTo(map);
+            map.flyTo([lat, lon], 11);
+            if ($(window).width() <  700) {
+                        //showforecast();
+                    }
+                    else {
+                        //showforecastwindow();
+                    }
+        };    
+        
+        function getGPS() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showGPS);
+            lat = position.coords.latitude;
+            console.log(lat)
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+       
+        //Marker 
+        var MarkerWhite = L.icon({
+            iconUrl: 'resources/locationBlue.png',
+            iconSize:     [38, 38], // size of the icon
+            iconAnchor:   [19, 38], // point of the icon which will correspond to marker's location
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
+    function writeCallbackData(){
+                    //write response to variables
+                    temp = Math.round(response.main.temp) + " °C";
+                    main = response.weather[0].main;
+                    desc = response.weather[0].description;
+                    felttemp = Math.round(response.main.feels_like) + " °C";
+                    mintemp = Math.round(response.main.temp_min) + " °C";
+                    maxtemp = Math.round(response.main.temp_max) + " °C";
+                    pressure = response.main.pressure + " hPa";
+                    humidity = response.main.humidity + " %";
+                    windspeed = Math.round(response.wind.speed) * 3.6 + " km/h";
+                    clouds = response.clouds.all + " %";
+                    //sunrise 
+                    var unixTimestamprise = response.sys.sunrise
+                    var millisecondsrise = unixTimestamprise * 1000 // UNIX Timestamp (1575909015000)
+                    var dateObjectrise = new Date(millisecondsrise);
+                    sunrise = dateObjectrise.toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'}); // HH:MM
+                    //sunset
+                    var unixTimestampset = response.sys.sunset
+                    var millisecondsset = unixTimestampset * 1000 // UNIX Timestamp (1575909015000)
+                    var dateObjectset = new Date(millisecondsset);
+                    sunset = dateObjectset.toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'}); // HH:MM
+                    visibility = response.visibility / 1000 + " km";
+                    city = response.name;
+                    country = response.sys.country;
+                    //wind DEG to text
+                    degrees = response.wind.deg;
+                    directions = ['N', 'NO', 'O', 'SO', 'S', 'SW', 'W', 'NW'];
+                    degrees = degrees * 8 / 360;
+                    // round to nearest integer.
+                    degrees = Math.round(degrees, 0);
+                    // Ensure it's within 0-7
+                    degrees = (degrees + 8) % 8
+                    windrichtung = directions[degrees];
+                    iconcode = response.weather[0].icon;
+
+
+                    //forecastfloat
+                    document.getElementById("tempfloat").innerHTML= temp;
+                    document.getElementById("villagepanel").innerHTML= city;
+                    document.getElementById("temperaturep").innerHTML = temp;                      
+                    var iconurl = "resources/weathericons/" + iconcode + ".svg";
+                    $('#floatico').attr('src', iconurl);
+                    $('#floaticopanel').attr('src', iconurl);
+                    document.getElementById("tempfloat").style.display = "flex";
+                    document.getElementById("iconfloat").style.display = "flex";
+                    document.getElementById("weatherbutton").style.display = "none"; 
+                    document.getElementById("floaticopanel").style.display = "inline-block";
+                    //forecastwindow
+                    //document.getElementById("resforecastcitywind").innerHTML= city;
+                    //document.getElementById("resforecastdescwind").innerHTML= desc;
+                    //document.getElementById("resforecasttempwind").innerHTML= temp;
+
+    ;}
+
+    function hideforecast(){
+        document.getElementById("forecast").style.top = "34px";
+        document.getElementById("closeforecast").style.top = "0px";
+    };
+
+    function hideforecastwind(){
+        document.getElementById("forecastwindow").style.left = "-400px";
+        document.getElementById("closeforecastwind").style.left = "-130px";
+    };
+
+
+    function showforecast(){
+        document.getElementById("forecast").style.top = "84px";
+        document.getElementById("closeforecast").style.top = "134px";
+    };
+    function showforecastwindow(){
+        document.getElementById("forecastwindow").style.left = "20px";
+        document.getElementById("closeforecastwind").style.left = "290px";
+    };
+
+    var Rain = L.tileLayer('http://tile.openweathermap.org/map/rain_cls/{z}/{x}/{y}.png?appid=2ede3ddfaf2748c8ed113f354dac9e76', {
+				maxZoom: 18,
+                opacity: 0.7,
+				id: 'temp'
+			}),
+	
+			Precipitation = L.tileLayer('http://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=2ede3ddfaf2748c8ed113f354dac9e76', {
+				maxZoom: 18,
+			}),
+	
+			Wind = L.tileLayer('http://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=2ede3ddfaf2748c8ed113f354dac9e76', {
+				maxZoom: 18,
+			}),
+	
+			Snow = L.tileLayer('http://tile.openweathermap.org/map/snow/{z}/{x}/{y}.png?appid=2ede3ddfaf2748c8ed113f354dac9e76', {
+				maxZoom: 18,
+			}),
+	
+			Clouds = L.tileLayer('http://tile.openweathermap.org/map/clouds_cls/{z}/{x}/{y}.png?appid=2ede3ddfaf2748c8ed113f354dac9e76', {
+				maxZoom: 18,
+                opacity: 0.6,
+			});
+
+            function removeradar(){
+                        map.eachLayer(function (layer) {
+                        map.removeLayer(layer);
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attributions: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+                        }).addTo(map);
+                    });
+                }
+
+        function addradar(){
+            map.removeLayer(Rain);
+            map.removeLayer(Snow)
+            map.removeLayer(Precipitation)
+            map.removeLayer(Clouds);
+            apiRequest.open("GET", "https://api.rainviewer.com/public/weather-maps.json", true);
+            apiRequest.onload = function(e) {
+            // store the API response for re-use purposes in memory
+            apiData = JSON.parse(apiRequest.response);
+            initialize(apiData, optionKind);
+            showplaypause(); 
+        };
+        apiRequest.send();
+        }
+
+        function hideplaypause(){
+            document.getElementById("playpausecontainer").style.top="-70px"; 
+        }
+
+        function showplaypause(){
+            document.getElementById("playpausecontainer").style.top="70px"; 
+        }
+
+        function hidefloatweather(){
+            document.getElementById("weatherfloat").style.bottom="140px"; 
+        }
+
+        function showfloatweather(){
+            document.getElementById("weatherfloat").style.bottom="70px"; 
+        }
+
+</script>
+</div>
+</body>
+</html>
