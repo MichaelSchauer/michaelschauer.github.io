@@ -139,6 +139,7 @@ function expandmenu(){
   document.getElementById("menu").setAttribute("onClick", "hidemenu()");
   document.getElementById("menuicon").src="resources/close.svg";
   document.getElementById("getGPSlocmobile").style.right="-80px";
+  hidefloatweather();
 }
 
 function hidemenu(){
@@ -147,4 +148,26 @@ function hidemenu(){
   document.getElementById("menuexpandable").style.width="0px";
   document.getElementById("menuicon").src="resources/settings.svg";
   document.getElementById("getGPSlocmobile").style.right="20px";
+  showfloatweather();
+}
+
+function openweatherpanel(){
+  var heightviewport = window.innerHeight;
+  var height =  heightviewport - 300;
+  var heightpanel = "-" + height + "px";
+  document.getElementById("weatherpanel").style.bottom=heightpanel;
+  document.getElementById("getGPSlocmobile").style.bottom = "320px";
+  document.getElementById("menu").style.bottom = "320px";
+}
+
+function expandweatherpanel(){
+  document.getElementById("weatherpanel").style.bottom= "0px";
+  document.getElementById("getGPSlocmobile").style.bottom = "100vh";
+  document.getElementById("menu").style.bottom = "100vh";
+}
+
+function closeweatherpanel(){
+  document.getElementById("weatherpanel").style.bottom= "-100vh";
+  document.getElementById("getGPSlocmobile").style.bottom = "70px";
+  document.getElementById("menu").style.bottom = "70px";
 }
