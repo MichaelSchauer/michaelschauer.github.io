@@ -147,7 +147,7 @@ function hidemenu(){
   //document.getElementById("menuexpandable").style.width="6px";
   document.getElementById("menuexpandable").style.width="0px";
   document.getElementById("menuicon").src="resources/settings.svg";
-  document.getElementById("getGPSlocmobile").style.right="20px";
+  document.getElementById("getGPSlocmobile").style.right="30px";
   showfloatweather();
 }
 
@@ -158,6 +158,7 @@ function openweatherpanel(){
   document.getElementById("weatherpanel").style.bottom=heightpanel;
   document.getElementById("getGPSlocmobile").style.bottom = "320px";
   document.getElementById("menu").style.bottom = "320px";
+  document.getElementById("closeweatherpanelbutton").style.bottom = "70px";
 }
 
 function expandweatherpanel(){
@@ -170,4 +171,5 @@ function closeweatherpanel(){
   document.getElementById("weatherpanel").style.bottom= "-100vh";
   document.getElementById("getGPSlocmobile").style.bottom = "70px";
   document.getElementById("menu").style.bottom = "70px";
+  document.getElementById("closeweatherpanelbutton").style.bottom = "-70px";
 }

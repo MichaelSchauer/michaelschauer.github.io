@@ -19,7 +19,6 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="resources.css">
-    <link rel="stylesheet" href="resources/all.css">
     <script src="main.js"></script>
     <link rel="stylesheet" href="resources/leaflet.css"/>
     <script src="resources/leaflet.js"></script>
@@ -98,9 +97,19 @@
     <button id="getGPSlocmobile" onclick="getGPS()"><img src="resources/locationWhite.svg" style="bottom: 50px !important;"></button>
     <div id="weatherpanel">
         <div id="placeholderweather"></div>
-        <div id="weathercontrols">
-            <!--<div id="expandweatherpanel"><p>ÖFFNEN</p></div>-->        
-            <div id="closeweatherpanel" onclick="closeweatherpanel()"><p>&#x2716;</p></div>
+        <div id="backgroundpanel">
+                <div id="weatherpaneldesc">
+                    <p id="descpanel"></p>
+                </div>
+                <div id="temperature">
+                    <p id="temppanel"></p>
+                </div>
+                <div id="headingcontainer">
+                    <p id="villagepanel">KLICKEN SIE AUF DIE KARTE</p>
+                </div>
+                <div id="weathercontainer">
+
+                </div>
         </div>
         <!--<div id="searchwrap">
             <form action="" method="get" id="form">
@@ -110,16 +119,10 @@
                 </div>
             </form>
         </div>-->
-        <div id="headingcontainer">
-            <h1 id="villagepanel">KLICKEN SIE AUF DIE KARTE</h1>
-        </div>
-        <div id="weatherpanelicon">
-            <img id="floaticopanel">
-        </div>
-        <div id="temperature">
-            <p id="temperaturep"></p>
-        </div>
+       
     </div>
+    <!--<div id="expandweatherpanel"><p>ÖFFNEN</p></div>-->        
+    <div id="closeweatherpanelbutton" onclick="closeweatherpanel()"><p>&#x2716;</p></div>
 </section>
     
     <script>
@@ -492,16 +495,31 @@
 
 
                     //forecastfloat
+                    document.getElementById("temppanel").innerHTML= temp;
                     document.getElementById("tempfloat").innerHTML= temp;
                     document.getElementById("villagepanel").innerHTML= city;
-                    document.getElementById("temperaturep").innerHTML = temp;                      
+                    document.getElementById("descpanel").innerHTML = desc;                      
                     var iconurl = "resources/weathericons/" + iconcode + ".svg";
                     $('#floatico').attr('src', iconurl);
-                    $('#floaticopanel').attr('src', iconurl);
+                    var iconurlbig = "url(resources/weathericonsbig/" + iconcode + ".png)";
+                    document.getElementById("backgroundpanel").style.backgroundImage = iconurlbig;
                     document.getElementById("tempfloat").style.display = "flex";
                     document.getElementById("iconfloat").style.display = "flex";
                     document.getElementById("weatherbutton").style.display = "none"; 
-                    document.getElementById("floaticopanel").style.display = "inline-block";
+                    //document.getElementById("floaticopanel").style.display = "inline-block";
+
+                    //BackgroundColor for Day and Night
+                    if (iconcode.indexOf('n') > -1 ) {
+                        console.log("Dark");
+                        document.getElementById("weatherpanel").style.backgroundColor = "#D07DF9";
+                        document.getElementById("closeweatherpanelbutton").style.backgroundColor ="#6000B2";
+                        return true;
+                        } else {
+                        console.log("Light");
+                        document.getElementById("weatherpanel").style.backgroundColor = "#E2F5FF";
+                        document.getElementById("closeweatherpanelbutton").style.backgroundColor ="#74D0FF";
+                        return false;
+                        }
                     //forecastwindow
                     //document.getElementById("resforecastcitywind").innerHTML= city;
                     //document.getElementById("resforecastdescwind").innerHTML= desc;
