@@ -159,12 +159,14 @@ function openweatherpanel(){
   document.getElementById("getGPSlocmobile").style.bottom = "320px";
   document.getElementById("menu").style.bottom = "320px";
   document.getElementById("closeweatherpanelbutton").style.bottom = "70px";
+  document.getElementById("expandweatherpanelbutton").style.bottom = "70px";
 }
 
 function expandweatherpanel(){
-  document.getElementById("weatherpanel").style.bottom= "0px";
-  document.getElementById("getGPSlocmobile").style.bottom = "100vh";
-  document.getElementById("menu").style.bottom = "100vh";
+  document.getElementById("weatherpanel").style.bottom= "0";
+  document.getElementById("placeholderweather").style.height = "50px";
+  document.getElementById("weathercontainer").style.height = "90px";
+  document.getElementById("expandweatherpanelbutton").style.bottom = "-70px";
 }
 
 function closeweatherpanel(){
@@ -172,4 +174,7 @@ function closeweatherpanel(){
   document.getElementById("getGPSlocmobile").style.bottom = "70px";
   document.getElementById("menu").style.bottom = "70px";
   document.getElementById("closeweatherpanelbutton").style.bottom = "-70px";
+  document.getElementById("expandweatherpanelbutton").style.bottom = "-70px";
+  document.getElementById("placeholderweather").style.height = "0px";
+  document.getElementById("weathercontainer").style.height = "0px";
 }

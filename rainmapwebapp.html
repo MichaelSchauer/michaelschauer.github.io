@@ -96,8 +96,8 @@
       </div>
     <button id="getGPSlocmobile" onclick="getGPS()"><img src="resources/locationWhite.svg" style="bottom: 50px !important;"></button>
     <div id="weatherpanel">
-        <div id="placeholderweather"></div>
         <div id="backgroundpanel">
+                <div id="placeholderweather"></div>
                 <div id="weatherpaneldesc">
                     <p id="descpanel"></p>
                 </div>
@@ -108,7 +108,30 @@
                     <p id="villagepanel">KLICKEN SIE AUF DIE KARTE</p>
                 </div>
                 <div id="weathercontainer">
-
+                    <div id="weatherbasiccontainer">
+                        <div id="minmax">
+                            <div id="minmaxico">
+                                <img src="resources/minmax.png">
+                            </div>
+                            <div id="minmaxtextcontainer">
+                                <div id="min"><p id="mintext">  -</p></div>
+                                <div class="flexbreak"></div>
+                                <div id="max"><p id="maxtext">  -</p></div>
+                            </div>
+                        </div>
+                        <div id="wind">
+                            <div id="windico">
+                                <img src="resources/wind.png">
+                            </div>
+                            <div id="windtextcontainer"><p id="windtext">-</p></div>
+                        </div>
+                        <div id="humidity">
+                            <div id="humidityico">
+                                <img src="resources/drop.png">
+                            </div>
+                            <div id="humiditytextcontainer"><p id="humiditytext">-</p></div>
+                        </div>
+                    </div>
                 </div>
         </div>
         <!--<div id="searchwrap">
@@ -123,6 +146,7 @@
     </div>
     <!--<div id="expandweatherpanel"><p>ÖFFNEN</p></div>-->        
     <div id="closeweatherpanelbutton" onclick="closeweatherpanel()"><p>&#x2716;</p></div>
+    <div id="expandweatherpanelbutton" onclick="expandweatherpanel()"><p>Öffnen</p></div>
 </section>
     
     <script>
@@ -498,7 +522,11 @@
                     document.getElementById("temppanel").innerHTML= temp;
                     document.getElementById("tempfloat").innerHTML= temp;
                     document.getElementById("villagepanel").innerHTML= city;
-                    document.getElementById("descpanel").innerHTML = desc;                      
+                    document.getElementById("descpanel").innerHTML = desc;
+                    document.getElementById("mintext").innerHTML = mintemp;
+                    document.getElementById("maxtext").innerHTML = maxtemp;
+                    document.getElementById("humiditytext").innerHTML = humidity;
+                    document.getElementById("windtext").innerHTML = windspeed;                                 
                     var iconurl = "resources/weathericons/" + iconcode + ".svg";
                     $('#floatico').attr('src', iconurl);
                     var iconurlbig = "url(resources/weathericonsbig/" + iconcode + ".png)";
@@ -512,7 +540,7 @@
                     if (iconcode.indexOf('n') > -1 ) {
                         console.log("Dark");
                         document.getElementById("weatherpanel").style.backgroundColor = "#D07DF9";
-                        document.getElementById("closeweatherpanelbutton").style.backgroundColor ="#6000B2";
+                        document.getElementById("timenow").style.backgroundColor = "#D07DF9";
                         return true;
                         } else {
                         console.log("Light");
