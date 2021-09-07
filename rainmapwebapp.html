@@ -419,6 +419,9 @@
         latit = coord.lat;
         longit = coord.lng;
         console.log("Coordinates: LAT: " + latit + ", LON: " + longit);
+        $(".leaflet-marker-icon").remove();
+        $(".leaflet-popup").remove();
+        var marker = L.marker([latit, longit],{icon: MarkerWhite}).addTo(map);
         getWeather_WeatherAPI();
         locationpicked = "1";
         if (panelopened == 1){
@@ -444,7 +447,8 @@
             console.log("CALL Forecast from GPS");
             getWeather_WeatherAPI();
             console.log("CALL Forecast form GPS finished");
-           
+            $(".leaflet-marker-icon").remove();
+            $(".leaflet-popup").remove();
             var marker = L.marker([latit, longit],{icon: MarkerWhite}).addTo(map);
             map.flyTo([latit, longit], 11);
             if ($(window).width() <  700) {
