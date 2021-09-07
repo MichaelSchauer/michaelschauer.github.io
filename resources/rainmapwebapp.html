@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-status-bar-style"content="black-translucent">
     <link rel="apple-touch-startup-image" href="resources/launchi12.png">
@@ -19,10 +19,10 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="resources.css">
-    <link rel="stylesheet" href="resources/all.css">
     <script src="main.js"></script>
     <link rel="stylesheet" href="resources/leaflet.css"/>
     <script src="resources/leaflet.js"></script>
+    <script src="weatherapi.js"></script>
     <style>
         .leaflet-control-attribution{
             display: none;
@@ -31,12 +31,13 @@
     </style>
 
 
+
 </head>
     
     <body style="padding:0; margin:0; text-align:center; background-color: #74D0FF; overflow: hidden;">
     <div id="body-content">
     <section id="" class="section">
-    <div id="timenow" style="text-align:center; position: absolute;top: 0px; left: 0; width: 100%; height: 50px; display: block; color: white; z-index: 901; background-color: #74D0FF; margin: 0; line-height: 50px;" ></div>
+    <div id="timenow" style="text-align:center; position: absolute;top: 0px; left: 0; width: 100%; height: 50px; display: block; color: white; z-index: 800; background-color: #74D0FF; margin: 0; line-height: 50px;" ></div>
     <div id="playpausecontainer">
         <div id="playpause" onclick="stop(); showFrame(animationPosition - 1); return;"><p>&#5130;</p></div>
         <div id="playpause" onclick="playStop();"><p id="animtext">START</p></div> 
@@ -97,10 +98,76 @@
       </div>
     <button id="getGPSlocmobile" onclick="getGPS()"><img src="resources/locationWhite.svg" style="bottom: 50px !important;"></button>
     <div id="weatherpanel">
-        <div id="placeholderweather"></div>
-        <div id="weathercontrols">
-            <!--<div id="expandweatherpanel"><p>ÖFFNEN</p></div>-->        
-            <div id="closeweatherpanel" onclick="closeweatherpanel()"><p>&#x2716;</p></div>
+        <div id="backgroundpanel">
+            <div id="placeholderweather"></div>
+                <div id="weatherdataicon">
+                    <img id="weatherdataiconimg">
+                </div>
+                <div id="headingcontainer">
+                    <p id="villagepanel">KLICKEN SIE AUF DIE KARTE</p>
+                </div>
+                <div id="temperature">
+                    <p id="temppanel"></p>
+                </div>
+                <div id="weatherpaneldesc">
+                    <p id="descpanel"></p>
+                </div>
+                <div id="weathercontainer">
+                    <div id="weatherbasiccontainer">
+                        <div id="minmax">
+                            <div id="minmaxico">
+                                <img src="resources/minmax.png">
+                            </div>
+                            <div id="minmaxtextcontainer">
+                                <div id="min"><p id="mintext">  -</p></div>
+                                <div class="flexbreak"></div>
+                                <div id="max"><p id="maxtext">  -</p></div>
+                            </div>
+                        </div>
+                        <div id="wind">
+                            <div id="windico">
+                                <img src="resources/wind.png">
+                            </div>
+                            <div id="windtextcontainer"><p id="windtext">-</p></div>
+                        </div>
+                        <div id="humidity">
+                            <div id="humidityico">
+                                <img src="resources/drop.png">
+                            </div>
+                            <div id="humiditytextcontainer"><p id="humiditytext">-</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="weatherforecastsun">
+                    <p id="weathersectionheading">Wetterdaten für heute</p>
+                    <div id="suncontainer">
+                        <div id="sunleft"></div>
+                        <div id="sunhorizon">
+                            <div id="sun"><div id="suninner"><div id="suninner2"></div></div></div>
+                        </div>
+                        <div id="sunright"></div>
+                    </div>
+                    <div id="suntimecontainer">
+                        <div id="sunrise"><p id="sunrisep"></p></div>
+                        <div id="sunset"><p id="sunsetp"></p></div>
+                    </div>
+                    <div class="weatherp"><p class="weatherphead">UV-Index:</p><p id="uv" class="weatherpanswer"></p></div><div class="flexbreak"></div>
+                    <div class="weatherp"><p class="weatherphead">Sichtweite:</p><p id="vis_km" class="weatherpanswer"></p></div><div class="flexbreak"></div>
+                    <div class="weatherp"><p class="weatherphead">Bewölkung:</p><p id="cloud" class="weatherpanswer"></p></div><div class="flexbreak"></div>
+                    <div class="weatherp"><p class="weatherphead">Niederschlag:</p><p id="precip_mm" class="weatherpanswer"></p></div><div class="flexbreak"></div>
+                </div>
+                <div id="weathersectionair">
+                    <p id="weathersectionheading">Luft</p>
+                    <div class="weatherp"><p class="weatherphead">Luftfeuchtigkeit:</p><p id="hu" class="weatherpanswer"></p></div><div class="flexbreak"></div>
+                    <div class="weatherp"><p class="weatherphead">Kohlenmonoxid:</p><p id="co" class="weatherpanswer"></p></div><div class="flexbreak"></div>
+                    <div class="weatherp"><p class="weatherphead">Ozon:</p><p id="o3" class="weatherpanswer"></p></div><div class="flexbreak"></div>
+                    <div class="weatherp"><p class="weatherphead">Stickstoffdioxid:</p><p id="no2" class="weatherpanswer"></p></div><div class="flexbreak"></div>
+                    <div class="weatherp"><p class="weatherphead">Schwefeldioxid:</p><p id="so2" class="weatherpanswer"></p></div><div class="flexbreak"></div>
+                    <div class="weatherp"><p class="weatherphead">Feinstaub &#060; 2,5μm:</p><p id="pm2_5" class="weatherpanswer"></p></div><div class="flexbreak"></div>
+                    <div class="weatherp"><p class="weatherphead">Feinstaub &#060; 10μm:</p><p id="pm_10" class="weatherpanswer"></p></div><div class="flexbreak"></div>
+                    <div id="weatherairqual"></div>
+                </div>
+                <div class="placeholderweather"></div>
         </div>
         <!--<div id="searchwrap">
             <form action="" method="get" id="form">
@@ -110,16 +177,13 @@
                 </div>
             </form>
         </div>-->
-        <div id="headingcontainer">
-            <h1 id="villagepanel">KLICKEN SIE AUF DIE KARTE</h1>
-        </div>
-        <div id="weatherpanelicon">
-            <img id="floaticopanel">
-        </div>
-        <div id="temperature">
-            <p id="temperaturep"></p>
-        </div>
+       
     </div>
+    <!--<div id="expandweatherpanel"><p>ÖFFNEN</p></div>-->        
+    <div id="closeweatherpanelbutton" onclick="closeweatherpanel()"><img src="resources/close.svg"></div>
+    <div id="expandweatherpanelbutton" onclick="expandweatherpanel()"><p>Öffnen</p></div>
+    <div id="infoweatherpanelbutton" onclick="window.location='impressumweather.html';"><p>i</p></div>
+
 </section>
     
     <script>
@@ -346,39 +410,20 @@
         //var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=de&appid=${APIKEY}`;
         var url = `https://api.openweathermap.org/data/2.5/weather`
         var jsonresponse = "";
-        var lat = "14.245";
-        var lon = "14.256";
-        var lan = "de";
-        var units = "metric";
-        var main = "";
-        var desc = "";
-        var temp = "";
-        var felttemp = "";
-        var mintemp = "";
-        var maxtemp = "";
-        var pressure = "";
-        var humidity = "";
-        var windspeed = "";
-        var clouds = "";
-        var sunrise = "";
-        var sunset = "";
-        var visibility = "";
-        var city = "";
-        var country = "";
-        var windrichtung = "";
-        var rainvol1h = "";
-        var rainvol3h = "";
-        var iconcode = "";
+        var latit = "14.245";
+        var longit = "14.256";
         
         //Get Coordinates from Clicking on Map
         map.on('click', function(e){
         var coord = e.latlng;
-        lat = coord.lat;
-        lon = coord.lng;
-        console.log("Coordinates: LAT: " + lat + ", LON: " + lon);
-        //forecastAPI();
-        getWeather();
-        //hidemenu();
+        latit = coord.lat;
+        longit = coord.lng;
+        console.log("Coordinates: LAT: " + latit + ", LON: " + longit);
+        getWeather_WeatherAPI();
+        locationpicked = "1";
+        if (panelopened == 1){
+            document.getElementById("expandweatherpanelbutton").style.bottom = "70px";
+        }
         console.log("CALL Forecast");
             if ($(window).width() <  700) {
                     //showforecast();
@@ -392,41 +437,16 @@
                 }
             }
         );
-            
-        function getWeather(){
-                $.ajax({
-                    url: url,
-                    jsonp: "callback",
-                    dataType: "jsonp",
-                    data: {
-                        APPID: APIKEY,
-                        lat: lat,
-                        lon: lon,
-                        units: units,
-                        lang: lan,
-                    },
-                    success: function( jsonresponse ) {
-                        console.log( jsonresponse ); // server response
-                        response = jsonresponse;
-                        writeCallbackData();
-                        console.log(temp);
-                    }
-                });
-            }
 
-
-
-
-    
         function showGPS(position) {
-            lat = position.coords.latitude;
-            lon = position.coords.longitude;
+            latit = position.coords.latitude;
+            longit = position.coords.longitude;
             console.log("CALL Forecast from GPS");
-            getWeather();
+            getWeather_WeatherAPI();
             console.log("CALL Forecast form GPS finished");
            
-            var marker = L.marker([lat, lon],{icon: MarkerWhite}).addTo(map);
-            map.flyTo([lat, lon], 11);
+            var marker = L.marker([latit, longit],{icon: MarkerWhite}).addTo(map);
+            map.flyTo([latit, longit], 11);
             if ($(window).width() <  700) {
                         //showforecast();
                     }
@@ -438,8 +458,9 @@
         function getGPS() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showGPS);
-            lat = position.coords.latitude;
-            console.log(lat)
+            //latit = position.coords.latitude;
+            //longit = position.coords.longitude;
+            //console.log(latit + " ," + longit)
             } else {
                 alert("Geolocation is not supported by this browser.");
             }
@@ -455,59 +476,52 @@
         });
 
     function writeCallbackData(){
-                    //write response to variables
-                    temp = Math.round(response.main.temp) + " °C";
-                    main = response.weather[0].main;
-                    desc = response.weather[0].description;
-                    felttemp = Math.round(response.main.feels_like) + " °C";
-                    mintemp = Math.round(response.main.temp_min) + " °C";
-                    maxtemp = Math.round(response.main.temp_max) + " °C";
-                    pressure = response.main.pressure + " hPa";
-                    humidity = response.main.humidity + " %";
-                    windspeed = Math.round(response.wind.speed) * 3.6 + " km/h";
-                    clouds = response.clouds.all + " %";
-                    //sunrise 
-                    var unixTimestamprise = response.sys.sunrise
-                    var millisecondsrise = unixTimestamprise * 1000 // UNIX Timestamp (1575909015000)
-                    var dateObjectrise = new Date(millisecondsrise);
-                    sunrise = dateObjectrise.toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'}); // HH:MM
-                    //sunset
-                    var unixTimestampset = response.sys.sunset
-                    var millisecondsset = unixTimestampset * 1000 // UNIX Timestamp (1575909015000)
-                    var dateObjectset = new Date(millisecondsset);
-                    sunset = dateObjectset.toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'}); // HH:MM
-                    visibility = response.visibility / 1000 + " km";
-                    city = response.name;
-                    country = response.sys.country;
-                    //wind DEG to text
-                    degrees = response.wind.deg;
-                    directions = ['N', 'NO', 'O', 'SO', 'S', 'SW', 'W', 'NW'];
-                    degrees = degrees * 8 / 360;
-                    // round to nearest integer.
-                    degrees = Math.round(degrees, 0);
-                    // Ensure it's within 0-7
-                    degrees = (degrees + 8) % 8
-                    windrichtung = directions[degrees];
-                    iconcode = response.weather[0].icon;
-
-
                     //forecastfloat
-                    document.getElementById("tempfloat").innerHTML= temp;
-                    document.getElementById("villagepanel").innerHTML= city;
-                    document.getElementById("temperaturep").innerHTML = temp;                      
-                    var iconurl = "resources/weathericons/" + iconcode + ".svg";
+                    document.getElementById("temppanel").innerHTML= temp_c;
+                    document.getElementById("tempfloat").innerHTML= temp_c;
+                    document.getElementById("villagepanel").innerHTML= locname;
+                    document.getElementById("descpanel").innerHTML = condition;
+                    document.getElementById("mintext").innerHTML = mintemp_c;
+                    document.getElementById("maxtext").innerHTML = maxtemp_c;
+                    document.getElementById("humiditytext").innerHTML = humidity;
+                    document.getElementById("windtext").innerHTML = wind_kph;
+                    document.getElementById("uv").innerHTML = uv;
+                    document.getElementById("vis_km").innerHTML = vis_km; 
+                    document.getElementById("precip_mm").innerHTML = precip_mm;  
+                    document.getElementById("cloud").innerHTML = cloud;   
+                    document.getElementById("co").innerHTML = co;  
+                    document.getElementById("no2").innerHTML = no2;  
+                    document.getElementById("o3").innerHTML = o3;  
+                    document.getElementById("so2").innerHTML = so2;  
+                    document.getElementById("pm2_5").innerHTML = pm2_5;  
+                    document.getElementById("pm_10").innerHTML = pm_10;
+                    document.getElementById("hu").innerHTML = humidity;
+                    document.getElementById("sunrisep").innerHTML = sunrise;
+                    document.getElementById("sunsetp").innerHTML = sunset;
+                    var iconurl = "resources/weather/icons/" + daynight + "/" + icon;
                     $('#floatico').attr('src', iconurl);
-                    $('#floaticopanel').attr('src', iconurl);
+                    $('#weatherdataiconimg').attr('src', iconurl);
+                    var iconurlbig = "url(resources/weathericonsbig/" + daynight +".png)";
+                    document.getElementById("backgroundpanel").style.backgroundImage = iconurlbig;
                     document.getElementById("tempfloat").style.display = "flex";
                     document.getElementById("iconfloat").style.display = "flex";
-                    document.getElementById("weatherbutton").style.display = "none"; 
-                    document.getElementById("floaticopanel").style.display = "inline-block";
-                    //forecastwindow
-                    //document.getElementById("resforecastcitywind").innerHTML= city;
-                    //document.getElementById("resforecastdescwind").innerHTML= desc;
-                    //document.getElementById("resforecasttempwind").innerHTML= temp;
+                    document.getElementById("weatherbutton").style.display = "none";
+                    //document.getElementById("floaticopanel").style.display = "inline-block";
 
-    ;}
+                    //Air Quality
+                    airquality()
+
+                    //BackgroundColor for Day and Night
+                    if ( daynight == "day" ) {
+                        console.log("Light");
+                        document.getElementById("weatherpanel").style.backgroundColor = "#E2F5FF";
+                        return true;
+                        } else {
+                        console.log("Dark");
+                        document.getElementById("weatherpanel").style.backgroundColor = "#D07DF9";
+                        return false;
+                        }
+                ;}
 
     function hideforecast(){
         document.getElementById("forecast").style.top = "34px";
