@@ -151,6 +151,8 @@ function hidemenu(){
   showfloatweather();
 }
 
+var locationpicked = "0";
+var panelopened = "0";
 function openweatherpanel(){
   var heightviewport = window.innerHeight;
   var height =  heightviewport - 300;
@@ -160,6 +162,13 @@ function openweatherpanel(){
   document.getElementById("menu").style.bottom = "320px";
   document.getElementById("closeweatherpanelbutton").style.bottom = "70px";
   document.getElementById("expandweatherpanelbutton").style.bottom = "70px";
+  document.getElementById("infoweatherpanelbutton").style.top = "70px";
+  panelopened = "1";
+  if (locationpicked == 1){
+    document.getElementById("expandweatherpanelbutton").style.bottom = "70px";
+  } else{
+    document.getElementById("expandweatherpanelbutton").style.bottom = "-70px";
+  }
 }
 
 function expandweatherpanel(){
@@ -167,6 +176,24 @@ function expandweatherpanel(){
   document.getElementById("placeholderweather").style.height = "50px";
   document.getElementById("weathercontainer").style.height = "90px";
   document.getElementById("expandweatherpanelbutton").style.bottom = "-70px";
+  document.getElementById("weatherforecastsun").style.height = "234px";
+  document.getElementById("weathersectionair").style.height = "290px";
+  document.getElementById("infoweatherpanelbutton").style.top = "-70px";
+  //Style and Position of Sun
+  if ( daynight == "day" ) {
+    document.getElementById("sun").style.marginLeft = sunpercent;
+    document.getElementById("sun").style.backgroundColor = "darkorange";
+    document.getElementById("suninner").style.backgroundColor = "rgb(255, 187, 60)";
+    document.getElementById("suninner2").style.backgroundColor = "rgb(255, 227, 174)";
+    return true;
+    } else {
+    document.getElementById("sun").style.marginLeft = "0%";
+    document.getElementById("sun").style.backgroundColor = "#7700ff";
+    document.getElementById("suninner").style.backgroundColor = "#9100e6";
+    document.getElementById("suninner2").style.backgroundColor = "#dc6bff";
+
+    return false;
+    }
 }
 
 function closeweatherpanel(){
@@ -177,4 +204,25 @@ function closeweatherpanel(){
   document.getElementById("expandweatherpanelbutton").style.bottom = "-70px";
   document.getElementById("placeholderweather").style.height = "0px";
   document.getElementById("weathercontainer").style.height = "0px";
+  document.getElementById("weatherforecastsun").style.height = "0px";
+  document.getElementById("weathersectionair").style.height = "0px";
+  document.getElementById("infoweatherpanelbutton").style.top = "-70px";
+  panelopened = "0";
+}
+
+function airquality(){
+//background of air quality
+  if( gb_defra_index <= 3) {
+    document.getElementById("weatherairqual").style.backgroundColor = "#5cff87";
+    document.getElementById("weatherairqual").innerHTML = "Gute Luftqualität"
+  } else if( gb_defra_index >= 4 && gb_defra_index <= 6) {
+    document.getElementById("weatherairqual").style.backgroundColor = "#ffff00"; 
+    document.getElementById("weatherairqual").innerHTML = "Mittlere Luftqualität"
+    }else if( gb_defra_index >= 7 && gb_defra_index <= 9) {
+      document.getElementById("weatherairqual").style.backgroundColor = "#ff6f5c";
+      document.getElementById("weatherairqual").innerHTML = "Schlechte Luftqualität" 
+      }else if( gb_defra_index == 10) {
+        document.getElementById("weatherairqual").style.backgroundColor = "#ff5cb3"; 
+        document.getElementById("weatherairqual").innerHTML = "Sehr schlechte Luftqualität"
+      }
 }
