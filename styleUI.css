@@ -1,0 +1,405 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    touch-action: manipulation;
+}
+
+body {
+    overflow: auto;
+    scroll-behavior: smooth;
+    position: relative;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+section{
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+    margin: 0;
+    text-align: center;
+}
+
+.card{
+    display: block;
+    min-height: 200px;
+    height: auto;
+    width: 90%;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.5); 
+    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.5);
+}
+
+/* Weather Card */
+
+#weatherwrap{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background: rgb(252,70,107);
+    background: radial-gradient(circle, rgba(252,70,107,1) 0%, rgba(101,116,255,1) 100%);
+    height: 268px;
+}
+
+#heading{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#quote{
+    width: 50%;
+    text-align: left;
+    margin: 0;
+    margin-left: 30px;
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#quotep{
+    margin: 0;
+}
+
+#quotediv{
+    padding-bottom: 5px;
+    position: relative;
+    width: fit-content
+}
+
+#quotediv:before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    border-bottom: 2px solid black;
+    left: 25%;
+}
+
+#time{
+    width: 50%;
+    text-align: right;
+    margin: 0;
+    margin-right: 30px;
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#timep{
+    margin: 0;
+}
+
+#description{
+    width: 100%;
+    text-align: left;
+    display: flex;
+}
+
+#descriptionp{
+    margin-top: 15px; 
+    margin-left: 20px;
+    color: white;
+    font-size: 18px;
+}
+
+#forecastwrap{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 160px;
+}
+
+#mockupicon{
+    display: flex;
+    height: 64px;
+    width: 64px;
+    background-color: yellow;
+}
+
+#forecastnow{
+    height: 100%;
+    width: 33.33%; 
+    display: flex;
+    flex-direction: column;
+}
+    #forecastnowtemp{
+        font-size: 36px;
+        color: white;
+        height: 30%;
+    }
+    #forecastnowicon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+    }
+    
+    #forecastnowtime{
+        color: white;
+        font-size: 18px;
+        height: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+#forecastthree{
+    height: 100%;
+    width: 33.33%; 
+    display: flex;
+    flex-direction: column;
+}
+
+    #forecastthreetemp{
+        font-size: 24px;
+        color: white;
+        height: 30%;
+        align-items: flex-end;
+        display: flex;
+        justify-content: center;
+    }
+
+    #forecastthreeicon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+    }
+    
+    #forecastthreetime{
+        color: white;
+        font-size: 18px;
+        height: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+#forecastsix{
+    height: 100%;
+    width: 33.33%; 
+    display: flex;
+    flex-direction: column;
+}
+    #forecastsixtemp{
+        font-size: 24px;
+        color: white;
+        height: 30%;
+        align-items: flex-end;
+        display: flex;
+        justify-content: center;
+    }
+
+    #forecastsixicon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+    }
+    
+    #forecastsixtime{
+        color: white;
+        font-size: 18px;
+        height: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+#linehorizontal{
+    width: 94%;
+    height: 1px;
+    display: flex;
+    background-color: white;
+    opacity: 50%;
+    margin-top: 4px;
+    margin: 0 auto;
+}
+
+#footerweather{
+    display: flex;
+    flex-direction: row;
+    height: 46px;
+    width: 100%;
+}
+
+    #date{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        color: white;
+        font-size: 16px;
+    }
+
+    #datep{
+        margin-left: 20px;
+    }
+
+    #tempminmax{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        text-align: right;
+    }
+
+    #tempmaxp{
+        color: white;
+        font-size: 18px;
+        margin-right: 5px;
+        padding-right: 2px;
+    }
+
+    #tempminp{
+        color: white;
+        font-size: 18px;
+        padding-right: 20px;
+        opacity: 50%;
+    }
+    
+#mapforecast{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 307px;
+    background-color: #6574FF;
+}
+
+#mapid{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+    
+    .osmLayer{
+        filter: saturate(0);
+    }
+
+    #timenow{
+        font-size: 18px;
+        width: 80px;
+        height: 24px;
+        z-index: 800;
+        display: block;
+        position: absolute;
+    }
+
+/* Weatherdata */
+
+#weatherdata{
+    height: 270px;
+}
+
+#weatherdataheading{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    text-align: left;
+    margin-bottom: 10px;
+}
+    #weatherdataheadingp{
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+#weatherdatacontent{
+    display: flex;
+    flex-direction: row;
+    height: 210px;
+}
+
+#dots{
+    display: flex;
+    width: 16%;
+    background-color: white;
+    flex-direction: column;
+    height: 100%;
+}
+
+    #dotfield{
+        height: 16.666%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: gray;
+    }
+
+        #linetop{
+            height: Calc(50% - 5px);
+            width: 100%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #linebottom{
+            height: Calc(50% - 5px);
+            width: 100%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #dotcont{
+            height: 10px;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            #dot{
+                display: block;
+                height: 10px;
+                width: 10px;
+                background-color: #6574FF;
+                border-radius: 5px;
+            }
+        #line{
+            display: block;
+            height: 100%;
+            width: 1px;
+            background-color: #BEBEBE;
+        }
+
+#weatherdataid{
+    display: flex;
+    width: 42%;
+    height: 100%;
+    flex-direction: column;
+}
+    #weatherdatafield{
+        display: flex;
+        height: 16.666%;
+        align-items: center;
+    }
+
+    .weatherp{
+        font-size: 20px;
+        margin: 0;
+    }
+
+#weatherdataapires{
+    display: flex;
+    width: 42%;
+    height: 100%;
+    flex-direction: column;
+}
