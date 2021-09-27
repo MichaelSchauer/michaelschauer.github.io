@@ -37,11 +37,13 @@
     <body style="padding:0; margin:0; text-align:center; background-color: #74D0FF; overflow: hidden;">
     <div id="body-content">
     <section id="" class="section">
-    <div id="timenow" style="text-align:center; position: absolute;top: 0px; left: 0; width: 100%; height: 50px; display: block; color: white; z-index: 800; background-color: #74D0FF; margin: 0; line-height: 50px;" ></div>
+    <div id="timenow" style="text-align:center; position: absolute;top: 0px; left: 0; width: 100%; height: 50px; display: block; color: white; z-index: 800; background-color: #74D0FF; margin: 0; line-height: 50px; font-size: 20px;" ></div>
     <div id="playpausecontainer">
-        <div id="playpause" onclick="stop(); showFrame(animationPosition - 1); return;"><p>&#5130;</p></div>
-        <div id="playpause" onclick="playStop();"><p id="animtext">START</p></div> 
-        <div id="playpause" onclick="stop(); showFrame(animationPosition + 1); return;"><p>&#5125;</p></div> 
+        <div id="animwrap">
+            <div id="playpause" onclick="stop(); showFrame(animationPosition - 1); return;"><p>&#5130;</p></div>
+            <div id="playpause" onclick="playStop();"><p id="animtext">START</p></div> 
+            <div id="playpause" onclick="stop(); showFrame(animationPosition + 1); return;"><p>&#5125;</p></div> 
+        </div>
     </div>
     <div id="mapid" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></div>
     <!--<div id="forecast">
@@ -410,8 +412,8 @@
         //var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=de&appid=${APIKEY}`;
         var url = `https://api.openweathermap.org/data/2.5/weather`
         var jsonresponse = "";
-        var latit = "14.245";
-        var longit = "14.256";
+        var latit = "48.367489";
+        var longit = "14.132030";
         
         //Get Coordinates from Clicking on Map
         map.on('click', function(e){
@@ -485,8 +487,8 @@
                     document.getElementById("tempfloat").innerHTML= temp_c;
                     document.getElementById("villagepanel").innerHTML= locname;
                     document.getElementById("descpanel").innerHTML = condition;
-                    document.getElementById("mintext").innerHTML = mintemp_c;
-                    document.getElementById("maxtext").innerHTML = maxtemp_c;
+                    document.getElementById("mintext").innerHTML = maxtemp_c;
+                    document.getElementById("maxtext").innerHTML = mintemp_c;
                     document.getElementById("humiditytext").innerHTML = humidity;
                     document.getElementById("windtext").innerHTML = wind_kph;
                     document.getElementById("uv").innerHTML = uv;

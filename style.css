@@ -748,10 +748,22 @@ input {
     height: 44px;
     width: 100%;
     left: 0;
-    z-index: 900;
+    z-index: 700;
     color: white;
     display: block;
     top: 70px;
+    -webkit-transition: 0.5s top ease;
+    transition: 0.5s top ease;
+}
+
+#animwrap{
+    background-color: violet;
+    width: 206px;
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
+    box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16);
+    background-color: #74D0FF !important;
+    border-radius: 22px;
 }
 
 #playpause{
@@ -759,15 +771,11 @@ input {
     width: 44px;
     border: none;
     cursor: pointer;
-    border-radius: 22px;
     line-height: 44px;
     font-family: 'Segoe UI Web (West European)';font-size: 20px;
     display: inline-block;
     justify-content: center;
     align-items: center;
-    background-color: #74D0FF !important;
-    -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
-    box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16);
 }
 
 #playpause:nth-child(2){
@@ -1475,22 +1483,22 @@ input {
 }
 
 #infoweatherpanelbutton{
-    height: 40px;
-    width: 40px;
+    height: 44px;
+    width: 44px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #74D0FF;
     position: absolute;
-    right: 30px;
-    top: -70px;
+    right: -50px;
+    top: 70px;
     z-index: 1000;
     -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
     box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16);
-    -webkit-transition: 0.5s top ease;
-    transition: 0.5s top ease;
+    -webkit-transition: 0.5s right ease;
+    transition: 0.5s right ease;
     color: white;
-    border-radius: 20px;
+    border-radius: 22px;
 }
 
 #infoweatherpanelbutton p{
@@ -1845,6 +1853,7 @@ input {
     align-items: center;
     flex-wrap: wrap;
     margin:0px;
+    overflow: hidden;
 }
 #sunleft{
     display: flex;
@@ -1877,6 +1886,7 @@ input {
     transition: 2s margin ease-in-out;
     justify-content: center;
     align-items: center;
+    margin-left: -15px;
 }
 
 #suninner{
@@ -1887,6 +1897,8 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+    margin-top: 5px;
 }
 
 #suninner2{
@@ -1894,7 +1906,7 @@ input {
     width: 10px;
     background-color: rgb(255, 227, 174);
     border-radius: 50%;
-    display: flex;
+    display: block;
 }
 
 #suntimecontainer{

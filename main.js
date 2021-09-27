@@ -162,7 +162,7 @@ function openweatherpanel(){
   document.getElementById("menu").style.bottom = "320px";
   document.getElementById("closeweatherpanelbutton").style.bottom = "70px";
   document.getElementById("expandweatherpanelbutton").style.bottom = "70px";
-  document.getElementById("infoweatherpanelbutton").style.top = "70px";
+  document.getElementById("infoweatherpanelbutton").style.right = "30px";
   panelopened = "1";
   if (locationpicked == 1){
     document.getElementById("expandweatherpanelbutton").style.bottom = "70px";
@@ -178,10 +178,10 @@ function expandweatherpanel(){
   document.getElementById("expandweatherpanelbutton").style.bottom = "-70px";
   document.getElementById("weatherforecastsun").style.height = "234px";
   document.getElementById("weathersectionair").style.height = "290px";
-  document.getElementById("infoweatherpanelbutton").style.top = "-70px";
+  document.getElementById("infoweatherpanelbutton").style.right = "-50px";
   //Style and Position of Sun
   if ( daynight == "day" ) {
-    document.getElementById("sun").style.marginLeft = sunpercent;
+    document.getElementById("sun").style.marginLeft = "Calc(" + sunpercent+ "% - 15px)";
     document.getElementById("sun").style.backgroundColor = "darkorange";
     document.getElementById("suninner").style.backgroundColor = "rgb(255, 187, 60)";
     document.getElementById("suninner2").style.backgroundColor = "rgb(255, 227, 174)";
@@ -206,7 +206,7 @@ function closeweatherpanel(){
   document.getElementById("weathercontainer").style.height = "0px";
   document.getElementById("weatherforecastsun").style.height = "0px";
   document.getElementById("weathersectionair").style.height = "0px";
-  document.getElementById("infoweatherpanelbutton").style.top = "-70px";
+  document.getElementById("infoweatherpanelbutton").style.right = "-50px";
   panelopened = "0";
 }
 
