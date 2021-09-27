@@ -762,8 +762,14 @@ input {
     margin: 0 auto;
     -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
     box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16);
-    background-color: #74D0FF !important;
+    /*background-color: #74D0FF !important;*/
     border-radius: 22px;
+    background-color: rgb(164 206 255 / 25%);
+    backdrop-filter: blur(8px);
+    -webkit-background-color: rgb(164 206 255 / 25%); 
+    -webkit-backdrop-filter: blur(8px);
+    -moz-background-color: rgb(164 206 255 / 25%);
+    -moz-backdrop-filter: blur(8px);
 }
 
 #playpause{
@@ -1112,7 +1118,12 @@ input {
     width: 46px;
     border: none;
     outline: none;
-    background-color: white;
+    background-color: rgb(164 206 255 / 25%);
+    backdrop-filter: blur(8px);
+    -webkit-background-color: rgb(164 206 255 / 25%); 
+    -webkit-backdrop-filter: blur(8px);
+    -moz-background-color: rgb(164 206 255 / 25%);
+    -moz-backdrop-filter: blur(8px);
     justify-content: center;
     align-items: center;
     -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
@@ -1130,7 +1141,6 @@ input {
     width: 56px;
     border: none;
     outline: none;
-    background-color: #74D0FF;
     justify-content: center;
     align-items: center;
     -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
@@ -1142,6 +1152,12 @@ input {
     transition: right 0.5s ease;
     -webkit-transition: bottom 0.5s ease;
     transition: bottom 0.5s ease;
+    background-color: rgb(164 206 255 / 25%);
+    backdrop-filter: blur(8px);
+    -webkit-background-color: rgb(164 206 255 / 25%); 
+    -webkit-backdrop-filter: blur(8px);
+    -moz-background-color: rgb(164 206 255 / 25%);
+    -moz-backdrop-filter: blur(8px);
 }
 
 #getGPSloc img{
@@ -1274,13 +1290,18 @@ input {
     height: 56px;
     border-radius: 28px;
     overflow: hidden;
-    background: #74D0FF;
     transition: all 0.5s ease;
     cursor: pointer;
     -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
     box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16);
     -webkit-transition: bottom 0.5s ease;
     transition: bottom 0.5s ease;
+    background-color: rgb(164 206 255 / 25%);
+    backdrop-filter: blur(8px);
+    -webkit-background-color: rgb(164 206 255 / 25%); 
+    -webkit-backdrop-filter: blur(8px);
+    -moz-background-color: rgb(164 206 255 / 25%);
+    -moz-backdrop-filter: blur(8px);
   }
   #menu > * {
     float: left;
@@ -1349,6 +1370,17 @@ input {
     margin-top: 16px;
   }
 
+  #timenow{
+    -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
+    box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16);
+    background-color: rgb(164 206 255 / 25%);  
+    backdrop-filter: blur(8px);
+    -webkit-background-color: rgb(164 206 255 / 25%);
+    -webkit-backdrop-filter: blur(8px);
+    -moz-background-color: rgb(164 206 255 / 25%);
+    -moz-backdrop-filter: blur(8px);
+  }
+
 /* Floating Weather Button */
 
 #weatherfloat{
@@ -1356,7 +1388,6 @@ input {
  height: 56px;
  width: 90px;
  border-radius: 28px;
- background-color: white;
  display: flex;
  bottom: 70px;
  left: 0;
@@ -1367,6 +1398,13 @@ input {
  transition: 0.2s bottom ease;
  -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
  box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16);
+ background-color: rgb(164 206 255 / 25%);
+ backdrop-filter: blur(8px);
+ -webkit-background-color: rgb(164 206 255 / 25%); 
+ -webkit-backdrop-filter: blur(8px);
+ -moz-background-color: rgb(164 206 255 / 25%);
+ -moz-backdrop-filter: blur(8px);
+ color: white;
 }
 
 #weatherfloat:hover{
@@ -1403,7 +1441,12 @@ input {
     position: absolute;
     height: 100vh;
     width: 100%;
-    background-color: #fff;
+    background-color: rgb(164 206 255 / 25%);
+    backdrop-filter: blur(8px);
+    -webkit-background-color: rgb(164 206 255 / 25%); 
+    -webkit-backdrop-filter: blur(8px);
+    -moz-background-color: rgb(164 206 255 / 25%);
+    -moz-backdrop-filter: blur(8px);
     z-index: 900;
     left: 0;
     bottom: -900px;
@@ -1488,7 +1531,12 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #74D0FF;
+    background-color: rgb(164 206 255 / 25%);
+    backdrop-filter: blur(8px);
+    -webkit-background-color: rgb(164 206 255 / 25%); 
+    -webkit-backdrop-filter: blur(8px);
+    -moz-background-color: rgb(164 206 255 / 25%);
+    -moz-backdrop-filter: blur(8px);
     position: absolute;
     right: -50px;
     top: 70px;
