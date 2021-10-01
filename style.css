@@ -27,7 +27,7 @@ html, body {
 }
 
 body {
-    overflow: auto;
+    overflow: hidden;
     scroll-behavior: smooth;
     position: relative;
     -webkit-user-select: none;
