@@ -137,7 +137,7 @@ $('.no-zoom').bind('touchend', function(e) {
 function expandmenu(){
   document.getElementById("menuexpandable").style.width="260px";
   document.getElementById("menu").setAttribute("onClick", "hidemenu()");
-  document.getElementById("menuicon").src="resources/close.svg";
+  //document.getElementById("menuicon").src="resources/close.svg";
   document.getElementById("getGPSlocmobile").style.right="-80px";
   hidefloatweather();
 }
@@ -146,9 +146,26 @@ function hidemenu(){
   document.getElementById("menu").setAttribute("onClick", "expandmenu()");
   //document.getElementById("menuexpandable").style.width="6px";
   document.getElementById("menuexpandable").style.width="0px";
-  document.getElementById("menuicon").src="resources/settings.svg";
+  //document.getElementById("menuicon").src="resources/settings.svg";
   document.getElementById("getGPSlocmobile").style.right="30px";
   showfloatweather();
+}
+
+function expandmenu2(){
+  document.getElementById("menuexpandable").style.width="260px";
+  document.getElementById("menu").setAttribute("onClick", "hidemenu2()");
+  //document.getElementById("menuicon").src="resources/close.svg";
+  //document.getElementById("getGPSlocmobile").style.right="-80px";
+  //hidefloatweather();
+}
+
+function hidemenu2(){
+  document.getElementById("menu").setAttribute("onClick", "expandmenu2()");
+  //document.getElementById("menuexpandable").style.width="6px";
+  document.getElementById("menuexpandable").style.width="0px";
+  //document.getElementById("menuicon").src="resources/settings.svg";
+  //document.getElementById("getGPSlocmobile").style.right="30px";
+  //showfloatweather();
 }
 
 var locationpicked = "0";
@@ -176,18 +193,20 @@ function expandweatherpanel(){
   document.getElementById("placeholderweather").style.height = "50px";
   document.getElementById("weathercontainer").style.height = "90px";
   document.getElementById("expandweatherpanelbutton").style.bottom = "-70px";
-  document.getElementById("weatherforecastsun").style.height = "234px";
-  document.getElementById("weathersectionair").style.height = "290px";
+  document.getElementById("weatherforecastsun").style.height = "248px";
+  document.getElementById("weathersectionair").style.height = "330px";
   document.getElementById("infoweatherpanelbutton").style.right = "-50px";
   //Style and Position of Sun
   if ( daynight == "day" ) {
-    document.getElementById("sun").style.marginLeft = "Calc(" + sunpercent+ "% - 15px)";
+    //document.getElementById("sun").style.marginLeft = "Calc(" + sunpercent+ "% - 15px)";
+    document.getElementById("sun").style.marginLeft= sunpercent;
+    console.log(sunpercent);
     document.getElementById("sun").style.backgroundColor = "darkorange";
     document.getElementById("suninner").style.backgroundColor = "rgb(255, 187, 60)";
     document.getElementById("suninner2").style.backgroundColor = "rgb(255, 227, 174)";
     return true;
     } else {
-    document.getElementById("sun").style.marginLeft = "0%";
+    document.getElementById("sun").style.marginLeft = "Calc(" + sunpercent+ "% + 15px)"
     document.getElementById("sun").style.backgroundColor = "#7700ff";
     document.getElementById("suninner").style.backgroundColor = "#9100e6";
     document.getElementById("suninner2").style.backgroundColor = "#dc6bff";
@@ -225,4 +244,24 @@ function airquality(){
         document.getElementById("weatherairqual").style.backgroundColor = "#ff5cb3"; 
         document.getElementById("weatherairqual").innerHTML = "Sehr schlechte Luftqualität"
       }
+}
+
+//Switch regions for webcams
+
+function sUU(){
+  document.getElementById("urfahrumgebung").style.display = "block";
+  document.getElementById("rohrbach").style.display = "none";
+  document.getElementById("freistadt").style.display = "none";
+}
+
+function sRO(){
+  document.getElementById("urfahrumgebung").style.display = "none";
+  document.getElementById("rohrbach").style.display = "block";
+  document.getElementById("freistadt").style.display = "none";
+}
+
+function sFR(){
+  document.getElementById("urfahrumgebung").style.display = "none";
+  document.getElementById("rohrbach").style.display = "none";
+  document.getElementById("freistadt").style.display = "block";
 }

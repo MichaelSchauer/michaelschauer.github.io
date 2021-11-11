@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @font-face {
     font-family: "Segoe UI Web (West European)";
     src: url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff2") format("woff2"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff") format("woff");
@@ -7,11 +8,12 @@
 
 
 html, body {
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Poppins', sans-serif;
     padding: 0;
     margin: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
     touch-action: manipulation;
 }
 
@@ -997,7 +999,7 @@ input {
     height: 100%;
     width: 100%;
     display: flex;
-    font-family: 'roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-size: 10px;
     z-index: 800; 
@@ -1270,7 +1272,7 @@ input {
 /* Layer Menu */
 
 #menu {
-    position: absolute;
+    position: fixed;
     bottom: 70px;
     left: 30px;
     z-index: 500;
@@ -1416,6 +1418,7 @@ input {
     overflow: scroll;
     transition: 0.5s bottom ease;
     transition: 0.5s bottom ease;
+    font-family: 'Poppins', sans-serif;
 }
 
 #placeholderweather{
@@ -1889,7 +1892,6 @@ input {
     transition: 2s margin ease-in-out;
     justify-content: center;
     align-items: center;
-    margin-left: -15px;
 }
 
 #suninner{
@@ -1901,7 +1903,6 @@ input {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    margin-top: 5px;
 }
 
 #suninner2{
@@ -1952,6 +1953,63 @@ input {
     height: 80px;
     display: block;
 }
+
+/* Webcams */
+.camcontainer{
+    max-width: 600px;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    height: 240px;
+    background-color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
+    box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16);
+    border-radius: 10px;
+}
+
+.camimage{
+    display: block;
+    height: 200px;
+    margin: 0 auto;
+}
+
+    .camimage img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+.camdescription{
+    color: #000;
+    font-size: 18px;
+    margin: 0;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+#menuiconbez{
+    display: block;
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 9px;
+    font-size: 12px;
+    color: white;
+}
+
+.camhead{
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: black;
+    font-weight: bold;
+}
+
 /* Responsive */
 
 @media screen and (min-width: 700px) and (min-height: 900px){

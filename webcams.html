@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-status-bar-style"content="black-translucent">
+    <title>Panorama</title>
+    <link rel="icon" href="resources/faviconcam.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="resources/faviconcam.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon-precomposed" href="resources/faviconcam.png"/>
+    <link rel="apple-touch-icon" href="resources/faviconcam.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="resources/cam72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="resources/cam114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="resources/cam144.png" />
+    <link rel="manifest" href="resources/cam.webmanifest">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resources.css">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="resources/leaflet.css"/>
+    <script src="resources/leaflet.js"></script>
+    <script src="weatherapi.js"></script>
+    <style>
+        .leaflet-control-attribution{
+            display: none;
+        }
+
+    </style>
+
+
+
+</head>
+    
+    <body style="padding:0; margin:0; text-align:center; background-color: #cbe7ff;" onload="sUU()">
+    <div id="body-content">
+    <section id="urfahrumgebung" class="section">
+        
+        <h1 class="camhead">Urfahr Umgebung</h1>
+        <div id="cam1" class="camcontainer">
+            <div class="camimage">
+                <a class="extlink" href="https://www.sternstein.at/webcam.php?camNo=2" target="“_blank“" rel="noopener"><img alt="" src="https://www.sternstein.at/webcam.php?camNo=2"></a>
+            </div>
+            <p class="camdescription">
+                Sternstein
+            </p>
+        </div>
+
+        <div id="cam1" class="camcontainer">
+            <div class="camimage">
+                <a class="extlink" href="https://webcam.wetter-linz.at/eidenbergeralm.jpg" target="“_blank“" rel="noopener"><img alt="" src="https://webcam.wetter-linz.at/eidenbergeralm.jpg"></a>
+            </div>
+            <p class="camdescription">
+                Eidenberger Alm
+            </p>
+        </div>
+
+        <div id="cam1" class="camcontainer">
+            <div class="camimage">  
+                <a class="extlink" href="https://www.ottensheim.at/webcam/img/duernberg/duernberg.jpg" target="“_blank“" rel="noopener"><img alt="" src="https://www.ottensheim.at/webcam/img/duernberg/duernberg.jpg"></a>  
+            </div>
+            <p class="camdescription">
+                Ottensheim (Dürnberg)
+            </p>
+        </div>
+
+        <div id="cam1" class="camcontainer">
+            <div class="camimage">  
+                <a class="extlink" href="https://www.ottensheim.at/webcam/img/marktplatz/marktplatz.jpg" target="“_blank“" rel="noopener"><img alt="" src="https://www.ottensheim.at/webcam/img/marktplatz/marktplatz.jpg"></a> 
+            </div>
+            <p class="camdescription">
+                Ottensheim (Marktplatz)
+            </p>
+        </div>
+
+        <div id="cam1" class="camcontainer">
+            <div class="camimage">   
+                <a class="extlink" href="http://d14350.ispservices.at/images/webcam/pos12.jpg" target="“_blank“" rel="noopener"><img alt="" src="http://d14350.ispservices.at/images/webcam/pos12.jpg"></a>
+            </div>
+            <p class="camdescription">
+                GIS (Blickrichtung Ottensheim)
+            </p>
+        </div>
+
+        <div id="cam1" class="camcontainer">
+            <div class="camimage">  
+                <a class="extlink" href="http://d14350.ispservices.at/images/webcam/pos7.jpg" target="“_blank“" rel="noopener"><img alt="" src="http://d14350.ispservices.at/images/webcam/pos7.jpg"></a>
+            </div>
+            <p class="camdescription">
+                GIS (Blickrichtung Linz)
+            </p>
+        </div>
+
+        <div id="cam1" class="camcontainer">
+            <div class="camimage">  
+                <a class="extlink" href="https://www.wetter-kirchschlag.at/online/hellmonsoedt.jpg" target="“_blank“" rel="noopener"><img alt="" src="https://www.wetter-kirchschlag.at/online/hellmonsoedt.jpg"></a>
+            </div>
+            <p class="camdescription">
+                Breitenstein (Blick auf Hellmonsödt)
+            </p>
+        </div>
+
+
+    </section>
+
+    <section id="rohrbach" class="section"> 
+        <h1 class="camhead">Rohrbach</h1>
+        <div id="cam1" class="camcontainer">
+            <div class="camimage">
+                <a class="extlink" href="https://images.bergfex.at/webcams/?id=6975&format=11&2" target="“_blank“" rel="noopener"><img alt="" src="https://images.bergfex.at/webcams/?id=6975&format=11&2"></a>
+            </div>
+            <p class="camdescription">
+                Hochficht (Bergstation)
+            </p>
+        </div>
+
+        <div id="cam1" class="camcontainer">
+            <div class="camimage">
+                <a class="extlink" href="https://webcam.ssu-stjohann.at/webshot_Starthaus.jpg" target="“_blank“" rel="noopener"><img alt="" src="https://webcam.ssu-stjohann.at/webshot_Starthaus.jpg"></a>
+            </div>
+            <p class="camdescription">
+                Hansberg
+            </p>
+        </div>
+    </section>
+
+    <section id="freistadt" class="section"> 
+        <h1 class="camhead">Freistadt</h1>
+        <div id="cam1" class="camcontainer">
+            <div class="camimage">
+                <a class="extlink" href="https://schilift-freistadt.at/webcam/cam1.jpg" target="“_blank“" rel="noopener"><img alt="" src="https://schilift-freistadt.at/webcam/cam1.jpg"></a>
+            </div>
+            <p class="camdescription">
+                Freistadt (Skilift)
+            </p>
+        </div>
+
+        <div id="cam1" class="camcontainer">
+            <div class="camimage">
+                <a class="extlink" href="https://cam.tourismuskern.at/webcam/webcam_links.jpg" target="“_blank“" rel="noopener"><img alt="" src="https://cam.tourismuskern.at/webcam/webcam_links.jpg"></a>
+            </div>
+            <p class="camdescription">
+                St. Oswald bei Freistadt
+            </p>
+        </div>
+    </section>
+
+        <div style="height: 130px; display: block;"></div>
+        <div id="menu" onclick="expandmenu2()">
+            <!-- <input type="checkbox" id="menu-toggle"/>-->
+             <div id="checkbox" id="menu-toggle"><p id="menuiconbez">BEZIRK</p></div>
+             <ul id="menuexpandable">
+               <li>
+                 <a href="#" onclick="sUU()">UU</a>
+               </li><li>
+                 <a href="#" onclick= sRO()>RO</a>
+               </li><li>
+                 <a href="#" onclick= sFR()>FR</a>
+               </li>
+             </ul>
+           </div>
+</body>
+</html>
