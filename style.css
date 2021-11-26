@@ -28,6 +28,7 @@ body {
 
 #body-content {
     padding: env(safe-area-inset-bottom);
+    width: 100%;
  }
 
 .contentwrapIMG {
