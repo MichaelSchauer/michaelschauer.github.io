@@ -252,16 +252,43 @@ function sUU(){
   document.getElementById("urfahrumgebung").style.display = "block";
   document.getElementById("rohrbach").style.display = "none";
   document.getElementById("freistadt").style.display = "none";
+    //IMG
+    document.getElementById("imgUU").src="resources/UUB.svg";
+    document.getElementById("imgRO").src="resources/ROG.svg";
+    document.getElementById("imgFR").src="resources/FRG.svg";
+
+    //Font color
+    document.getElementById("colorUU").style.color="#0190FC"
+    document.getElementById("colorRO").style.color="#000"
+    document.getElementById("colorFR").style.color="#000"
 }
 
 function sRO(){
   document.getElementById("urfahrumgebung").style.display = "none";
   document.getElementById("rohrbach").style.display = "block";
   document.getElementById("freistadt").style.display = "none";
+    //IMG
+    document.getElementById("imgUU").src="resources/UUG.svg";
+    document.getElementById("imgRO").src="resources/ROB.svg";
+    document.getElementById("imgFR").src="resources/FRG.svg";
+
+    //Font color
+    document.getElementById("colorUU").style.color="#000"
+    document.getElementById("colorRO").style.color="#0190FC"
+    document.getElementById("colorFR").style.color="#000"
 }
 
 function sFR(){
   document.getElementById("urfahrumgebung").style.display = "none";
   document.getElementById("rohrbach").style.display = "none";
   document.getElementById("freistadt").style.display = "block";
+    //IMG
+    document.getElementById("imgUU").src="resources/UUG.svg";
+    document.getElementById("imgRO").src="resources/ROG.svg";
+    document.getElementById("imgFR").src="resources/FRB.svg";
+
+    //Font color
+    document.getElementById("colorUU").style.color="#000"
+    document.getElementById("colorRO").style.color="#000"
+    document.getElementById("colorFR").style.color="#0190FC"
 }
