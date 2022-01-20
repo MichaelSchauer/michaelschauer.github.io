@@ -743,7 +743,7 @@ input {
 /* Rainmap */
 
 #timenow{
-    background-color: #74D0FF;
+    background-color: #0190FC;
 }
 
 #playpausecontainer{
@@ -768,7 +768,7 @@ input {
     margin: 0 auto;
     -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
     box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16);
-    background-color: #74D0FF !important;
+    background-color: #0190FC !important;
     border-radius: 22px;
 }
 
@@ -1136,7 +1136,7 @@ input {
     width: 56px;
     border: none;
     outline: none;
-    background-color: #74D0FF;
+    background-color: #0190FC;
     justify-content: center;
     align-items: center;
     -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
@@ -1280,7 +1280,7 @@ input {
     height: 56px;
     border-radius: 28px;
     overflow: hidden;
-    background: #74D0FF;
+    background: #0190FC;
     transition: all 0.5s ease;
     cursor: pointer;
     -webkit-box-shadow: 0px 17px 20px 0px rgba(0,0,0,0.16); 
@@ -1419,7 +1419,6 @@ input {
     overflow: scroll;
     transition: 0.5s bottom ease;
     transition: 0.5s bottom ease;
-    font-family: 'Poppins', sans-serif;
 }
 
 #placeholderweather{
@@ -1435,7 +1434,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #74D0FF;
+    background-color: #0190FC;
     position: absolute;
     right: 30px;
     bottom: -70px;
@@ -1466,7 +1465,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #74D0FF;
+    background-color: #0190FC;
     position: absolute;
     left: 30px;
     bottom: -70px;
@@ -1495,7 +1494,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #74D0FF;
+    background-color: #0190FC;
     position: absolute;
     right: -50px;
     top: 70px;
@@ -1671,7 +1670,7 @@ input {
     padding: 0;
     width: 260px;
     text-indent: 10px;
-    background-color: #74D0FF;
+    background-color: #0190FC;
     color: white;
     border-radius: 10px 0 0px 10px;
 }
@@ -1691,7 +1690,7 @@ input {
     float: right;
     text-align: center;
     border-radius: 0 10px 10px 0px;
-    background-color: #74D0FF;
+    background-color: #0190FC;
     width: 100%;
 }
 
