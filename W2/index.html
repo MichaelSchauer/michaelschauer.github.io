@@ -1,0 +1,67 @@
+<head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-status-bar-style"content="black-translucent">
+    <title>Navbar</title>
+    <script src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="forecast.css">
+    <script src="nav.js"></script>
+    <script src="api.js"></script>
+    <script src="openweather.js"></script>
+    <script src="content.js"></script>
+    </head>
+ 
+ <body onload="loadApp()">
+    <div id="search">
+        <div class="searchwrap" >
+          <input id="search_input" type="text" placeholder="Stadt">
+          <div class="search_button" onclick="API_Call()"><img class="search_icon" src="resources/icon-search-1.svg"></div>
+        </div>  
+    </div>
+    <section id="section_forecast" class="light " onload="loadApp()">
+        <div class="settings_placeholder">
+          <div id="forecast_header">
+            <img class="forecast_header_img" src="resources/iconsettings.svg">
+          </div>
+        </div>
+        <div id="alerts"></div>
+        <div id="weather_now"></div>
+        <div id="weather_forecast">
+          <div class="forecast_header_title"><img class="forecast_small_icon" src="resources/iconuhr.svg"><p class="forecast_small_header">Stündliche Vorhersage</p></div>
+          <div id="weather_forecast_scroll"></div>
+        </div>
+
+
+      <div id="weather_forecast_7Days">
+        <div class="forecast_header_title"><img class="forecast_small_icon" src="resources/iconcalendar.svg"><p class="forecast_small_header">7 Tages Vorhersage</p></div>
+        <div id="weather_forecast_week"></div>
+      </div>
+
+
+    </section>
+
+    <section id="section_map" class="light">
+      <p>MA</p>
+    </section>
+   
+    <div class="navalign">
+      <div class="navwrapper">
+        <div id="navicon1" class="navinner" onclick="switch_section(0)">
+          <div class="navicon" ><img src="resources/icon-search-1.svg" alt=" "></div>
+        </div>
+        <div id="navicon2" class="navinner iconactive" onclick="switch_section(1)">
+          <div class="navicon" ><img src="resources/iconthermo.svg" alt=" "></div>
+        </div>
+        <div id="navicon3" class="navinner" onclick="switch_section(2)">
+          <div class="navicon" ><img src="resources/iconmap3.svg" alt=" "></div>
+        </div>
+      </div> 
+    </div>
+
+ 
+
+
+ </body>
+
