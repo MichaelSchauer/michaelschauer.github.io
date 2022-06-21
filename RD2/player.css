@@ -76,7 +76,7 @@ html,body{
 #controlbarwrap{
     position: fixed;
     display: flex;
-    top: 145px;
+    top: 135px;
     left: 0px;
     justify-content: center;
     align-items: flex-start;

@@ -72,17 +72,17 @@ function loadJSON(){
     const player = audio;
   
     navigator.mediaSession.metadata = new MediaMetadata({
-      title: 'Shadows of Ourselves',
-      artist: 'Thievery Corporation',
-      album: 'The Mirror Conspiracy',
+      title: stationsjson[station].name,
+      artist: 'Radio',
+      album: 'Made by Michael',
       artwork: [
         {
-          src: 'https://whatpwacando.today/src/img/media/mirror-conspiracy256x256.jpeg',
+          src: stationsjson[station].icon,
           sizes: '256x256',
           type: 'image/jpeg'
         },
         {
-          src: 'https://whatpwacando.today/src/img/media/mirror-conspiracy512x512.jpeg',
+          src: stationsjson[station].icon,
           sizes: '512x512',
           type: 'image/jpeg'
         }
