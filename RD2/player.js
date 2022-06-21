@@ -79,12 +79,12 @@ function loadJSON(){
         {
           src: stationsjson[station].icon,
           sizes: '256x256',
-          type: 'image/jpeg'
+          type: 'image'
         },
         {
           src: stationsjson[station].icon,
           sizes: '512x512',
-          type: 'image/jpeg'
+          type: 'image'
         }
       ]
     });
