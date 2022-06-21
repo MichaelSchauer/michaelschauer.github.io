@@ -1,5 +1,6 @@
 var stationsjson = "";
-  $.ajax({
+function loadJSON(){
+    $.ajax({
     url: "stations.json",
     type: "GET",
     dataType: "json",
@@ -12,6 +13,8 @@ var stationsjson = "";
       console.log("Error")
     }
   });
+}
+
 
   var url ='';
   function initialize(){
