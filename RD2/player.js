@@ -39,7 +39,7 @@ function loadJSON(){
       audio.id = "nowplaying"; 
       audio.load();
       audio.play();
-      $('#playbuttonicon').attr("src", "/resources/pause.svg");//change icons
+      $('#playbuttonicon').attr("src", "resources/pause.svg");//change icons
             
       //Change Station name
       $('#h2radiop').html(stationsjson[station].name);
@@ -50,11 +50,11 @@ function loadJSON(){
 
       if (audio.duration > 0 && !audio.paused) {
         //audio playing
-        $('#playbuttonicon').attr("src", "/resources/spiel.svg");//change icons
+        $('#playbuttonicon').attr("src", "resources/spiel.svg");//change icons
         audio.pause() 
       } else {
         //audio not playing
-        $('#playbuttonicon').attr("src", "/resources/pause.svg");//change icons
+        $('#playbuttonicon').attr("src", "resources/pause.svg");//change icons
         audio.play()
       }
   }
