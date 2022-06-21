@@ -1,0 +1,48 @@
+<!-- player.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="apple-mobile-web-app-status-bar-style"content="black-translucent">
+  <link rel="manifest" href="resources/manifest.webmanifest">
+
+  <title>FF Info</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="player.css">
+  <link rel="stylesheet" href="volumecontrol.css">
+  <script src="player.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+  <script src="stations.json"></script>
+</head>
+<body>
+  
+  <!--http://fmstream.org/index.php?c=USA-->
+  
+  <div id="topper">
+    <div id="details">
+      <div id="h2radio"><p id="h2radiop">Radio</p></div>
+      <div id="radioname"><p id="name">Wählen Sie einen Sender</p></div>
+    </div>
+  </div>
+  <div id="playerwrap"></div>
+  <div id="controlbarwrap">
+    <div id="controlbar">
+      <div id="playpause">
+        <div id="playbutton" onclick="playpause()">
+          <img id="playbuttonicon" src="/resources/spiel.svg">
+        </div>
+      </div>
+      <div id="volume" >
+          <input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+        </div>
+        <div class="volicon">
+            <img src="/resources/volumen.svg">
+        </div>
+    </div>
+  </div>
+  
+</body>
+</html>
