@@ -83,5 +83,10 @@
          "url": "https://stream.revma.ihrhls.com/zc1157",
          "dest": "Grand Rapids, ID, USA",
          "icon":"resources/icons/b93.png"
+      },{
+         "name": "Radio Bollerwagen",
+         "url": "https://stream.ffn.de/radiobollerwagen/mp3-192",
+         "dest": "Hannover, Deutschland",
+         "icon": "resources/icons/radiobollerwagen.png"
       }
 ]
