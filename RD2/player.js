@@ -29,7 +29,9 @@ function loadJSON(){
 
   var audio = "";
   var currenttrack = '';
+  var currentstation = '';
   function play(station){
+      currentstation = station;
       audio.src = "";
       audio.currentTime = 0;
       audio = new Audio(stationsjson[station].url);
@@ -39,6 +41,36 @@ function loadJSON(){
       audio.id = "nowplaying"; 
       audio.load();
       audio.play();
+    //MediaSession
+      if ('mediaSession' in navigator) {
+        const player = audio; //define player
+        navigator.mediaSession.metadata = new MediaMetadata({
+        title: stationsjson[station].name,
+        artist: stationsjson[station].dest,
+        album: "Michael's Radio",
+        artwork: [
+            { src: stationsjson[station].icon, type: 'image' }
+        ]
+        });
+        navigator.mediaSession.setActionHandler('play', () => player.play());
+        navigator.mediaSession.setActionHandler('pause', () => player.pause());
+        navigator.mediaSession.setActionHandler('previoustrack', function() {
+          var nextstation = Number(currentstation - 1)
+          play(nextstation)
+        });
+        navigator.mediaSession.setActionHandler('nexttrack', function() {
+          var prevstation = Number(currentstation + 1)
+          play(prevstation)
+        });
+        navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+          player.currentTime = audio.currentTime - (details.seekOffset || 10);
+        });
+        navigator.mediaSession.setActionHandler('seekforward', (details) => {
+          player.currentTime = audio.currentTime + (details.seekOffset || 10);
+        });
+    }
+
+
       $('#playbuttonicon').attr("src", "resources/pause.svg");//change icons
             
       //Change Station name
@@ -61,36 +93,7 @@ function loadJSON(){
 
   //volume
   window.SetVolume = function(val){
-      console.log('Before: ' + audio.volume);
+      //console.log('Before: ' + audio.volume);
       audio.volume = val / 100;
-      console.log('After: ' + audio.volume);
+      //console.log('After: ' + audio.volume);
   }
-
-  //mediasession
-
-  if('mediaSession' in navigator) {
-    const player = audio;
-  
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: stationsjson[station].name,
-      artist: 'Radio',
-      album: 'Made by Michael',
-      artwork: [
-        {
-          src: stationsjson[station].icon,
-          sizes: '256x256',
-          type: 'image'
-        },
-        {
-          src: stationsjson[station].icon,
-          sizes: '512x512',
-          type: 'image'
-        }
-      ]
-    });
-  
-    navigator.mediaSession.setActionHandler('play', () => player.play());
-    navigator.mediaSession.setActionHandler('pause', () => player.pause());
-
-  }    
-      
