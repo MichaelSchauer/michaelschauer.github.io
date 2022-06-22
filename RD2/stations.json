@@ -12,6 +12,12 @@
         "icon":"resources/icons/kronehit.png"
      },
      {
+      "name": "Life Radio", 
+      "url": "https://liferadio.streamabc.net/lfr-lr-mp3-192-7172638",
+      "dest": "Linz, Österreich",
+      "icon":"resources/icons/LifeRadio.png"
+      },
+     {
         "name": "Welle 1", 
         "url": "https://live.welle1.at:17128/stream",
         "dest": "Österreich",
@@ -71,5 +77,11 @@
          "url": "http://cassini.shoutca.st:8293/live",
          "dest": "Selma, AL, USA",
          "icon":"resources/icons/dixie.png"
+      },
+      {
+         "name": "B-93", 
+         "url": "https://stream.revma.ihrhls.com/zc1157",
+         "dest": "Grand Rapids, ID, USA",
+         "icon":"resources/icons/b93.png"
       }
 ]
