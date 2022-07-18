@@ -43,13 +43,13 @@
      }, 
      {
       "name": "The Wolf 99.5", 
-      "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KPLXFM.mp3",
+      "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KPLXFMAAC.aac",
       "dest": "Dallas, TX, USA",
       "icon":"resources/icons/thewolf.png"
       },
       {
          "name": "New Country 96.3", 
-         "url": "http://19473.live.streamtheworld.com:3690/KSCSFM_SC",
+         "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KSCSFMAAC.aac",
          "dest": "Dallas, TX, USA",
          "icon":"resources/icons/newcountry.jpg"
       },

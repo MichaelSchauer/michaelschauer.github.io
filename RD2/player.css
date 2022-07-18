@@ -76,7 +76,7 @@ html,body{
 #controlbarwrap{
     position: fixed;
     display: flex;
-    top: 135px;
+    top: 140px;
     left: 0px;
     justify-content: center;
     align-items: flex-start;
@@ -130,7 +130,7 @@ html,body{
 
 #volume{
     height: 80px;
-    width: Calc(100% - 160px);;
+    width: calc(90vw - 80px - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -229,7 +229,35 @@ html,body{
         width: calc(100% - 80px);
     }
 
+    @media only screen and (max-width: 768px) {
 
+        #volume{
+            display: none;
+        }
+
+        .volicon{
+            display: none;
+        }
+
+        #controlbarwrap{
+            top: 140px;
+            justify-content: flex-start;
+            margin-left: 25px;
+        }
+
+
+        #controlbar{
+            width: 80px;
+            height: 80px;
+            margin-top: 0px;
+        }
+
+        #playbutton{
+            height: 100%;
+            width: 100%;
+        }
+
+    }
 
     @media screen and ( min-width: 800px ) {
         #controlbarwrap{
