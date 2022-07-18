@@ -3,66 +3,77 @@
        "name": "Hitradio Ö3", 
        "url": "https://orf-live.ors-shoutcast.at/oe3-q1a",
        "dest": "Österreich",
+       "country": "AT",
        "icon":"resources/icons/oe3.png"
     },
     {
         "name": "Kronehit", 
         "url": "https://secureonair.krone.at/kronehit1058.mp3",
         "dest": "Österreich",
+        "country": "AT",
         "icon":"resources/icons/kronehit.png"
      },
      {
       "name": "Life Radio", 
       "url": "https://liferadio.streamabc.net/lfr-lr-mp3-192-7172638",
       "dest": "Linz, Österreich",
+      "country": "AT",
       "icon":"resources/icons/LifeRadio.png"
       },
      {
         "name": "Welle 1", 
         "url": "https://live.welle1.at:17128/stream",
         "dest": "Österreich",
+        "country": "AT",
         "icon":"resources/icons/welle1.png"
      },
      {
         "name": "Radio Oberösterreich", 
         "url": "https://orf-live.ors-shoutcast.at/ooe-q1a",
         "dest": "Österreich",
+        "country": "AT",
         "icon":"resources/icons/radioooe.png"
      },
      {
         "name": "Radio Arabella", 
         "url": "https://frontend.streams.arabella.at/arabella-oberoesterreich/stream/mp3",
         "dest": "Österreich",
+        "country": "AT",
         "icon":"resources/icons/arabella.png"
      },
      {
         "name": "BBC World Service", 
         "url": "https://stream.live.vc.bbcmedia.co.uk/bbc_world_service_americas",
         "dest": "Großbritannien",
+        "country": "GB",
         "icon":"resources/icons/bbc.png"
      }, 
      {
       "name": "The Wolf 99.5", 
       "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KPLXFMAAC.aac",
       "dest": "Dallas, TX, USA",
+      "country": "US",
       "icon":"resources/icons/thewolf.png"
       },
       {
          "name": "New Country 96.3", 
          "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/KSCSFMAAC.aac",
          "dest": "Dallas, TX, USA",
+         "country": "US",
          "icon":"resources/icons/newcountry.jpg"
       },
       {
          "name": "KOST 103.5", 
          "url": "http://stream.revma.ihrhls.com/zc193",
          "dest": "Los Angeles, CA, USA",
+         "country": "US",
          "icon":"resources/icons/kost.png"
       },
       {
          "name": "Kiss FM", 
          "url": "http://stream.revma.ihrhls.com/zc849",
          "dest": "Chicago, IL, USA",
+         "country": "US",
          "icon":"resources/icons/kissfm.png"
       },
 
@@ -70,24 +81,28 @@
          "name": "KEXP 90.3", 
          "url": "https://kexp-mp3-128.streamguys1.com/kexp128.mp3",
          "dest": "Seattle, WA, USA",
+         "country": "US",
          "icon":"resources/icons/KEXP.png"
       },
       {
          "name": "Dixie Country", 
          "url": "http://cassini.shoutca.st:8293/live",
          "dest": "Selma, AL, USA",
+         "country": "US",
          "icon":"resources/icons/dixie.png"
       },
       {
          "name": "B-93", 
          "url": "https://stream.revma.ihrhls.com/zc1157",
          "dest": "Grand Rapids, ID, USA",
+         "country": "US",
          "icon":"resources/icons/B93.png"
       },
       {
          "name": "Radio Bollerwagen",
          "url": "https://stream.ffn.de/radiobollerwagen/mp3-192",
          "dest": "Hannover, Deutschland",
+         "country": "DE",
          "icon": "resources/icons/radiobollerwagen.png"
       }
 ]

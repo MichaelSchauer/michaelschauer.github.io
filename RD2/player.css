@@ -19,6 +19,11 @@ html,body{
     display: none;
   }
 
+#playerlist::-webkit-scrollbar {
+    display: none;
+}
+
+
 #topper{
     background-color: var(--bg);
     color: var(--white);
@@ -30,10 +35,11 @@ html,body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin: 0;
 }
     #h2radio{
         width: 100%;
-        height: 90px;
+        height: 80px;
         display: flex;
         justify-content: flex-start;
         align-items: flex-end;
@@ -48,7 +54,7 @@ html,body{
 
     #radioname{
         width: 100%;
-        height: 90px;
+        height: 80px;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
@@ -65,10 +71,18 @@ html,body{
 #playerwrap{
     height: calc(100vh - 180px);
     width: 100%;
-    overflow: auto;
+    overflow: hidden;
     position: fixed;
     bottom: 0px;
     background-color: var(--white);
+}
+
+#playerlist{
+    height: calc(100vh - 180px);
+    overflow: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -173,7 +187,7 @@ html,body{
 }
 
 .station:first-child{
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 .station:hover{
@@ -243,6 +257,7 @@ html,body{
             top: 140px;
             justify-content: flex-start;
             margin-left: 25px;
+            max-width: 80px;
         }
 
 
@@ -259,7 +274,7 @@ html,body{
 
     }
 
-    @media screen and ( min-width: 800px ) {
+    @media screen and ( min-width: 769px ) {
         #controlbarwrap{
             position: fixed;
             display: flex;

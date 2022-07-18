@@ -14,16 +14,20 @@ function loadJSON(){
     }
   });
 }
-
-
   var url ='';
   function initialize(){
+    $('#playerwrap').append('<div id="filter" onclick="filtervisibility()"><button id="filterbtn"><img src="resources/filter.svg"></button></div>' +
+   ' <div id="filteroptions" style="display: none;"><button class="filteropt" onclick="filter(at)">Österreich</button><button class="filteropt" onclick="filter(de)">Deutschland</button><button class="filteropt" onclick="filter(gb)">Großbritannien</button><button class="filteropt" onclick="filter(us)">USA</button></div>'
+    );
+
+    $('#playerwrap').append('<div id="playerlist"></div>')
+
     for (var i = 0; i < stationsjson.length; i++){
       var name = stationsjson[i].name;
       url = stationsjson[i].url;
       var dest = stationsjson[i].dest;
       var icon = stationsjson[i].icon;
-      $("#playerwrap").append('<div class="station" onclick="play('+i+')"><div class="playstation"><img id="iconstation" src="'+icon+'"></div><div class="stationdesc"><div class="stationdescname">'+name+'</div><div class="stationdesccountry">'+dest+'</div></div></div>')
+      $("#playerlist").append('<div class="station" onclick="play('+i+')"><div class="playstation"><img id="iconstation" src="'+icon+'"></div><div class="stationdesc"><div class="stationdescname">'+name+'</div><div class="stationdesccountry">'+dest+'</div></div></div>')
     }
   } 
 
@@ -80,7 +84,7 @@ function play(station){
 
   function playpause(){
 
-      if (audio.duration > 0 && !audio.paused && audio) {
+      if (audio.duration > 0 && !audio.paused) {
         //audio playing
         $('#playbuttonicon').attr("src", "resources/spiel.svg");//change icons
         audio.pause() 
@@ -95,3 +99,37 @@ function play(station){
   window.SetVolume = function(val){
       audio.volume = val / 100;
   }
+
+//filter
+
+
+function filtervisibility(){
+    if($('#filteroptions').css('display') == 'none'){
+      $("#filteroptions").show(100);
+      $("#playerlist").hide(100);
+    } else {
+      $("#filteroptions").hide(100);
+      $("#playerlist").show(100);
+    }
+}
+
+//Countryvariables
+var at = "AT"
+var de = "DE"
+var gb = "GB"
+var us = "US"
+function filter(countrycode){
+  $(".station").remove();
+
+  console.log(countrycode)
+  for (var i = 0; i < stationsjson.length; i++){
+    if (stationsjson[i].country == countrycode){
+      var name = stationsjson[i].name;
+      url = stationsjson[i].url;
+      var dest = stationsjson[i].dest;
+      var icon = stationsjson[i].icon;
+      $("#playerlist").append('<div class="station" onclick="play('+i+')"><div class="playstation"><img id="iconstation" src="'+icon+'"></div><div class="stationdesc"><div class="stationdescname">'+name+'</div><div class="stationdesccountry">'+dest+'</div></div></div>')
+    }
+  }
+  filtervisibility();
+}
