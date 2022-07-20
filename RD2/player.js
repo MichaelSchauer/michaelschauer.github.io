@@ -75,11 +75,16 @@ function play(station){
     });
     }
 
+    $('#h2radiop').html("Laden...");
+    $('#name').html("");
+
     $('#playbuttonicon').attr("src", "resources/pause.svg");//change icons
-          
-    //Change Station name
-    $('#h2radiop').html(stationsjson[station].name);
-    $('#name').html(stationsjson[station].dest);
+
+    audio.onloadeddata = function() {
+      $('#h2radiop').html(stationsjson[station].name);
+      $('#name').html(stationsjson[station].dest);
+    };
+
   }
 
   function playpause(){
