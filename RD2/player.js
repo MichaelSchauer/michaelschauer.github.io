@@ -34,7 +34,13 @@ function loadJSON(){
 var audio = "";
 var currenttrack = '';
 var currentstation = '';
+var intervalexists = 0;
 function play(station){
+  //clear interval
+   /* if(intervalexists == 1) {
+      clearInterval(interval);
+    }
+    intervalexists = 1; */
     currentstation = station;
     audio.src = "";
     audio.currentTime = 0;
@@ -46,13 +52,33 @@ function play(station){
     audio.load();
     audio.play();
 
+    /*//refresh time interval
+    getTime(stationsjson[station].timelocation)
+    const interval = setInterval(function() {
+      //Count time
+      sstation ++;
+      
+      if (sstation > 59){
+        sstation = 0
+        mstation ++;
+      }
+      if (mstation > 59){
+        mstation = 0
+        hstation ++;
+      }
+      if (hstation > 23){
+        hstation = 0;
+      }
+      console.log(hstation+":"+mstation+":"+sstation)
+    }, 1000); */
+
   //MediaSession
   if ('mediaSession' in navigator) {
     const player = audio; //define player
     navigator.mediaSession.metadata = new MediaMetadata({
     title: stationsjson[station].name,
     artist: stationsjson[station].dest,
-    album: "Michael's Radio",
+    album: "",
     artwork: [
         { src: stationsjson[station].icon, type: 'image' }
     ]
@@ -137,4 +163,37 @@ function filter(countrycode){
     }
   }
   filtervisibility();
+}
+
+var hstation = "";
+var mstation = "";
+var sstation = "";
+function getTime(timelocation){
+  var timeapiurl = "http://worldtimeapi.org/api/timezone/" + timelocation;
+  console.log(timeapiurl)
+  $.ajax({
+    url: timeapiurl,
+    type: "GET",
+    dataType: "json",
+    success: function (data) {
+      //console.log(data);
+      var tnew = data.datetime
+      var timehours = tnew.slice(11,16)
+
+      //console.log ("Dateobject " + tnew)
+      console.log("Lokalzeit des Senders: " + timehours);
+
+      //timedifference
+      hstation = ("0" + tnew.slice(11,13)).slice(-2)
+      mstation = ("0" + tnew.slice(14,16)).slice(-2)
+      sstation = ("0" + tnew.slice(17,19)).slice(-2)
+      /*var differenceh = Number(hlocal) - Number(hstation)
+      var differencem = Number(mlocal) - Number(mstation)
+      //console.log(differenceh)
+      //console.log(differencem) */  
+    },
+    error: function(){
+      console.log("Error")
+    }
+  });
 }
