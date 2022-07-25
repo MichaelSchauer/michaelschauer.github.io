@@ -118,5 +118,13 @@
          "country": "DE",
          "timelocation" : "europe/berlin",
          "icon": "resources/icons/radiobollerwagen.png"
+      },
+      {
+         "name": "Kickin' Country 103.1",
+         "url": "http://stream.abacast.net/direct/townsquare-kkcnfmaac-ibc3",
+         "dest": "Ballinger, TX, USA",
+         "country": "US",
+         "timelocation" : "america/chicago",
+         "icon": "resources/icons/kickincountry.png"
       }
 ]

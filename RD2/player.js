@@ -105,6 +105,7 @@ function play(station){
     $('#name').html("");
 
     $('#playbuttonicon').attr("src", "resources/pause.svg");//change icons
+    
 
     audio.onloadeddata = function() {
       $('#h2radiop').html(stationsjson[station].name);
@@ -159,7 +160,7 @@ function filter(countrycode){
       url = stationsjson[i].url;
       var dest = stationsjson[i].dest;
       var icon = stationsjson[i].icon;
-      $("#playerlist").append('<div class="station" onclick="play('+i+')"><div class="playstation"><img id="iconstation" src="'+icon+'"></div><div class="stationdesc"><div class="stationdescname">'+name+'</div><div class="stationdesccountry">'+dest+'</div></div></div>')
+      $("#playerlist").append('<div class="station" onclick="play('+i+')"><div class="playstation"><img loading="lazy" id="iconstation" src="'+icon+'"></div><div class="stationdesc"><div class="stationdescname">'+name+'</div><div class="stationdesccountry">'+dest+'</div></div></div>')
     }
   }
   filtervisibility();
