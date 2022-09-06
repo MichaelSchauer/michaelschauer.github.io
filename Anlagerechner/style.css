@@ -1,0 +1,124 @@
+body{
+    color: black;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+input{
+    display: flex;
+}
+
+form{
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+form > label{
+    margin-top: 10px;
+    display: block;
+}
+
+form > input{
+    width: 100%;
+    display: block;
+    border-radius: 0;
+    height: 30px;
+    border: 1px solid grey;
+    outline: none;
+}
+
+form > input:focus{
+    border-radius: 0;
+    height: 30px;
+    border: 1px solid rgb(255, 131, 30);
+}
+
+form > button{
+    height: 30px;
+    width: 100px;
+    display: block;
+    margin-top: 10px;
+    border: none;
+    background-color: rgb(255, 131, 30);
+}
+
+form > button:hover{
+    cursor: pointer;
+    background-color: rgb(255, 189, 134);
+}
+
+#ergebnis{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#endergebnis{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+
+h4{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.auswertungsline{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-bottom: 0.5px solid grey;
+    font-size: 14px;
+}
+
+.auswertungslinie:first-child{
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+.auswertungslinie:last-child{
+    border-bottom: 1px solid white !important;
+}
+
+.auswertungsjahr{
+    text-align: left;
+    line-height: 30px;
+    width: 25%;
+    height: 30px;
+}
+
+.auswertungsjahreswertunv{
+    text-align: right;
+    line-height: 30px;
+    width: 25%;
+    height: 30px;
+}
+
+.auswertungsjahreswertverz{
+    text-align: right;
+    line-height: 30px;
+    width: 25%;
+    height: 30px;
+}
+
+.auswertungzinsen{
+    text-align: right;
+    line-height: 30px;
+    width: 25%;
+    height: 30px;
+}
