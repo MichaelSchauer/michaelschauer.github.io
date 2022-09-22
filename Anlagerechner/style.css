@@ -1,56 +1,79 @@
+:root {
+    --dark-blue: #0295A9;
+    --light-blue: #12ADC1;
+    --yellow: #FDD037;
+    --white: #FFFFFF;
+  }
+
 body{
     color: black;
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Inter';
+    background-color: var(--white);
 }
 
 h1{
-    text-align: center;
-}
-
-input{
-    display: flex;
+    text-align: left‚;
+    margin-left: 5vw;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 38px;
+    font-weight: bold;
+    color: var(--dark-blue);
 }
 
 form{
-    width: 80%;
+    width: 90vw;
     height: auto;
-    display: block;
+    padding: 0;
     margin: 0 auto;
 }
 
-form > label{
-    margin-top: 10px;
+.input-container{
     display: block;
-}
-
-form > input{
+    margin: 0 auto;
     width: 100%;
+}
+
+.text-input{
     display: block;
-    border-radius: 0;
-    height: 30px;
-    border: 1px solid grey;
+    width: Calc(100% - 9px);
+    height: 40px;
+    border:2px solid var(--dark-blue) ;
+    font-size: 18px;
     outline: none;
+    transition: all 0.2s;
+    color: var(--dark-blue);
+    background-color: var(--white);
 }
 
-form > input:focus{
-    border-radius: 0;
-    height: 30px;
-    border: 1px solid rgb(255, 131, 30);
+.text-input:focus{
+    border: 2px solid var(--yellow);
 }
 
-form > button{
-    height: 30px;
-    width: 100px;
+.label{
     display: block;
+    color: var(--dark-blue);
     margin-top: 10px;
-    border: none;
-    background-color: rgb(255, 131, 30);
+    margin-bottom:2px;
 }
 
-form > button:hover{
+.input-button{
+    height: 40px;
+    width: 120px;
+    display: block;
+    margin-top: 26px;
+    border: none;
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+.input-button:hover{
     cursor: pointer;
-    background-color: rgb(255, 189, 134);
+    background-color: var(--white);
+    border: 2px solid var(--dark-blue);
+    color: var(--dark-blue);
+    box-sizing: border-box;
 }
 
 #ergebnis{
@@ -62,7 +85,7 @@ form > button:hover{
 }
 
 #endergebnis{
-    width: 80%;
+    width: 90%;
     display: block;
     margin: 0 auto;
     margin-top: 30px;
@@ -75,6 +98,8 @@ h4{
     margin: 0 auto;
     margin-bottom: 10px;
     margin-top: 20px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .auswertungsline{
@@ -121,4 +146,12 @@ h4{
     line-height: 30px;
     width: 25%;
     height: 30px;
+}
+
+#ergebnis{
+    margin-bottom: 30px;
+}
+
+.auswertungsline:last-child{
+    border-bottom: none;
 }

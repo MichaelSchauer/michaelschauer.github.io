@@ -116,5 +116,3 @@ function removeData(chart) {
     chart.data.datasets[1].data = []
     chart.update();
 }
-
-//initialized = 1;

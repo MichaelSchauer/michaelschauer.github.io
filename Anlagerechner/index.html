@@ -7,10 +7,10 @@
     <title>Index</title>
 
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <script src="main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-
     
 
 
@@ -27,15 +27,23 @@
 <body>
     <h1>Anlagerechner</h1>
    <form>
-       <label for="startkapital">Startkapital</label>
-       <input id="startkapital" type="number" name="startkapital" >
-       <label for="monatsrate">Monatatsrate</label>
-       <input id="monatsrate" type="number" name="monatsrate" >
-       <label for="laufzeit">Laufzeit in Jahren</label>
-       <input id="laufzeit" type="number" name="laufzeit" >
-       <label for="prozent">Prozent Wachstum im Jahr</label>
-       <input id="prozent" type="number" name="prozent" >
-       <button type="button" onclick="calculate()">Berechnen</button>
+        <div class="input-container">
+            <label class="label" for="startkapital">Startkapital</label>
+            <input required class="text-input" id="startkapital"  type="number" name="startkapital" >
+        </div>
+        <div class="input-container">
+            <label class="label" for="monatsrate">Monatatsrate</label>
+            <input required class="text-input" id="monatsrate" type="number" name="monatsrate" >
+        </div>
+        <div class="input-container">
+            <label class="label" for="laufzeit">Laufzeit in Jahren</label>
+            <input required class="text-input" id="laufzeit" type="number" name="laufzeit" >
+        </div>
+        <div class="input-container">
+            <label class="label" for="prozent">Prozent Wachstum im Jahr</label>
+            <input required class="text-input" id="prozent" type="number" name="prozent" >
+        </div>
+       <button class="input-button" type="button" onclick="calculate()">Berechnen</button>
 
        
    </form>
@@ -59,10 +67,10 @@
                 data: [],
                 backgroundColor: [
                     //'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 1)',
+                    '#FDD037',
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
+                    '#FDD037',
                 ],
                 borderWidth: 0,
                 order: 2,
@@ -74,10 +82,10 @@
                 data: [],
                 backgroundColor: [
                     //'rgba(255, 99, 132, 0.2)',
-                    'rgba(255, 0, 0, 1)',
+                    '#0295A9',
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
+                    '#0295A9',,
                 ],
                 borderWidth: 0,
                 order: 1,
