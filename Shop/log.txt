@@ -1,0 +1,73 @@
+13.1.2023, 23:31:14 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+13.1.2023, 23:32:05 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+13.1.2023, 23:32:10 | test | Bestellung aufgegeben: 
+13.1.2023, 23:32:37 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+13.1.2023, 23:32:51 | test | Bestellung aufgegeben: 
+13.1.2023, 23:34:05 | test | Bestellung aufgegeben: 
+13.1.2023, 23:34:20 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+13.1.2023, 23:34:23 | test | Bestellung abgeschlossen: 
+13.1.2023, 23:35:28 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) 
+13.1.2023, 23:35:34 | test | Bestellung abgeschlossen: 
+13.1.2023, 23:37:34 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) 
+13.1.2023, 23:37:37 | test | Bestellung abgeschlossen: -Bacardi Razz(0,75l) 
+13.1.2023, 23:37:48 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+13.1.2023, 23:37:52 | test | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+13.1.2023, 23:38:18 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) 
+13.1.2023, 23:38:19 | test | Bestellung abgeschlossen: -Bacardi Razz(0,75l) 
+14.1.2023, 08:22:26 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+14.1.2023, 08:22:44 | test | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+14.1.2023, 08:22:46 | test | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+14.1.2023, 08:22:51 | test | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+14.1.2023, 08:23:06 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) 
+14.1.2023, 08:24:23 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Sandwich(200g) 
+14.1.2023, 08:24:39 | test | Bestellung abgeschlossen: -Bacardi Razz(0,75l) 
+14.1.2023, 08:24:40 | test | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Sandwich(200g) 
+15.01.2023 10:21:55 | test | Erfolgreicher Loginversuch | IP: ::1
+15.01.2023 10:22:59 | test | Erfolgreicher Loginversuch | Client IP: ::1
+15.01.2023 10:44:20 | test | Fehlgeschlagener Loginversuch | Client IP: ::1
+15.01.2023 10:45:20 | test | Erfolgreicher Loginversuch | Client IP: ::1
+15.01.2023 10:45:29 | test | Fehlgeschlagener Loginversuch | Client IP: ::1
+15.01.2023 10:45:53 | test | Fehlgeschlagener Loginversuch | Client IP: ::1
+15.01.2023 10:46:05 | test | Erfolgreicher Loginversuch | Client IP: ::1
+15.01.2023 10:46:58 | unknown user | Fehlgeschlagener Loginversuch | Client IP: ::1
+15.01.2023 10:47:13 | test | Erfolgreicher Loginversuch | Client IP: ::1
+15.1.2023, 12:25:13 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+15.1.2023, 12:25:23 | test | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+17.01.2023 10:59:18 | test | Erfolgreicher Loginversuch | Client IP: ::1
+17.1.2023, 12:57:41 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+17.1.2023, 12:57:46 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+17.1.2023, 13:05:06 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Coca Cola(1,5l) -Toast(100g) 
+17.1.2023, 13:05:11 | test | Bestellung abgeschlossen: -Jägermeister(0,7l) -Jägermeister(0,7l) -Jägermeister(0,7l) 
+17.1.2023, 13:05:12 | test | Bestellung abgeschlossen: -Jägermeister(0,7l) -Jägermeister(0,7l) 
+17.1.2023, 13:05:12 | test | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Coca Cola(1,5l) -Toast(100g) 
+17.1.2023, 13:06:50 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+17.1.2023, 13:06:52 | test | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+17.1.2023, 13:34:24 | test | Bestellung aufgegeben: -Pizza(12 Stk) -Pizza(12 Stk) 
+17.1.2023, 13:34:39 | test | Bestellung abgeschlossen: -Pizza(12 Stk) -Pizza(12 Stk) 
+17.1.2023, 13:45:26 | test | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+17.1.2023, 18:36:29 | test | Produkt gelöscht: Toast
+17.1.2023, 18:38:45 | test | Produkt gelöscht: Toast
+17.1.2023, 20:40:13 | test | Produkt Hinzugefügt: Name:Pizzastück Größe:1 Stk Lagerbestand:100
+17.1.2023, 21:25:21 | test | Produkt gelöscht: Toast
+17.1.2023, 21:29:17 | test | Produkt gelöscht: Toast
+17.1.2023, 22:15:15 | test | Produkt gelöscht: Pizza
+17.1.2023, 22:21:35 | test | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+18.1.2023, 07:08:51 | test | Produkt Hinzugefügt: Name:Pizza Größe:12 Stk Lagerbestand:10
+18.01.2023 06:14:02 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+18.01.2023 06:16:05 | test | Erfolgreicher Loginversuch | Client IP: ::1
+18.01.2023 06:24:58 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+18.01.2023 06:34:27 | test | Erfolgreicher Loginversuch | Client IP: ::1
+18.01.2023 06:34:41 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+18.01.2023 06:37:17 | test | Erfolgreicher Loginversuch | Client IP: ::1
+18.01.2023 06:54:06 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+18.1.2023, 07:59:47 | admin | Produkt hinzugefügt: Name: Pizza Größe:1 Lagerbestand:10
+18.1.2023, 08:01:53 | admin | Produkt hinzugefügt: Name: Pizza Größe:1Stk Lagerbestand:100
+18.1.2023, 08:02:07 | admin | Produkt gelöscht: Pizza
+18.1.2023, 08:04:15 | admin | Produkt hinzugefügt: Name: sdf Größe:sdf Lagerbestand:10
+18.1.2023, 08:04:50 | admin | Produkt gelöscht: sdf
+18.1.2023, 08:05:09 | admin | Produkt hinzugefügt: Name: Pizza Größe:12 Stk Lagerbestand:100
+18.1.2023, 08:08:58 | admin | Bestellung aufgegeben: -Bacardi Razz(0,75l) 
+18.01.2023 08:11:52 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+18.1.2023, 10:11:33 | admin | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Jägermeister(0,7l) -Pizza(12 Stk) 
+18.1.2023, 10:11:43 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) 
+18.1.2023, 10:11:44 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Jägermeister(0,7l) -Pizza(12 Stk) 

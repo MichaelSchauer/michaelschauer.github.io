@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, content='viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>Panorama</title>
+    <link rel="icon" href="resources/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-startup-image" href="resources/Icon.png">
+    <link rel="apple-touch-icon-precomposed" href="resources/Icon.png"/>
+    <link rel="apple-touch-icon" href="resources/Icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="resources/72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="resources/114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="resources/144.png" />
+    <link rel="manifest" href="../resources/cam.webmanifest">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <!-- <link rel="stylesheet" href="./resources/leaflet.css"/>
+    <script src="./resources/leaflet.js"></script>     -->
+</head>
+
+<section id="list"style="display: block;">
+    <card>
+        <div class="image" style="background-image: url('https://www.foto-webcam.eu/webcam/hotel-lindenhof/current/1920.jpg');"></div> 
+        <p>Ramsau Hotel Lindenhof</p>
+    </card>
+</section>
+
+<section id="map"style="display: none;">
+    Map
+</section>
+    
+<body style="padding:0; margin:0; text-align:center; background-color: #f2f2f2;">
+  <nav>
+        <div id="linkToMap" class="navItem" onclick="loadMap()" >
+            <img src="/res/map.svg">
+        </div>
+        <div id="linkToList" class="navItem" onclick="loadList()" >
+            <img src="/res/list.svg">
+        </div>
+  </nav>
+</body>
+</html>

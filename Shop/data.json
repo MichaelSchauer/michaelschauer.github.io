@@ -1,0 +1,20 @@
+[
+    {
+        "username": "admin",
+        "name": "test",
+        "surname": "test",
+        "password": "$2y$10$KzOaId6wxct3kLkDWk4pluVdHeNBsgoHBFC5KkQljlsmPBZfcQJDq"
+    },
+    {
+        "username": "test",
+        "name": "test1",
+        "surname": "test2",
+        "password": "$2y$10$rzJMpy0mHs2gbYAS5OTLTecL1Oqy8wPMfNYQkclBPp.lQi5wCc\/RG"
+    },
+    {
+        "username": "MichaelS114",
+        "name": "Michael",
+        "surname": "Schauer",
+        "password": "$2y$10$n.vT.7Ee2rXSiUnclxcJrOhAe206W33liC2CXsdoKcqVo5.tb.3qK"
+    }
+]

@@ -1,0 +1,50 @@
+[
+   {
+      "name": "Sternstein", 
+      "url": "https://www.sternstein.at/webcam.php?camNo=2",
+      "lon": "48.559706",
+      "lat": "14.268874"
+   },
+   {
+      "name": "Eidenberger Alm", 
+      "url": "https://webcam.wetter-linz.at/eidenbergeralm.jpg",
+      "lon": "48.39813917857577",
+      "lat": "14.2394095821697"
+   },
+   {
+      "name": "Großglockner Freiwandeck", 
+      "url": "https://www.foto-webcam.eu/webcam/freiwandeck/current/1920.jpg",
+      "lon": "47.082578606939386",
+      "lat": "12.751480088367892"
+   },
+   {
+      "name": "Großglockner Wallackhaus", 
+      "url": "https://www.foto-webcam.eu/webcam/wallackhaus/current/1920.jpg",
+      "lon": "47.07289631752711",
+      "lat": "12.83962264217961"
+   },
+   {
+      "name": "Ramsau Hotel Lindenhof", 
+      "url": "https://www.foto-webcam.eu/webcam/hotel-lindenhof/current/1920.jpg",
+      "lon": "47.42716679166323",
+      "lat": "13.644814551093138"
+   },
+   {
+      "name": "Innsbruck", 
+      "url": "https://www.foto-webcam.eu/webcam/innsbruck/current/1920.jpg",
+      "lon": "47.311930",
+      "lat": "11.383930"
+   },
+   {
+      "name": "Dachstein", 
+      "url": "https://www.foto-webcam.eu/webcam/simonyhuette/current/1920.jpg",
+      "lon": "47.50075192255687",
+      "lat": "13.623802937759416"
+   },
+   {
+      "name": "St. Johann in Tirol", 
+      "url": "https://www.foto-webcam.eu/webcam/wilder-kaiser/current/1920.jpg",
+      "lon": "47.492528154866115",
+      "lat": "12.426760857173687"
+   }
+]
