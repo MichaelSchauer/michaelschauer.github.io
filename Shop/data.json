@@ -16,5 +16,19 @@
         "name": "Michael",
         "surname": "Schauer",
         "password": "$2y$10$n.vT.7Ee2rXSiUnclxcJrOhAe206W33liC2CXsdoKcqVo5.tb.3qK"
+    },
+    {
+        "username": "schauer2000",
+        "name": "Michael",
+        "surname": "Schauer",
+        "password": "$2y$10$ogiGOmNCemQei.\/adHQDSu6LKG2d1Yy5\/xkLQQMR9ILLRt1VUAovy",
+        "rights": 0
+    },
+    {
+        "username": "alex2005",
+        "name": "Alexander",
+        "surname": "Schauer",
+        "password": "$2y$10$m6vxEp\/UQJpoPDWvZ\/rLD.6V6EHMqNiUT2\/McYBgO3XcgZJlfDCY6",
+        "rights": 0
     }
 ]

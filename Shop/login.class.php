@@ -48,7 +48,7 @@ class LoginUser{
 
 					//open file orders.json and write (overwrite) data into file 
 					$file = fopen("log.txt", "a");
-					echo fwrite($file, $log1);
+					fwrite($file, $log1);
 					//close stream
 					fclose($file);
 				}
@@ -62,7 +62,7 @@ class LoginUser{
 
 		//open file orders.json and write (overwrite) data into file 
 		$file = fopen("log.txt", "a");
-		echo fwrite($file, $log1);
+		fwrite($file, $log1);
 		//close stream
 		fclose($file);
 

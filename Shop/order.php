@@ -17,24 +17,25 @@
     <meta name="viewport" content="width=device-width, content='viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <title>Bestellungen</title>
-    <link rel="icon" href="resources/favicon.ico" type="image/x-icon"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Shop</title>
+    <link rel="icon" href="res/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon"/>
-    <link rel="apple-touch-startup-image" href="resources/Icon.png">
-    <link rel="apple-touch-icon-precomposed" href="resources/Icon.png"/>
-    <link rel="apple-touch-icon" href="resources/Icon.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="resources/72.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="resources/114.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="resources/144.png" />
-    <!-- <link rel="manifest" href="resources/cam.webmanifest"> -->
+    <link rel="apple-touch-startup-image" href="res/icon.png">
+    <link rel="apple-touch-icon-precomposed" href="res/icon.png"/>
+    <link rel="apple-touch-icon" href="res/icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="res/72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="res/114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="res/144.png" /> 
+    <link rel="manifest" href="res/manifest.webmanifest">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="shop.css">
-	<link rel="stylesheet" href="order.css">
-	<link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="lib/css/shop.css">
+	<link rel="stylesheet" href="lib/css/order.css">
+	<link rel="stylesheet" href="lib/css/main.css">
 
 
-    <script src="main.js"></script>
+    <script src="lib/js/main.js"></script>
     
 
 </head>
@@ -83,6 +84,7 @@
 
 	//Displays orders
 	function displayOrders(){
+		showNoOrders();
 		$("#orderItems").empty();
 		var json = getOrdersFromFile();
 		console.log(json);
@@ -106,20 +108,38 @@
 
 			var id = i+1;
 			var time = '&quot;'+json[i].time+'&quot;';
-			var text = "<div class='order'>"
-			text+= "<div class='orderNr'><p>"+id+"<p></div>"
+			var text = "<div class='order'><div class='orderFrom'>Bestellung von "+json[i].user+" nach "+json[i].location+"</div>"
+			// text+= "<div class='orderNr'><p>"+id+"<p></div>"
 			text+= "<div class='orderItems'>"+orderitems+ordersizes+"</div>"
-			text+= "<div class='orderDetails'>"+json[i].user+"</div>"
-			text+= "<div class='orderRoom'>"+json[i].location+"</div>"
+			// text+= "<div class='orderDetails'>"+json[i].user+"</div>"
+			// text+= "<div class='orderRoom'>"+json[i].location+"</div>"
 			text+= "<div class='orderCheck'><button class='ordercheckbutton' onclick='deleteOrder("+time+")'><img class='ordercheckimg' src='res/icons/prufen.svg'></button></div></div>"
 			
-			$("#orderItems").append(text);		
+			$("#orderItems").append(text);	
 		}
 	}
 
 </script>
+
+<style>
+	body{
+		padding:0; margin:0; text-align:center; background-color: #4338ca;
+	}
+
+	section{
+		height: 100vh; top: 40px; right: 0; margin: 0;
+	}
+
+	mobileNav{
+		background: #f3f4f6;
+	}
+</style>
     
-<body style="padding:0; margin:0; text-align:center; background-color: #f2f2f2;" onload="displayOrders()">
+<body onload="displayOrders()">
+<mobileNav>
+	<div class="mobileHeader" id="productAdmin"><img src="res/icons/plus.svg"></div>
+	<div class="mobileHeader"id="mobileLogOut"><a href="?logout"><img src="res/icons/exit.svg"></a></div>
+</mobileNav>
 <toastGood><div class="toastMessage"></div><div class="toastTime"><div class="timerGood"></div></div></toastGood>
 <toastBad><div class="toastMessage"></div><div class="toastTime"><div class="timerBad"></div></div></toastBad>
 
@@ -127,28 +147,17 @@
 
 <sidebar>
 	<div class="logo"><div>HAK</div></div>
-	<div class="sidebar_item"><a href="index.php"><img src="res/icons/home.svg"/></a></div>
-	<div class="sidebar_item orders" ><a href="cart.php"><img src="res/icons/bag.svg"/></a></div>
-	<div class="sidebar_item"><a href="#"><img src="res/icons/order.svg"/></a></div>
-	<div id="productAdmin" class="sidebar_item"><a href="product.php"><img src="res/icons/plus.svg"/></a></div>
-	<div class="sidebar_item"><a href="?logout"><img src="res/icons/exit.svg"></a></div>
+	<div class="sidebar_item"><a href="index.php"><img src="res/icons/home.svg"/>Startseite</a></div>
+	<div class="sidebar_item orders" ><a href="cart.php"><img src="res/icons/bag.svg"/>Warenkorb</a><div id="pill"></div></div>
+	<div class="sidebar_item"><a href="#"><img src="res/icons/order.svg"/>Bestellungen</a></div>
+	<div id="productAdmin" class="sidebar_item"><a href="product.php"><img src="res/icons/plus.svg"/>Bearbeiten</a></div>
+	<div class="sidebar_item"><a href="?logout"><img src="res/icons/exit.svg">Abmelden</a></div>
 </sidebar>
 
-<section style="height: 100vh; top: 0; right: 0; margin: 0;">
+<section>
     <div class="section_wrap">
 
-        <h3>Bestellungen</h3>
-
-		<div class="order" style="min-height: 40px; font-weight: bold;">
-			<div class="orderNr"><p>Nr.<p></div>
-			<div class="orderItems">
-				<div class = "orderitemcontainer" style="text-align:left">Produkt</div>
-				<div class="orderSizes" style="justify-content: left;"><div class='orderItems' style="width: 100%">Größe</div></div>
-			</div>
-			<div class="orderDetails">Kunde</div>
-			<div class="orderRoom">Ort</div>
-			<div class="orderCheck">Bestätigen</div>
-		</div>
+        <h3>Offene Bestellungen</h3>
         <div id="orderItems">			
         </div>	
     </div>
@@ -156,16 +165,24 @@
 
 <!-- Nav -->
 
-<!-- <nav>
-    <div><img src="res/icons/home.svg"></div>
-    <div><img src="res/icons/cart.svg"></div>
-    <div><img src="res/icons/history.svg"></div>
-</nav> -->
+<nav>
+    <div id="linkIndex" class="navLink" onclick="location.href='index.php'"><img src="res/icons/home.svg"><span>Home</span></div>
+    <div id="linkCart" class="navLink" onclick="location.href='cart.php'"><img src="res/icons/bag.svg"><span>Warenkorb</span></div>
+    <div id="linkOrder" class="navLink" onclick="location.href='#'"><img src="res/icons/order.svg"><span>Bestellungen</span></div>
+	<div id="linkProduct" class="navLink" onclick="location.href='product.php'"><img src="res/icons/plus.svg"><span>Produkte</span></div>
+</nav>
 <script>
 	//check admin rights
 	if(getUser()!="admin"){
-		$("#productAdmin").hide();
+		document.getElementById("productAdmin").remove();
+		const element = document.getElementById("productAdmin");
+		element.remove();
+
+		//document.getElementById("linkProduct").remove();
+		const element2 = document.getElementById("linkProduct");
+		element2.remove();
 	}
+
 </script>
 </body>
 

@@ -71,3 +71,110 @@
 18.1.2023, 10:11:33 | admin | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Jägermeister(0,7l) -Pizza(12 Stk) 
 18.1.2023, 10:11:43 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) 
 18.1.2023, 10:11:44 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Jägermeister(0,7l) -Pizza(12 Stk) 
+20.1.2023, 07:20:28 | admin | Produkt gelöscht: Pizza
+20.1.2023, 07:20:46 | admin | Produkt hinzugefügt: Name: Pizza Größe:12 Stk Lagerbestand:100
+20.01.2023 07:50:06 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+20.01.2023 08:30:59 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+20.1.2023, 09:34:35 | admin | Bestellung aufgegeben: -Bacardi Razz(0,75l) 
+20.01.2023 08:38:37 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+20.1.2023, 09:50:29 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) 
+20.1.2023, 09:50:40 | admin | Bestellung aufgegeben: -Bacardi Razz(0,75l) 
+20.1.2023, 14:30:11 | admin | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Coca Cola(1,5l) 
+20.1.2023, 16:39:11 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) 
+20.1.2023, 16:39:12 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Coca Cola(1,5l) 
+20.01.2023 15:42:39 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+20.01.2023 18:13:02 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+20.1.2023, 19:13:22 | admin | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Sandwich(200g) 
+20.1.2023, 19:13:28 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+20.1.2023, 19:13:29 | admin | Bestellung abgeschlossen: -Jägermeister(0,7l) -Jägermeister(0,7l) -Jägermeister(0,7l) 
+20.1.2023, 19:13:30 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Sandwich(200g) 
+20.01.2023 19:50:47 | admin | Fehlgeschlagener Loginversuch | Client IP: ::1
+20.01.2023 19:50:47 | unknown user | Fehlgeschlagener Loginversuch | Client IP: ::1
+20.01.2023 19:50:50 | unknown user | Fehlgeschlagener Loginversuch | Client IP: ::1
+20.01.2023 19:50:54 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+20.1.2023, 20:51:12 | admin | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+20.1.2023, 20:51:17 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+20.1.2023, 20:51:38 | admin | Produkt hinzugefügt: Name: Pizza Größe:1 Stk Lagerbestand:30
+21.01.2023 18:24:32 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+21.1.2023, 19:29:16 | admin | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Jägermeister(0,7l) -Cappy Orange(0,75l) 
+21.01.2023 18:35:16 | MichaelS114 | Erfolgreicher Loginversuch | Client IP: ::1
+21.01.2023 18:40:49 | admin | Fehlgeschlagener Loginversuch | Client IP: ::1
+21.01.2023 18:40:49 | unknown user | Fehlgeschlagener Loginversuch | Client IP: ::1
+21.01.2023 18:40:59 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+21.01.2023 18:45:33 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+21.01.2023 18:50:04 | MichaelS114 | Erfolgreicher Loginversuch | Client IP: ::1
+21.01.2023 19:00:50 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+21.1.2023, 20:00:55 | admin | Produkt gelöscht: Pizza
+21.1.2023, 20:01:25 | admin | Produkt hinzugefügt: Name: Pizzastück Größe:1 Stk Lagerbestand:120
+21.1.2023, 20:01:53 | admin | Produkt hinzugefügt: Name: Bratwürstel Größe:1 Paar Lagerbestand:60
+21.1.2023, 20:02:14 | admin | Produkt hinzugefügt: Name: Semmel Größe:1 Stk Lagerbestand:200
+21.1.2023, 20:03:11 | admin | Produkt hinzugefügt: Name: Chicken Wrap Größe:1 Stk Lagerbestand:50
+21.1.2023, 20:03:58 | admin | Produkt hinzugefügt: Name: Kebap Größe:1 Stk Lagerbestand:100
+21.1.2023, 20:04:17 | admin | Produkt hinzugefügt: Name: Klopfer Größe:1 Packung Lagerbestand:30
+21.1.2023, 20:04:39 | admin | Produkt hinzugefügt: Name: Freistädter Märzen Größe:1 Flasche Lagerbestand:200
+21.1.2023, 20:05:00 | admin | Produkt hinzugefügt: Name: Jim Beam Größe:0,7 L Lagerbestand:20
+21.1.2023, 20:05:20 | admin | Produkt hinzugefügt: Name: Berliner Luft Größe:0.75 L Lagerbestand:20
+21.1.2023, 20:05:45 | admin | Produkt hinzugefügt: Name: Absolut Vodka Größe:0,7L Lagerbestand:20
+21.1.2023, 20:06:18 | admin | Produkt hinzugefügt: Name: Hofstettner Granitseiterl Größe:0,35 L Lagerbestand:150
+21.1.2023, 20:06:45 | admin | Bestellung aufgegeben: -Hofstettner Granitseiterl(0,35 L) -Absolut Vodka(0,7L) -Berliner Luft(0.75 L) -Pizza(1 Stk) -Toast(100g) -Sandwich(200g) 
+21.1.2023, 20:06:59 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Jägermeister(0,7l) -Cappy Orange(0,75l) 
+21.01.2023 19:18:36 | MichaelS114 | Erfolgreicher Loginversuch | Client IP: ::1
+21.1.2023, 20:18:52 | MichaelS114 | Bestellung aufgegeben: -Bacardi Razz(0,75l) 
+21.01.2023 19:20:45 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+21.1.2023, 20:20:54 | admin | Produkt gelöscht: Jim Beam
+21.1.2023, 20:21:15 | admin | Produkt hinzugefügt: Name: Jim Beam Größe:0,7 L Lagerbestand:20
+21.01.2023 20:25:44 | admin | Erfolgreicher Loginversuch | Client IP: 127.0.0.1
+22.01.2023 10:34:46 | admin | Erfolgreicher Loginversuch | Client IP: 127.0.0.1
+23.01.2023 07:05:09 | test | Erfolgreicher Loginversuch | Client IP: 127.0.0.1
+23.01.2023 07:10:36 | admin | Erfolgreicher Loginversuch | Client IP: 127.0.0.1
+23.01.2023 10:05:39 | test | Erfolgreicher Loginversuch | Client IP: 127.0.0.1
+23.1.2023, 11:09:43 | test | Bestellung abgeschlossen: -Hofstettner Granitseiterl(0,35 L) -Absolut Vodka(0,7L) -Berliner Luft(0.75 L) -Pizza(1 Stk) -Toast(100g) -Sandwich(200g) 
+23.1.2023, 11:09:44 | test | Bestellung abgeschlossen: -Hofstettner Granitseiterl(0,35 L) -Absolut Vodka(0,7L) -Berliner Luft(0.75 L) -Pizza(1 Stk) -Toast(100g) -Sandwich(200g) 
+23.01.2023 10:15:54 | test | Fehlgeschlagener Loginversuch | Client IP: 127.0.0.1
+23.01.2023 10:15:54 | unknown user | Fehlgeschlagener Loginversuch | Client IP: 127.0.0.1
+23.01.2023 10:17:05 | test | Fehlgeschlagener Loginversuch | Client IP: 127.0.0.1
+23.01.2023 10:17:05 | unknown user | Fehlgeschlagener Loginversuch | Client IP: 127.0.0.1
+23.01.2023 10:17:07 | test | Fehlgeschlagener Loginversuch | Client IP: 127.0.0.1
+23.01.2023 10:17:07 | unknown user | Fehlgeschlagener Loginversuch | Client IP: 127.0.0.1
+23.01.2023 10:17:13 | unknown user | Fehlgeschlagener Loginversuch | Client IP: 127.0.0.1
+23.01.2023 10:17:29 | unknown user | Fehlgeschlagener Loginversuch | Client IP: 127.0.0.1
+23.01.2023 10:17:35 | test | Fehlgeschlagener Loginversuch | Client IP: 127.0.0.1
+23.01.2023 10:17:35 | unknown user | Fehlgeschlagener Loginversuch | Client IP: 127.0.0.1
+23.01.2023 10:42:52 | admin | Erfolgreicher Loginversuch | Client IP: 127.0.0.1
+23.01.2023 10:45:53 | admin | Erfolgreicher Loginversuch | Client IP: 127.0.0.1
+23.01.2023 11:53:58 | test | Fehlgeschlagener Loginversuch | Client IP: 127.0.0.1
+23.01.2023 11:53:58 | unknown user | Fehlgeschlagener Loginversuch | Client IP: 127.0.0.1
+23.01.2023 11:54:02 | test | Erfolgreicher Loginversuch | Client IP: 127.0.0.1
+25.01.2023 09:08:08 | admin | Erfolgreicher Loginversuch | Client IP: 127.0.0.1
+25.01.2023 09:14:28 | admin | Erfolgreicher Loginversuch | Client IP: 127.0.0.1
+25.01.2023 09:46:06 | admin | Erfolgreicher Loginversuch | Client IP: 127.0.0.1
+25.1.2023, 10:46:18 | admin | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+25.1.2023, 10:47:38 | admin | Produkt hinzugefügt: Name: Test123 Größe:1 Lagerbestand:2
+25.01.2023 09:49:10 | admin | Erfolgreicher Loginversuch | Client IP: 127.0.0.1
+25.1.2023, 10:49:47 | admin | Produkt gelöscht: Test123
+25.1.2023, 11:01:42 | admin | Produkt hinzugefügt: Name: Pizza Größe:1 Lagerbestand:10
+25.1.2023, 12:38:19 | admin | Produkt hinzugefügt: Name: dgf Größe:dfg Lagerbestand:45
+25.1.2023, 12:38:42 | admin | Produkt gelöscht: dgf
+25.1.2023, 12:39:13 | admin | Produkt gelöscht: Pizza
+25.1.2023, 17:58:45 | admin | Produkt hinzugefügt: Name: test Größe:223 Lagerbestand:123
+25.1.2023, 17:59:11 | admin | Produkt hinzugefügt: Name: test Größe:test Lagerbestand:123
+25.1.2023, 17:59:23 | admin | Produkt gelöscht: test
+25.1.2023, 18:03:06 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+25.1.2023, 18:14:58 | admin | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+25.1.2023, 18:15:01 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+25.1.2023, 18:15:11 | admin | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+25.1.2023, 18:15:13 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+25.1.2023, 18:15:27 | admin | Produkt hinzugefügt: Name: 123 Größe:123 Lagerbestand:123
+25.1.2023, 18:15:40 | admin | Produkt gelöscht: 123
+25.1.2023, 18:28:27 | admin | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+25.1.2023, 18:28:29 | admin | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) 
+02.02.2023 12:31:04 | alex2005 | Erfolgreicher Loginversuch | Client IP: ::1
+2.2.2023, 13:31:52 | alex2005 | Bestellung aufgegeben: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Jägermeister(0,7l) -Jägermeister(0,7l) 
+2.2.2023, 13:32:10 | alex2005 | Bestellung abgeschlossen: -Bacardi Razz(0,75l) -Bacardi Razz(0,75l) -Jägermeister(0,7l) -Jägermeister(0,7l) 
+02.02.2023 12:32:19 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+2.2.2023, 13:32:57 | admin | Produkt hinzugefügt: Name: Pizza Tonno Größe:12 Stk Lagerbestand:20
+2.2.2023, 13:33:25 | admin | Produkt gelöscht: Pizza Tonno
+02.02.2023 13:19:21 | admin | Erfolgreicher Loginversuch | Client IP: ::1
+02.02.2023 13:27:15 | admin | Fehlgeschlagener Loginversuch | Client IP: ::1
+02.02.2023 13:27:15 | unknown user | Fehlgeschlagener Loginversuch | Client IP: ::1
+02.02.2023 13:27:20 | admin | Erfolgreicher Loginversuch | Client IP: ::1

@@ -1,0 +1,364 @@
+section{
+    background-color: #f3f4f6;
+}
+
+.addWrap{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 0.375rem;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.addImageWrap{
+    display: flex;
+    background: #f9fafb;
+    border-radius: 0.375rem;
+    border: 1px solid #e5e7eb;
+    height: 260px;
+    width: 210px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.addImageWrap:hover{
+    cursor: pointer;
+}
+
+.addFormWrap{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: left;
+    justify-content:left;
+    border-radius: 30px;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+
+    #selectType{
+        height: 38px;
+        width: 100%;
+        max-width: 302px;
+        margin-bottom: 12px;
+        border:  1px solid #e5e7eb !important;
+        border-radius: 0.375rem;
+        font-size: 16px;
+        border: 1px;
+        color: #757575;
+        text-indent: 10px;
+    }
+
+.addFormWrap p{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+.addFormWrap input[type=text]{
+    margin: 0;
+    padding: 0;
+    height: 38px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 12px;
+	border:  1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    text-indent: 10px;
+    outline: none;
+    font-size: 16px;
+
+}
+
+.addFormWrap input[type=text]:focus{
+    border: 1px solid #4338ca;
+
+}
+
+.addFormWrap input[type=number]{
+    margin: 0;
+    padding: 0;
+    height: 38px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 12px;
+    border:  1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    text-indent: 10px;
+    outline: none;
+    font-size: 16px;
+
+}
+
+.addFormWrap input[type=number]:focus{
+    border: 1px solid #4338ca;
+
+}
+
+
+#addThumb{
+    display: block;
+    height: 40px;
+    width: 40px;
+	filter: invert(17%) sepia(29%) saturate(7293%) hue-rotate(239deg) brightness(86%) contrast(95%);
+    opacity: 0.8;
+}
+
+.addImageWrap canvas{
+    display: none;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.addImageWrap label{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addImageWrap label:hover{
+    cursor: pointer;
+}
+
+#addItem{
+    display: block;
+    height: 40px;
+    width: 100px;
+    background-color: #4338ca;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    float: right;
+    margin: 20px;
+    margin-right: 0;
+    margin-top: 30px;
+    transition: none;
+    margin-top: auto;
+}
+
+#addItem button{
+    width: 100px;
+}
+
+#addItem:hover{
+    background-color: #e0e7ff;
+	color: #4338ca;
+    cursor: pointer;
+}
+
+.addButton{
+    display: block;
+    width: 100%;
+    min-height: 60px;
+    height: fit-content;
+}
+
+.addItem{
+    height: fit-content;
+    display: block;
+    width: 100%;
+}
+
+#products{
+    padding-bottom: 10px;
+}
+
+.prodItem{
+    width: 100%;
+    min-height: 50px;
+    display: block;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    border-left:  1px solid #e5e7eb; 
+    border-right:  1px solid #e5e7eb; 
+    border-bottom:  1px solid #e5e7eb; ;
+}
+
+#products .prodItem:last-child{
+    border-radius: 0 0 0.375rem 0.375rem;
+}
+
+.prodItemFirst{
+    font-weight: bold;
+    color: black !important;
+    font-size: 15px;
+    background-color: #f9fafb;
+    border:  1px solid #e5e7eb; 
+    border-radius: 0.375rem 0.375rem 0 0;
+    font-family: InterBold;
+}
+
+.tcpf{
+    width: 45%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: left;
+    text-indent: 10px;
+}
+
+.tcp{
+    width: 45%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: left;
+    display: block;
+    text-align: left;
+    line-height: 50px;
+}
+
+.tc{
+    width: 15%;
+    min-height: 50px;
+    display: block;
+    text-align: left;
+    line-height: 50px;
+    text-indent: 10px;
+    line-height: 50px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+    .tc:first-child{
+        width: 20%;
+    }
+
+    .tc:nth-child(3){
+        justify-content: right;
+    }
+
+
+.rem{
+    width: 20%;
+    height: 50px;
+    display: flex;
+    padding-right: 10px;
+    justify-content: right;
+    align-items: center;
+    color: #4338ca;
+    box-sizing: border-box;
+}
+
+.rem:hover{
+    cursor: pointer;
+}
+
+.remF{
+    width: 20%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    box-sizing: border-box;
+}
+
+#searchProduct{
+    height: 34px;
+    width: 100%;
+    min-width: 40px;
+    max-width: 300px;
+    background-color: #fff;
+    outline: none;
+	border:  1px solid #e5e7eb;    
+    border-radius: 0.375rem;
+    font-size: 16px;
+    text-indent: 10px;
+}
+
+
+.buttonSave{
+    display: block;
+    height: 40px;
+    width: 100px;
+    background-color: #4338ca;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 16px;
+    float: right;
+    transition: none;
+    margin-bottom: 40px !important;
+}
+
+.buttonSave:hover{
+    background-color: #e0e7ff;
+	color: #4338ca;
+    cursor: pointer;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .addWrap{
+        height: 700px;
+      
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .addImageWrap{
+        height: 100%;
+        max-height: 300px;
+        width: 240px;
+    }
+    
+    .addFormWrap{
+        height: 100%;
+        max-height: 300px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .addWrap{
+        height: fit-content;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .addImageWrap{
+        height: 300px;
+        max-height: 300px;
+        width: 240px;
+    }
+    
+    .addFormWrap{
+        margin-top: 10px;
+        padding:0;
+        height: fit-content;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    section{
+        top: 40px !important;
+    }
+}

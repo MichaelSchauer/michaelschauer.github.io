@@ -3,15 +3,18 @@ class RegisterUser{
 	// Class properties
 	private $username;
 	private $raw_password;
+	private $checkPass;
 	private $encrypted_password;
 	public $error;
 	public $success;
+	public $surname;
+	private $name;
 	private $storage = "data.json";
 	private $stored_users;
 	private $new_user; // array 
 
 
-	public function __construct($username, $password, $name, $surname){
+	public function __construct($username, $password, $name, $surname, $password2){
 
 		$this->username = trim($this->username);
 		$this->username = filter_var($username, FILTER_SANITIZE_STRING);
@@ -22,16 +25,19 @@ class RegisterUser{
 		$this->surname = trim($this->surname);
 		$this->surname = filter_var($surname, FILTER_SANITIZE_STRING);
 
+		$this->checkPass = filter_var(trim($password2), FILTER_SANITIZE_STRING);
+
 		$this->raw_password = filter_var(trim($password), FILTER_SANITIZE_STRING);
 		$this->encrypted_password = password_hash($this->raw_password, PASSWORD_DEFAULT);
 
 		$this->stored_users = json_decode(file_get_contents($this->storage), true);
-
+		$rights = 0;
 		$this->new_user = [
 			"username" => $this->username,
 			"name" => $this->name,
 			"surname" => $this->surname,
 			"password" => $this->encrypted_password,
+			"rights" => $rights,
 		];
 
 		if($this->checkFieldValues()){
@@ -41,8 +47,8 @@ class RegisterUser{
 
 
 	private function checkFieldValues(){
-		if(empty($this->username) || empty($this->raw_password)){
-			$this->error = "Beide Felder werden benötigt.";
+		if(empty($this->username) || empty($this->raw_password) || empty($this->name)|| empty($this->surname)|| empty($this->checkPass)){
+			$this->error = "Alle Felder werden benötigt.";
 			return false;
 		}else{
 			return true;
@@ -53,16 +59,25 @@ class RegisterUser{
 	private function usernameExists(){
 		foreach($this->stored_users as $user){
 			if($this->username == $user['username']){
-				$this->error = "Benutzername ist bereits in verwendung";
+				$this->error = "Benutzername ist bereits in Verwendung";
 				return true;
 			}
 		}
 		return false;
 	}
 
+	private function passwortMatches(){
+		if(strcmp($_POST['password'], $_POST['password2']) !== 0){
+			$this->error = "Passwörter stimmen nicht überein";
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 
 	private function insertUser(){
-		if($this->usernameExists() == FALSE){
+		if($this->usernameExists() == FALSE && $this->passwortMatches() == FALSE){
 			array_push($this->stored_users, $this->new_user);
 			if(file_put_contents($this->storage, json_encode($this->stored_users, JSON_PRETTY_PRINT))){
 				return $this->success = "Registrierung erfolgreich";

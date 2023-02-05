@@ -19,32 +19,35 @@
 	<head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, content='viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Shop</title>
-    <!-- <link rel="icon" href="resources/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="res/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon"/>
-    <link rel="apple-touch-startup-image" href="resources/Icon.png">
-    <link rel="apple-touch-icon-precomposed" href="resources/Icon.png"/>
-    <link rel="apple-touch-icon" href="resources/Icon.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="resources/72.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="resources/114.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="resources/144.png" /> -->
-    <!-- <link rel="manifest" href="resources/cam.webmanifest"> -->
+    <link rel="apple-touch-startup-image" href="res/icon.png">
+    <link rel="apple-touch-icon-precomposed" href="res/icon.png"/>
+    <link rel="apple-touch-icon" href="res/icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="res/72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="res/114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="res/144.png" /> 
+    <link rel="manifest" href="res/manifest.webmanifest">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="shop.css">
-	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="lib/css/shop.css">
+	<link rel="stylesheet" href="lib/css/main.css">
+	<link rel="stylesheet" href="lib/css/product.css">
 
 
-    <script src="main.js"></script>
-	<script src="product.js"></script>
+    <script src="lib/js/main.js"></script>
+	<script src="lib/js/product.js"></script>
 
     
 
 </head>
 <script>
+	
+	function changeColor(){
+  		$("#selectType").css("color", "black");
+	};
 
 	function getUser(){
 		var user = "<?php echo $_SESSION['user']; ?>";
@@ -96,6 +99,7 @@
 			success: function(response) {
 				console.log("updated Item")
 				console.log(response);
+				location.reload();
 			}
 		})
 	}	
@@ -133,24 +137,46 @@
 			}
 		})
 	}
-
-
 </script>
+
+<style>
+	body{
+		padding:0; margin:0; text-align:center; background-color: #4338ca;
+	}
+
+	section{
+		height: 100vh; top: 0px; right: 0; margin: 0;
+	}
+
+	mobileNav{
+		background: #f3f4f6;
+	}
+
+	.addFormWrap p{
+		font-size: 14px;
+		margin-bottom: 20px;
+		color:grey;
+	}
+</style>
     
-<body style="padding:0; margin:0; text-align:center; background-color: #f2f2f2;" onload="showProductTable()">
+<body onload="showProductTable()">
+<mobileNav>
+	<div class="mobileHeader" id="productAdmin"><img src="res/icons/plus.svg"></div>
+	<div class="mobileHeader"id="mobileLogOut"><a href="?logout"><img src="res/icons/exit.svg"></a></div>
+</mobileNav>
 <toastGood><div class="toastMessage"></div><div class="toastTime"><div class="timerGood"></div></div></toastGood>
 <toastBad><div class="toastMessage"></div><div class="toastTime"><div class="timerBad"></div></div></toastBad>
 
 <sidebar>
 	<div class="logo"><div>HAK</div></div>
-	<div class="sidebar_item"><a href="index.php"><img src="res/icons/home.svg"/></a></div>
-	<div class="sidebar_item orders" ><a href="cart.php"><img src="res/icons/bag.svg"/></a></div>
-	<div class="sidebar_item"><a href="order.php"><img src="res/icons/order.svg"/></a></div>
-	<div id="productAdmin" class="sidebar_item"><a href="#"><img src="res/icons/plus.svg"/></a></div>
-	<div class="sidebar_item"><a href="?logout"><img src="res/icons/exit.svg"></a></div>
+	<div class="sidebar_item"><a href="index.php"><img src="res/icons/home.svg"/>Startseite</a></div>
+	<div class="sidebar_item orders" ><a href="cart.php"><img src="res/icons/bag.svg"/>Warenkorb</a><div id="pill"></div></div>
+	<div class="sidebar_item"><a href="order.php"><img src="res/icons/order.svg"/>Bestellungen</a></div>
+	<div id="productAdmin" class="sidebar_item"><a href="#"><img src="res/icons/plus.svg"/>Bearbeiten</a></div>
+	<div class="sidebar_item"><a href="?logout"><img src="res/icons/exit.svg">Abmelden</a></div>
 </sidebar>
 
-<section style="top:0">
+<section>
     <div class="section_wrap">
 
         <h3>Produktverwaltung</h3>
@@ -165,40 +191,36 @@
 				</div>
 				<div class="addFormWrap">
 					<input style="display:none"type="file" id="imageLoader" name="imageLoader" />
-					<p>Art des Produkts</p>
-					<select id="selectType">
-						<option disabled selected value></option>
+					<p>maximale Bildgröße: 2 MB</p>
+					<select id="selectType" onchange="changeColor()">
+						<option selected hidden >Produktart</option>
 						<option value="1">Getränk</option>
 						<option value="2">Essen</option>
 					</select>
-					<p>Produktbezeichnung</p>
-					<input type="text" id="inputName">
-					<p>Größe/Menge</p>
-					<input type="text" id="inputSize">
-					<p>Lagerbestand</p>
-					<input type="number" id="inputStock">
-					<button id="addItem" onclick="saveItem()">Speichern</button>
+					<input type="text" id="inputName" placeholder="Produktname" maxlength="20">
+					<input type="text" id="inputSize" placeholder="Größe" maxlength="7">
+					<input type="number" id="inputStock" placeholder="Lagerbestand" maxlength="9">
 				</div>
 			</div>
+			<div class="addButton"><button id="addItem" onclick="saveItem()">Speichern</button></div>
 
 		<h4>Produkt löschen</h4>
-		<div class='prodItem prodItemFirst'><div class='tc'>Nr.</div><div class='tc'><input id="searchProduct" type="text" placeholder="Suchen" onkeyup="showProductTableFilter()"></div><div class='tc'>Größe</div><div class='remF'>Löschen</div></div>
+		<div class='prodItem prodItemFirst'><div class='tc'>Nr.</div><div class='tcpf'><input id="searchProduct" type="text" placeholder="Suchen" onkeyup="showProductTableFilter()"></div><div class='tc'>Größe</div><div class='remF'></div></div>
 		<div id="products"></div>
-
-        <!-- <div id="drinks">
-        </div>
-		<div id="food">
-        </div> -->
+		<button class="buttonSave" onclick="saveDeletedItems()">Speichern</button>
+      
     </div>
 </section>
 
 <!-- Nav -->
 
-<!-- <nav>
-    <div><img src="res/icons/home.svg"></div>
-    <div><img src="res/icons/cart.svg"></div>
-    <div><img src="res/icons/history.svg"></div>
-</nav> -->
+<nav>
+    <div id="linkIndex" class="navLink" onclick="location.href='index.php'"><img src="res/icons/home.svg"><span>Home</span></div>
+    <div id="linkCart" class="navLink" onclick="location.href='cart.php'"><img src="res/icons/bag.svg"><span>Warenkorb</span></div>
+    <div id="linkOrder" class="navLink" onclick="location.href='order.php'"><img src="res/icons/order.svg"><span>Bestellungen</span></div>
+	<div id="linkProduct" class="navLink" onclick="location.href='#'"><img src="res/icons/plus.svg"><span>Produkte</span></div>
+</nav>
+
 <script>
 
 var imageLoader = document.getElementById('imageLoader');
@@ -235,9 +257,17 @@ var onImageLoad = function(img) {
 }
 
 //check admin rights
-if(getUser()!="admin"){
-		$("#productAdmin").hide();
+	//check admin rights
+	if(getUser()!="admin"){
+		document.getElementById("productAdmin").remove();
+		const element = document.getElementById("productAdmin");
+		element.remove();
+
+		//document.getElementById("linkProduct").remove();
+		const element2 = document.getElementById("linkProduct");
+		element2.remove();
 	}
+
 </script>
 </body>
 <!-- <h2>Willkommen <?php echo $_SESSION['user']; ?><h2> -->
