@@ -1,0 +1,111 @@
+{
+    "webext2": true,
+    "version": "1.3.1",
+    "title": "laufende Eins\u00e4tze",
+    "pubDate": "Tue, 14 Feb 2023 08:30:04 +0100",
+    "cnt_feuerwehren": 3,
+    "cnt_einsaetze": 2,
+    "einsaetze": {
+        "0": {
+            "einsatz": {
+                "num1": "E230202697",
+                "einsatzort": "RI - RIED IM INNKREIS",
+                "startzeit": "Tue, 14 Feb 2023 08:07:26 +0100",
+                "inzeit": "",
+                "status": "offen",
+                "alarmstufe": 1,
+                "einsatzart": "TEE",
+                "einsatztyp": {
+                    "id": "DISP",
+                    "text": "SELBSTST\u00c4NDIGER FEUERWEHREINSATZ  (OHNE AL LWZ\/BWST)"
+                },
+                "einsatzsubtyp": {
+                    "id": "VU-DI",
+                    "text": "VERKEHRSUNFALL"
+                },
+                "adresse": {
+                    "default": "RIED IM INNKREIS",
+                    "earea": "RIED IM INNKREIS",
+                    "emun": "RIED IM INNKREIS",
+                    "efeanme": "",
+                    "estnum": "",
+                    "ecompl": "KREISVERKEHR B143 HAUSRUCKSTRA\u00dfE"
+                },
+                "wgs84": {
+                    "lng": 13.482609999999999,
+                    "lat": 48.212721000000002
+                },
+                "bezirk": {
+                    "id": 8,
+                    "text": "Ried im Innkreis"
+                },
+                "cntfeuerwehren": 1,
+                "feuerwehren": {
+                    "408223": {
+                        "feuerwehr": "FF Ried im Innkreis"
+                    }
+                },
+                "feuerwehrenarray": {
+                    "0": {
+                        "fwnr": "408223",
+                        "fwname": "FF Ried im Innkreis"
+                    }
+                }
+            }
+        },
+        "1": {
+            "einsatz": {
+                "num1": "E230202694",
+                "einsatzort": "PE - ARBING",
+                "startzeit": "Tue, 14 Feb 2023 07:51:01 +0100",
+                "inzeit": "",
+                "status": "offen",
+                "alarmstufe": "2",
+                "einsatzart": "TEE",
+                "einsatztyp": {
+                    "id": "VU",
+                    "text": "VERKEHRSUNFALL FEUERWEHREINSATZ"
+                },
+                "einsatzsubtyp": {
+                    "id": "AUFRAEUM-VU",
+                    "text": "VERKEHRSUNFALL AUFR\u00c4UMARBEITEN"
+                },
+                "adresse": {
+                    "default": "INKOBA 11",
+                    "earea": "ARBING",
+                    "emun": "ARBING",
+                    "efeanme": "INKOBA",
+                    "estnum": "11",
+                    "ecompl": ""
+                },
+                "wgs84": {
+                    "lng": 14.70255,
+                    "lat": 48.224155000000003
+                },
+                "bezirk": {
+                    "id": 7,
+                    "text": "Perg"
+                },
+                "cntfeuerwehren": 2,
+                "feuerwehren": {
+                    "407302": {
+                        "feuerwehr": "FF Arbing"
+                    },
+                    "407309": {
+                        "feuerwehr": "FF M\u00fcnzbach"
+                    }
+                },
+                "feuerwehrenarray": {
+                    "0": {
+                        "fwnr": "407302",
+                        "fwname": "FF Arbing"
+                    },
+                    "1": {
+                        "fwnr": "407309",
+                        "fwname": "FF M\u00fcnzbach"
+                    }
+                }
+            }
+        }
+    }
+}
