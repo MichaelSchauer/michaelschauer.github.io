@@ -171,10 +171,12 @@ card{
   padding: 0 !important;
   background-color: var(--light);
   width: calc(100vw - 32px);
+  border-radius: 12px !important
 }
 
 .leaflet-popup-content-wrapper{
     background-color: var(--light) !important;
+    border-radius: 12px !important
    
 }
 
@@ -208,5 +210,6 @@ card{
     height: fit-content;
     width: 100%;
     background-color: var(--light);
+    border-radius: 12px;
 }
 
