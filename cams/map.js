@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var map = L.map('map').setView([48.099399, 14.250617], 8.5);
   
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    L.tileLayer("https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png", {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
     
@@ -26,17 +26,17 @@ document.addEventListener("DOMContentLoaded", function() {
         iconUrl: 'res/dot.svg',
         iconSize: [24, 24],
         iconAnchor: [0, 0],
-        popupAnchor: [0, -20],
+        popupAnchor: [0, -24],
     });
     d3.json("res/stations.json").then(function(data) {
         console.log(data)
         for(var i = 0; i < data.length; i++){
             var lon = data[i].lon;
             var lat = data[i].lat;
-            var img = data[i].url;
+            var url = JSON.stringify(data[i].url);
             var name = data[i].name;
             var marker = L.marker([lon, lat],{icon: myIcon}  ).addTo(map);
-            marker.bindPopup("<div>"+name+"<div>");
+            marker.bindPopup("<div class='popup'><div class='popupimage' style='background-image: url("+url+");' onclick='window.location = "+url+"'></div><p>"+name+"</p><div>");
             marker.on('click', onClick);
 
         }

@@ -9,6 +9,4 @@ function loadCams(){
             // <div class='image' style='background-image: url("+data_json[i].url+");' onclick='window.location = "+data_json[i].url+";></div>
         }
     })
-   
-
 }

@@ -143,6 +143,17 @@ card{
     margin: 0 auto;
 }
 
+.popupimage{
+    border-radius: 12px;
+    display: block;
+    max-width: calc(100vw - 32px) !important;
+    height: 210px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+}
+
 #map{
     height: 100%;
     width: 100%;
@@ -151,16 +162,51 @@ card{
 
 /* leaflet */
 
-.leaflet-popup-tip-container, .leaflet-control-attribution, .leaflet-control-zoom, .leaflet-popup-tip{
+.leaflet-popup-close-button,.leaflet-popup-tip-container, .leaflet-control-attribution, .leaflet-control-zoom, .leaflet-popup-tip{
     display: none;
 }
 
-.leaflet-popup-content-wrapper{
-    position: absolute !important;
-    left: 16px !important;
-    bottom: 90px !important;
-    height: 50px !important;
-    width: calc(100vw - 32px);
-    display: block !important;
-    border-radius: 12px !important;
+.leaflet-popup-content{
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: var(--light);
+  width: calc(100vw - 32px);
 }
+
+.leaflet-popup-content-wrapper{
+    background-color: var(--light) !important;
+   
+}
+
+    .leaflet-popup-content-wrapper p{
+        font-size: 16px;
+        line-height: 16px;
+        margin: 16px !important;
+        font-weight: 400;
+    }
+
+
+
+/* .leaflet-popup-pane, .leaflet-popup{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transform: none !important;
+    bottom: 0 !important;
+    left: 0 !important;
+} */
+
+.popup{
+    /* position: fixed;
+    left: 16px;
+    bottom: 90px;
+
+    display: block;
+    border-radius: 12px;
+    background-color: #fff; */    
+    
+    height: fit-content;
+    width: 100%;
+    background-color: var(--light);
+}
+
