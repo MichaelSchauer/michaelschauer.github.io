@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var map = L.map('map').setView([48.099399, 14.250617], 8.5);
   
-    L.tileLayer("https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png", {
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
     
