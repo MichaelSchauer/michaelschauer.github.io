@@ -148,3 +148,19 @@ card{
     width: 100%;
     display: block;
 }
+
+/* leaflet */
+
+.leaflet-popup-tip-container, .leaflet-control-attribution, .leaflet-control-zoom, .leaflet-popup-tip{
+    display: none;
+}
+
+.leaflet-popup-content-wrapper{
+    position: absolute !important;
+    left: 16px !important;
+    bottom: 90px !important;
+    height: 50px !important;
+    width: calc(100vw - 32px);
+    display: block !important;
+    border-radius: 12px !important;
+}
