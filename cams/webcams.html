@@ -20,28 +20,29 @@
 
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="res/stations.json"></script>
+
     <!-- <link rel="stylesheet" href="./resources/leaflet.css"/>
     <script src="./resources/leaflet.js"></script>     -->
 </head>
-
-<section id="list"style="display: block;">
-    <card>
-        <div class="image" style="background-image: url('https://www.foto-webcam.eu/webcam/hotel-lindenhof/current/1920.jpg');"></div> 
-        <p>Ramsau Hotel Lindenhof</p>
-    </card>
-</section>
-
-<section id="map"style="display: none;">
-    Map
-</section>
     
-<body style="padding:0; margin:0; text-align:center; background-color: #f2f2f2;">
+<body style="padding:0; margin:0; text-align:center; background-color: #f2f2f2;" onload="loadCams()">
+    <header>
+        <p>Webcams</p>
+    </header>
+    <section id="list"style="display: block;">
+   
+    </section>
+
   <nav>
-        <div id="linkToMap" class="navItem" onclick="loadMap()" >
-            <img src="/res/map.svg">
+        <div id="linkToMap" class="navItem" >
+            <div class="naviconcont active"><img src="res/map.svg"></div>
+            <p>Webcams</p>
         </div>
-        <div id="linkToList" class="navItem" onclick="loadList()" >
-            <img src="/res/list.svg">
+        <div id="linkToList" class="navItem" onclick="window.location = 'map.html'" >
+            <div class="naviconcont"><img src="res/list.svg"></div>
+            <p>Karte</p>
         </div>
   </nav>
 </body>

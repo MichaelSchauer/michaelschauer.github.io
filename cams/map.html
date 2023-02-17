@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, content='viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>Panorama</title>
+    <link rel="icon" href="resources/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-startup-image" href="resources/Icon.png">
+    <link rel="apple-touch-icon-precomposed" href="resources/Icon.png"/>
+    <link rel="apple-touch-icon" href="resources/Icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="resources/72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="resources/114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="resources/144.png" />
+    <link rel="manifest" href="../resources/cam.webmanifest">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <script src="map.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- <script type="text/javascript" src="res/stations.json"></script> -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+</head>
+    
+<body style="padding:0; margin:0; text-align:center; background-color: #f2f2f2;">
+    <header>
+        <p>Karte</p>
+    </header>
+    <section style="display: block; height: calc(100vh - 192px); top: 112px;">
+        <div id="map"></div>
+    </section>
+
+  <nav>
+        <div id="linkToMap" class="navItem" onclick="window.location = 'webcams.html'" >
+            <div class="naviconcont"><img src="res/map.svg"></div>
+            <p>Webcams</p>
+        </div>
+        <div id="linkToList" class="navItem" >
+            <div class="naviconcont active"><img src="res/list.svg"></div>
+            <p>Karte</p>
+        </div>
+  </nav>
+</body>
+<script>
+    var map = L.map('map', {
+        center: [14.268874, 48.559706],
+        zoom: 10
+    });
+</script>
+</html>
